@@ -1,0 +1,47 @@
+﻿@using System.Globalization
+@using System.Web.Optimization
+@using InSiteCommerce.Web
+<!DOCTYPE html>
+<html data-isCustomErrorEnabled="@Html.IsCustomErrorEnabled()">
+<head>
+    @Html.RequireScript("/Scripts/Libraries/modernizr/2.6.2/custom.modernizr.js", false)
+    @Html.RequireScript("/Scripts/Libraries/porthole/0.0.0/porthole.min.js", false)
+    @Styles.Render(BundleConfig.ContentAdminGlobalStyleBundlePath)
+    
+    @RenderSection("Styles", false)
+</head>
+<body>
+    @RenderBody()
+    @Html.RequireScript("/Console/editor/ckeditor.js", false)
+    @Html.RequireScript("/Console/editor/ckfinder/ckfinder.js", false)
+    @Scripts.Render(BundleConfig.ContentAdminLibraryScriptBundlePath)
+    @Html.RequireScript("/Scripts/App/jquery.autocomplete.custom.js", false)
+    <script>
+        ko.bindingHandlers.checkedRadioToBool = {
+            init: function (element, valueAccessor, allBindingsAccessor) {
+                var observable = valueAccessor(),
+                    interceptor = ko.computed({
+                        read: function () {
+                            return observable().toString();
+                        },
+                        write: function (newValue) {
+                            observable(newValue === "true");
+                        },
+                        owner: this
+                    });
+                ko.applyBindingsToNode(element, { checked: interceptor });
+            }
+        };
+    </script>
+    @Scripts.Render(BundleConfig.ContentAdminGlobalScriptBundlePath)
+    <script>
+        insite.core.dateTimeFormat = "@CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern";
+    </script>
+
+    @Html.RenderDeferredScripts()
+    
+    @RenderSection("Javascript", false)
+</body>
+<!-- @HttpContext.Current.Server.MachineName -->
+<!-- InSiteCommerce -->
+</html>

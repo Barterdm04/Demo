@@ -1,0 +1,22 @@
+﻿@model Footer
+
+@if (!ExcludeCmsCss)
+{
+    @Html.Raw(Model.Css)
+}
+
+@if (!ExcludeCmsJs)
+{
+    @Html.Script(@<text>@Html.Raw(Model.JavaScript)</text>)
+}
+
+<footer class="cms-rearrangeable" id="footer">
+    <div class="footer-tier-1-wrap">
+        <div class="row">
+            <div class="medium-12 large-12 columns footer-tier-1">
+                @Html.Zone(Model, "TopContent")
+            </div>
+        </div>
+    </div>
+    <div class="ui-lock use-fastclick"></div>
+</footer>

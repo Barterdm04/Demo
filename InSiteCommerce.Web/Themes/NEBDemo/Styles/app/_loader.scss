@@ -1,0 +1,60 @@
+﻿.morsco-loader-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.morsco-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes loader {
+    to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes loader {
+    to {-webkit-transform: rotate(360deg);}
+}
+ 
+.morsco-loader {
+    min-width: 50px;
+    min-height: 50px;
+}
+ 
+.morsco-loader:before {
+    content: 'Loading…';
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+ 
+.morsco-loader:not(:required):before {
+    content: '';
+    border-radius: 50%;
+    border-top: 2px solid #03ade0;
+    border-right: 2px solid transparent;
+    animation: loader .6s linear infinite;
+    -webkit-animation: loader .6s linear infinite;
+}
+
+.slideshow-wrapper {
+    .preloader {
+
+        &:before {}
+    }
+}

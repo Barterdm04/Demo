@@ -1,0 +1,13 @@
+﻿@model Insite.Account.Content.MyAccountAddressPage
+
+@section BodyClass {ma-addresses}
+@section Styles
+{
+    @Html.RequireCss(Url.ThemedContent("/Styles/template/ma-addresses.css"))
+}
+
+<div class="row main-row">
+    <div class="medium-12 large-12 columns">
+        @Html.Zone(Model, "Content")
+    </div>
+</div>

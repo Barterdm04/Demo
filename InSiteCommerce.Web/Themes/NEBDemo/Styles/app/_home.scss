@@ -1,0 +1,159 @@
+﻿@import "_colors.scss";
+
+@media all and (min-width: 1040px) {
+ .home-main-row {
+    
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
+@media (max-width: 642px) {
+    .home-three-image-container, .home-four-image-container {
+        .columns {
+            padding:.15em 0 !important;
+          }
+    }
+}
+
+.leftnav a:link{
+    color:black;
+}
+
+.home-three-image-container {
+    margin-top: .75rem;
+
+     img {
+        width:100%;
+        height:100%;
+    }
+  .columns {
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+  .columns:first-child {
+      padding-right:.5rem;
+      padding-left:0;
+  }
+  .columns:last-child {
+      padding-left:.5rem;
+      padding-right:0;
+  }
+}
+
+.home-four-image-container {
+    margin-top: 1rem;
+
+    img {
+        width:100%;
+        height:100%;
+    }
+  .columns {
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+  .columns:first-child {
+      padding-right:.5rem;
+      padding-left:0;
+  }
+  .columns:last-child {
+      padding-left:.5rem;
+      padding-right:0;
+  }
+}
+
+
+.left-nav-home {
+    padding:0;
+}
+.home-left-nav-title{
+    color:$white;
+    background:$tarawera;
+    padding-left:.6rem;
+    height:45px;
+    line-height:45px;
+}
+
+.home-cta{
+    margin-top:0;
+    padding-left:1.2rem;
+    padding-right:1.2rem;
+    height:100%;
+
+  .button-container {
+    text-align: center;
+    margin-bottom:1.6rem;
+  }
+}
+
+.home-cta-row{
+     margin-top: .75rem;
+    padding-left: .0rem !important;
+    padding-right: .0rem !important;
+   .cta-column, .cta-columns {
+    padding-left: .0rem !important;
+    padding-right: .0rem !important;
+    border: 1px solid $mercury;
+    }
+   .cta-column:first-child {
+        background:$wild-sand;
+    }
+}
+
+.home-info {
+    padding-left:1.2rem;
+    padding-right:1.2rem;
+    .button-container {
+    text-align: center;
+    margin-bottom:1.6rem;
+  }
+}
+
+.home-popular-brands{
+    background:$white;
+    text-align:center;
+    hr{
+        height: 1px;
+        border: 0;
+        border-top: 1px solid $mercury;
+        margin-left:1.2rem;
+        margin-right:1.2rem;
+        margin-bottom:.5rem;
+    
+    }
+}
+
+.home-link-list {
+    height: 381px;
+    margin-bottom:0 !important;
+}
+
+.home-subscribe{
+    background:$wild-sand;
+    border: 1px solid $mercury;
+    padding-left:1rem;
+    padding-right:1rem;
+    height: 231px;
+    display: table-cell;
+    vertical-align: middle;
+
+    button{
+        width:100% !important;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:.5rem;
+    }
+
+    input{
+        max-width:100%;
+    }
+    
+}
+
+.promotions-carousel {
+    img {
+        margin:0 auto;
+    }
+}
+
+

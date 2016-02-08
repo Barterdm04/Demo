@@ -1,0 +1,963 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Dealers</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Dealers.Content.DealerPageCreator">
+            <summary>
+            Responsible for Creating the Dealer Page
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Content.DealerPageCreator.Create">
+            <summary>Creates this instance.</summary>
+            <returns>The <see cref="T:Insite.Dealers.Content.DealerPage"/>.</returns>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerDirectionsPage">
+            <summary>
+             The Dealer Directions Content Page
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerDirectionsPageCreator">
+            <summary>
+            Responsible for Creating the Dealer Directions Page
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Content.DealerDirectionsPageCreator.Create">
+            <summary>Creates this instance.</summary>
+            <returns>The <see cref="T:Insite.Dealers.Content.DealerDirectionsPage"/>.</returns>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerDirectionsView">
+            <summary>
+            The Dealer Directions Widgit
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerLocatorPage">
+            <summary>
+            The Dealer Locator Content Page
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerLocatorPageCreator">
+            <summary>
+            Responsible for creating the dealer locator page
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Content.DealerLocatorPageCreator.Create">
+            <summary>Creates this instance.</summary>
+            <returns>The <see cref="T:System.Int32"/>.</returns>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerLocatorView">
+            <summary>
+            The Dealer Locator Widget
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerPage">
+            <summary>
+             The Dealer Content Page
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerPreparer">
+            <summary>
+            The Dealer Preparer
+            </summary>
+        </member>
+        <member name="F:Insite.Dealers.Content.DealerPreparer.ServiceLocator">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Dealers.Content.DealerPreparer.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Microsoft.Practices.ServiceLocation.IServiceLocator)">
+            <summary>
+            Get <see cref="T:Insite.Dealers.WebApi.V1.ApiModels.DealerModel"/> for current request
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Content.DealerPreparer.Prepare(Insite.Dealers.Content.DealerPage)">
+            <summary>
+            Prepare for loading <see cref="T:Insite.Dealers.Content.DealerPage"/>
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Content.DealerPreparer.GetDealerInfo">
+            <summary>
+            Get <see cref="T:Insite.Dealers.WebApi.V1.ApiModels.DealerModel"/> for current request
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Content.DealerView">
+            <summary>
+            The Dealer Widgit
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.Handlers.Helpers.DealerProvider">
+            <summary>
+                DealerLocator_Generic - the Generic DealerLocator provider.
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.Handlers.Interfaces.IDealerProvider">
+            <summary>
+            Abstraction layer to retrieve dealers based on a location or a search string.
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.Interfaces.IDealerProvider.FindDealers(System.Guid,System.Double,System.Double,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Finds dealers based on location, radius and name (optional). Provides a paging mechanism to pull the dealers in
+            chunks.
+            </summary>
+            <param name="websiteId">Id of website to find associated dealers.</param>
+            <param name="latitude">Latitude of the center point of the search area.</param>
+            <param name="longitude">Longitude of the center point of the search area.</param>
+            <param name="radius">Distance from the center point in miles to the outer edge of the search area.</param>
+            <param name="name">Name of the dealer to search for.</param>
+            <param name="page">Page to pull from the matches.</param>
+            <param name="pageSize">Max number of rows to pull from the matches.</param>
+            <returns>A <see cref="T:Insite.Dealers.Services.Handlers.Helpers.FindDealersResult"/>.</returns>
+        </member>
+        <member name="F:Insite.Dealers.Services.Handlers.Helpers.DealerProvider.UnitOfWork">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.Helpers.DealerProvider.#ctor(InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Insite.Dealers.Services.Handlers.Helpers.DealerProvider"/> class.
+            </summary>
+            <param name="unitOfWork">The unit of work.</param>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.Helpers.DealerProvider.FindDealers(System.Guid,System.Double,System.Double,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+                Finds dealers based on location, radius and name (optional). Provides a paging mechanism to pull the dealers in
+                chunks.
+            </summary>
+            <param name="websiteId">Id of website to find associated dealers.</param>
+            <param name="latitude">Latitude of the center point of the search area.</param>
+            <param name="longitude">Longitude of the center point of the search area.</param>
+            <param name="name">Name of the store to search for.</param>
+            <param name="radius">Distance from the center point in miles to the outer edge of the search area.</param>
+            <param name="page">Page to pull from the matches.</param>
+            <param name="pageSize">Max number of rows to pull from the matches.</param>
+            <returns>A <see cref="T:Insite.Dealers.Services.Handlers.Helpers.FindDealersResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.Helpers.DealerProvider.PopulateHtmlContent(System.Collections.Generic.IList{Insite.Dealers.Services.Dtos.DealerSqlDto})">
+            <summary>
+                Method used to get the hours for each dealer if they're defined.
+            </summary>
+            <param name="dealers">List of dealers to populate HtmlContent (hours) for.</param>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.Helpers.DealerProvider.MapDealerLocatorSqlDtoToDealerLocatorDto(Insite.Dealers.Services.Dtos.DealerSqlDto)">
+            <summary>
+                Method used to take the <see cref="T:Insite.Dealers.Services.Dtos.DealerSqlDto"/> and turn it into the more generic <see cref="T:Insite.Dealers.Services.Dtos.DealerDto"/>.
+            </summary>
+            <param name="dealer">DealerLocatorSqlDto objects to turn into a DealerDto object.</param>
+        </member>
+        <member name="P:Insite.Dealers.Services.Handlers.Helpers.DealerProvider.ParameterCollection">
+            <summary>
+                Gets or sets the ParameterCollection.
+            </summary>
+            <value>
+                The ParameterCollection.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.Services.DealerService">
+            <summary>
+            The default implementation of <see cref="T:Insite.Dealers.Services.IDealerService"/> that offers functions for finding dealers by either
+            specifying a point and finding dealers near that point or by specifying a name and finding dealers with names
+            matching the name provided.
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.IDealerService">
+            <summary>
+                Public interface that provides the contract for implementing a DealerLocatorService. The implementation's primary
+                responsibility is to offer functions for finding dealers by location and by name.
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.IDealerService.GetDealerCollection(Insite.Dealers.Services.Parameters.GetDealerCollectionParameter)">
+            <summary>
+                Find nearest dealers by location and name.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter"/>.</param>
+            <returns>A <see cref="T:Insite.Dealers.Services.Results.GetDealerCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.Services.IDealerService.GetDealer(Insite.Dealers.Services.Parameters.GetDealerParameter)">
+            <summary>
+                Get a single dealer by id.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Dealers.Services.Parameters.GetDealerParameter"/>.</param>
+            <returns>A <see cref="T:Insite.Dealers.Services.Results.GetDealerResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.Services.DealerService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>
+            Dependency Injection constructor.
+            </summary>
+            <param name="unitOfWorkFactory"><see cref="T:InSite.Model.Interfaces.IUnitOfWork"/></param>
+            <param name="contextProvider"><see cref="T:InSite.Model.Interfaces.IContextProvider"/></param>
+            <param name="translationLocalizer"><see cref="T:InSite.Model.Interfaces.ITranslationLocalizer"/></param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.Dealers.Services.DealerService.GetDealerCollection(Insite.Dealers.Services.Parameters.GetDealerCollectionParameter)">
+            <summary>
+            Find nearest dealers by location and name.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter"/>.</param>
+            <returns>
+            A <see cref="T:Insite.Dealers.Services.Results.GetDealerCollectionResult"/>.
+            </returns>
+        </member>
+        <member name="M:Insite.Dealers.Services.DealerService.GetDealer(Insite.Dealers.Services.Parameters.GetDealerParameter)">
+            <summary>
+            Provides the functionality to find a single dealer.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+            A <see cref="T:Insite.Dealers.Services.Results.GetDealerResult"/>.
+            </returns>
+        </member>
+        <member name="T:Insite.Dealers.Services.Dtos.DealerSqlDto">
+            <summary>
+            Class that has some extra SQL specific knowledge that is not required in the more general
+            </summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.rownumber">
+            <summary>
+                Gets or sets the rownumber.
+            </summary>
+            <value>
+                The rownumber.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Id">
+            <summary>
+                Gets or sets the dealer identifier.
+            </summary>
+            <value>
+                The dealer identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Address1">
+            <summary>
+                Gets or sets the address1.
+            </summary>
+            <value>
+                The address1.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Address2">
+            <summary>
+                Gets or sets the address2.
+            </summary>
+            <value>
+                The address2.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.City">
+            <summary>
+                Gets or sets the city.
+            </summary>
+            <value>
+                The city.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.State">
+            <summary>
+                Gets or sets the state.
+            </summary>
+            <value>
+                The state.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>
+            The postal code.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.CountryId">
+            <summary>
+                Gets or sets the country identifier.
+            </summary>
+            <value>
+                The country identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>
+            The phone.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Latitude">
+            <summary>
+                Gets or sets the latitude.
+            </summary>
+            <value>
+                The latitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Longitude">
+            <summary>
+                Gets or sets the longitude.
+            </summary>
+            <value>
+                The longitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.WebSiteUrl">
+            <summary>
+                Gets or sets the web site URL.
+            </summary>
+            <value>
+                The web site URL.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.ContentManagerId">
+            <summary>
+                Gets or sets the content manager identifier.
+            </summary>
+            <value>
+                The content manager identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.HtmlContent">
+            <summary>
+                Gets or sets the content of the HTML.
+            </summary>
+            <value>
+                The content of the HTML.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerSqlDto.Distance">
+            <summary>
+                Gets or sets the distance.
+            </summary>
+            <value>
+                The distance.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.Services.Dtos.DealerDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Distance">
+            <summary>Gets or sets the distance.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.DealerId">
+            <summary>Gets or sets the dealer identifier.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Name">
+            <summary>Gets or sets the name.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Address1">
+            <summary>Gets or sets the address1.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Address2">
+            <summary>Gets or sets the address2.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.City">
+            <summary>Gets or sets the city.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.State">
+            <summary>Gets or sets the state.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.PostalCode">
+            <summary>Gets or sets the zip.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.CountryId">
+            <summary>Gets or sets the country identifier.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Phone">
+            <summary>Gets or sets the phone1.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Latitude">
+            <summary>Gets or sets the latitude.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.Longitude">
+            <summary>Gets or sets the longitude.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.WebSiteUrl">
+            <summary>Gets or sets the web site URL.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.HtmlContent">
+            <summary>Gets or sets the content of the HTML.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Dtos.DealerDto.DistanceUnitOfMeasure">
+            <summary>Gets or sets the distance unit of measure.</summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler">
+            <summary>The get dealer collection handler.</summary>
+        </member>
+        <member name="F:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler.ContextProvider">
+            <summary>
+            The context provider.
+            </summary>
+        </member>
+        <member name="F:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler.DealerProvider">
+            <summary>
+            The dealer provider.
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider,Insite.Dealers.Services.Handlers.Interfaces.IDealerProvider)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="dealerProvider">The dealer locator provider.</param>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Dealers.Services.Parameters.GetDealerCollectionParameter,Insite.Dealers.Services.Results.GetDealerCollectionResult)">
+            <summary>Executes the handler.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Dealers.Services.Results.GetDealerCollectionResult"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">The value of 'parameter' cannot be null. </exception>
+            <exception cref="T:System.FormatException">does not represent a number in a valid format. </exception>
+            <exception cref="T:System.OverflowException">represents a number that is less than <see cref="F:System.Double.MinValue"/> or greater than <see cref="F:System.Double.MaxValue"/>. </exception>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler.FindDistanceUnitOfMeasure(System.Collections.Generic.IList{Insite.Dealers.Services.Dtos.DealerDto},InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>The find distance unit of measure.</summary>
+            <param name="dealers">The dealers.</param>
+            <param name="unitOfWork">The unit of work.</param>
+            <returns>The <see cref="T:InSite.Model.DistanceUnitOfMeasure"/>.</returns>
+        </member>
+        <member name="P:Insite.Dealers.Services.Handlers.GetDealerCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.Handlers.GetDealerHandler">
+            <summary>The get dealer handler.</summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.GetDealerHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Dealers.Services.Parameters.GetDealerParameter,Insite.Dealers.Services.Results.GetDealerResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Dealers.Services.Results.GetDealerResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.GetDealerHandler.MapDealerToDealerDto(InSite.Model.Dealer,InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>Maps a <see cref="T:InSite.Model.Dealer"/> object to a <see cref="T:Insite.Dealers.Services.Dtos.DealerDto"/>.</summary>
+            <param name="dealer">The <see cref="T:InSite.Model.Dealer"/>.</param>
+            <param name="unitOfWork">The unit of work.</param>
+            <returns>A <see cref="T:Insite.Dealers.Services.Results.GetDealerResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.Services.Handlers.GetDealerHandler.FindDistanceUnitOfMeasure(InSite.Model.Dealer,InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>The find distance unit of measure.</summary>
+            <param name="dealer">The dealer.</param>
+            <param name="unitOfWork">The unit of work.</param>
+            <returns>The <see cref="T:InSite.Model.DistanceUnitOfMeasure"/>.</returns>
+        </member>
+        <member name="P:Insite.Dealers.Services.Handlers.GetDealerHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.Handlers.Helpers.FindDealersResult">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Handlers.Helpers.FindDealersResult.Dealers">
+            <summary>The dealers found the correspond to the search criteria, start row and page size.</summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Handlers.Helpers.FindDealersResult.Count">
+            <summary>The total count of dealers found regardless of page size provided.</summary>
+        </member>
+        <member name="T:Insite.Dealers.Services.Parameters.GetDealerParameter">
+            <summary>
+            Parameter used in the GetDealer method of the <see cref="T:Insite.Dealers.Services.IDealerService"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Parameters.GetDealerParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dealers.Services.Parameters.GetDealerParameter"/> class.</summary>
+            <param name="currentContext">The current Context.</param>
+            <param name="dealerId">The dealer identifier.</param>
+        </member>
+        <member name="P:Insite.Dealers.Services.Parameters.GetDealerParameter.DealerId">
+            <summary>
+            Id of dealer to retrieve.
+            </summary>
+            <value>
+            The dealer identifier.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.Services.Results.GetDealerResult">
+            <summary>
+                Result used in the GetDealer method of the <see cref="T:Insite.Dealers.Services.IDealerService"/>.
+            </summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerResult.Dealer">
+            <summary>
+                Gets or sets the dealer.
+            </summary>
+            <value>
+                The dealer.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter">
+            <summary>
+            Parameter used in the GetDealers method of the <see cref="T:Insite.Dealers.Services.IDealerService"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter.UseDefaultLocation">
+            <summary>
+            Gets or sets a value indicating whether [use default location].
+            </summary>
+            <value>
+            <c>true</c> if [use default location]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter.Latitude">
+            <summary>
+            Latitude of point to use when finding dealers.
+            </summary>
+            <value>
+            The latitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter.Longitude">
+            <summary>
+            Longitude of point to use when finding dealers.
+            </summary>
+            <value>
+            The longitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter.Radius">
+            <summary>
+            Radius to use when searching for dealers.
+            </summary>
+            <value>
+            The radius.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter.Name">
+            <summary>
+            Name of the dealer to use when finding dealers.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.Services.Results.GetDealerCollectionResult">
+            <summary>
+                Result used in the GetDealers method of the <see cref="T:Insite.Dealers.Services.IDealerService"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Dealers.Services.Results.GetDealerCollectionResult.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Insite.Dealers.Services.Results.GetDealerCollectionResult"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.Latitude">
+            <summary>
+                Latitude of point used to find locations.
+            </summary>
+            <value>
+                The latitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.Longitude">
+            <summary>
+                Longitude of point used to find locations.
+            </summary>
+            <value>
+                The longitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.Dealers">
+            <summary>
+                List of dealers found.
+            </summary>
+            <value>
+                The dealers.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.DistanceUnitOfMeasure">
+            <summary>
+                Gets or sets the distance unit of measure.
+            </summary>
+            <value>
+                The distance unit of measure.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.GeocodeErrorMessage">
+            <summary>
+                Gets or sets the geocode error message.
+            </summary>
+            <value>
+                The geocode error message.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.LocationSearchLabel">
+            <summary>
+                Gets or sets the location search label.
+            </summary>
+            <value>
+                The location search label.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.NameSearchLabel">
+            <summary>
+                Gets or sets the name search label.
+            </summary>
+            <value>
+                The name search label.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.NoLocationMessage">
+            <summary>
+                Gets or sets the no location message.
+            </summary>
+            <value>
+                The no location message.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.NoResultsMessage">
+            <summary>
+                Gets or sets the no results message.
+            </summary>
+            <value>
+                The no results message.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.DealerLocatorDefaultPageSize">
+            <summary>
+                Gets or sets the size of the dealer locator default page.
+            </summary>
+            <value>
+                The size of the dealer locator default page.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.Services.Results.GetDealerCollectionResult.Radius">
+            <summary>
+                Gets or sets the radius.
+            </summary>
+            <value>
+                The radius.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.Dealers">
+            <summary>
+            Gets or sets the dealers.
+            </summary>
+            <value>
+            The dealers.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.DistanceUnitOfMeasure">
+            <summary>
+            Gets or sets the distance unit of measure.
+            </summary>
+            <value>
+            The distance unit of measure.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.Pagination">
+            <summary>
+            Gets or sets the pagination.
+            </summary>
+            <value>
+            The pagination.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.DefaultLatitude">
+            <summary>
+            Gets or sets the default latitude.
+            </summary>
+            <value>
+            The default latitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.DefaultLongitude">
+            <summary>
+            Gets or sets the default longitude.
+            </summary>
+            <value>
+            The default longitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.FormattedAddress">
+            <summary>
+            Gets or sets the formatted address.
+            </summary>
+            <value>
+            The formatted address.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.DefaultRadius">
+            <summary>
+            Gets or sets the default radius.
+            </summary>
+            <value>
+            The default radius.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel.StartDealerNumber">
+            <summary>
+            Gets or sets the start dealer number.
+            </summary>
+            <value>
+            The start dealer number.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.ApiModels.DealerModel">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.DealerId">
+            <summary>
+            Gets or sets the dealer identifier.
+            </summary>
+            <value>
+            The dealer identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+            <value>
+            The address1.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+            <value>
+            The address2.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>
+            The city.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>
+            The state.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>
+            The postal code.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+            <value>
+            The country identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>
+            The phone.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Latitude">
+            <summary>
+            Gets or sets the latitude.
+            </summary>
+            <value>
+            The latitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Longitude">
+            <summary>
+            Gets or sets the longitude.
+            </summary>
+            <value>
+            The longitude.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.WebSiteUrl">
+            <summary>
+            Gets or sets the web site URL.
+            </summary>
+            <value>
+            The web site URL.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.HtmlContent">
+            <summary>
+            Gets or sets the content of the HTML.
+            </summary>
+            <value>
+            The content of the HTML.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.Distance">
+            <summary>
+            Gets or sets the distance.
+            </summary>
+            <value>
+            The distance.
+            </value>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerModel.DistanceUnitOfMeasure">
+            <summary>
+            Gets or sets the distance unit of measure.
+            </summary>
+            <value>
+            The distance unit of measure.
+            </value>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Dealers.Services.IDealerService.GetDealerCollection(Insite.Dealers.Services.Parameters.GetDealerCollectionParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.UseDefaultLocation">
+            <summary>Gets or sets the use default location</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.Latitude">
+            <summary>Gets or sets the latitude</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.Longitude">
+            <summary>Gets or sets the longitude</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.Radius">
+            <summary>Gets or sets the radius</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.Name">
+            <summary>Gets or sets the name</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.Page">
+            <summary>Gets or sets the page</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.StartPage">
+            <summary>Gets or sets the start page.</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.PageSize">
+            <summary>Gets or sets the page size.</summary>
+        </member>
+        <member name="P:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter.Sort">
+            <summary>Gets or sets the sort.</summary>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.Mappers.DealersStartupTask">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.DealersStartupTask.Run">
+            <summary>
+            Method that gets executed by the <see cref="T:InSite.Model.BootStrapper.IBootStrapper"/>.
+            </summary>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper">
+            <summary>The get dealer collection mapper.</summary>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.Mappers.Interfaces.IGetDealerCollectionMapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper.GetDealerMapper">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper.ObjectToObjectMapper">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper.UrlHelper">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper.#ctor(Insite.Dealers.WebApi.V1.Mappers.Interfaces.IGetDealerMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper"/> class.</summary>
+            <param name="getDealerMapper">The get Dealer Mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper.MapParameter(Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="apiParameter">The API parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Dealers.Services.Parameters.GetDealerCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.GetDealerCollectionMapper.MapResult(Insite.Dealers.Services.Results.GetDealerCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionModel"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">The value of 'serviceResult' cannot be null. </exception>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper">
+            <summary>The get dealer mapper.</summary>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.Mappers.Interfaces.IGetDealerMapper">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper.ObjectToObjectMapper">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper.UrlHelper">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper.#ctor(Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper"/> class. Gets the dealer locator mapper.</summary>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="apiParameter">The API parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Dealers.Services.Parameters.GetDealerParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.Mappers.GetDealerMapper.MapResult(Insite.Dealers.Services.Results.GetDealerResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Dealers.WebApi.V1.ApiModels.DealerModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Dealers.WebApi.V1.DealersV1Controller">
+            <summary>The dealers v 1 controller.</summary>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.DealersV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Dealers.Services.IDealerService,Insite.Dealers.WebApi.V1.Mappers.Interfaces.IGetDealerCollectionMapper,Insite.Dealers.WebApi.V1.Mappers.Interfaces.IGetDealerMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dealers.WebApi.V1.DealersV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="dealerService">The dealer locator service.</param>
+            <param name="getDealerCollectionMapper">The get dealer locator collection mapper.</param>
+            <param name="getDealerMapper">The get dealer locator mapper.</param>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.DealersV1Controller.Get(Insite.Dealers.WebApi.V1.ApiModels.DealerCollectionParameter)">
+            <summary>Gets a collection of dealers.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Dealers.WebApi.V1.DealersV1Controller.Get(System.String)">
+            <summary>Gets the specified dealer.</summary>
+            <param name="dealerId">The dealer identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+    </members>
+</doc>

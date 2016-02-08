@@ -1,0 +1,1675 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Rfq</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Rfq.Content.RfqQuoteDetailsPagePreparer">
+            <summary>The rfq quote details page preparer.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Content.RfqQuoteDetailsPagePreparer.unitOfWork">
+            <summary>The unit of work.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqQuoteDetailsPagePreparer.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,InSite.Model.Interfaces.IUnitOfWorkFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Content.RfqQuoteDetailsPagePreparer"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqQuoteDetailsPagePreparer.Prepare(Insite.Rfq.Content.RfqQuoteDetailsPage)">
+            <summary>The prepare.</summary>
+            <param name="rfqQuoteDetailsPage">The rfq quote details page.</param>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqQuoteDetailsPagePreparer.GetOrderInfo">
+            <summary>The get order info.</summary>
+            <returns>The <see cref="T:InSite.Model.CustomerOrder"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqConfirmationPage">
+            <summary>The rfq confirmation page.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqPage">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqConfirmationPageCreator">
+            <summary>The rfq confirmation page creator.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqConfirmationPageCreator.Create">
+            <summary>The create.</summary>
+            <returns>The <see cref="T:Insite.Rfq.Content.RfqConfirmationPage"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqConfirmationView">
+            <summary>The rfq confirmation view.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqIsEnabledFilter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqIsEnabledFilter.#ctor(Insite.WebFramework.Mvc.IActionResultFactory,InSite.Model.Interfaces.IUnitOfWorkFactory)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqIsEnabledFilter.Execute(Insite.Rfq.Content.RfqPage,InSite.Model.Interfaces.IContextProvider)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Rfq.Content.RfqIsEnabledFilter.WebSiteConfigurationName">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqMyQuotesPage">
+            <summary>The rfq my quotes page.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqMyQuotesPageCreator">
+            <summary>The rfq my quotes page creator.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqMyQuotesPageCreator.Create">
+            <summary>The create.</summary>
+            <returns>The <see cref="T:Insite.Rfq.Content.RfqMyQuotesPage"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqMyQuotesView">
+            <summary>The rfq my quotes view.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqQuoteDetailsPage">
+            <summary>The rfq quote details page.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqQuoteDetailsPageCreator">
+            <summary>The rfq quote details page creator.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqQuoteDetailsPageCreator.Create">
+            <summary>The create.</summary>
+            <returns>The <see cref="T:Insite.Rfq.Content.RfqQuoteDetailsPage"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqQuoteDetailsView">
+            <summary>The rfq quote details view.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqRequestQuotePageCreator">
+            <summary>The rfq request quote page creator.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Content.RfqRequestQuotePageCreator.Create">
+            <summary>The create.</summary>
+            <returns>The <see cref="T:Insite.Rfq.Content.RfqRequestQuotePage"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqRequestQuotePage">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Rfq.Content.RfqRequestQuoteView">
+            <summary>The rfq request quote view.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Dtos.RfqCalculationMethod">
+            <summary>The rfq calculation method.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Dtos.RfqCalculationMethod.List">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Dtos.RfqCalculationMethod.Customer">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Dtos.RfqCalculationMethod.Margin">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Dtos.CalculationMethodDto">
+            <summary>The calculation method dto.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.CalculationMethodDto.Value">
+            <summary>Gets or sets the value.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.CalculationMethodDto.Name">
+            <summary>Gets or sets the value.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.CalculationMethodDto.DisplayName">
+            <summary>Gets or sets the name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.CalculationMethodDto.MaximumDiscount">
+            <summary>Gets or sets the maximum discount.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.CalculationMethodDto.MinimumMargin">
+            <summary>Gets or sets the minimum margin.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Dtos.PricingRfqDto">
+            <summary>The rfq pricing dto.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.ListPrice">
+            <summary>Gets or sets the list price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.ListPriceDisplay">
+            <summary>Gets or sets the list price display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.CustomerPrice">
+            <summary>Gets or sets the customer price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.CustomerPriceDisplay">
+            <summary>Gets or sets the customer price display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.UnitCost">
+            <summary>Gets or sets the unit cost.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.UnitCostDisplay">
+            <summary>Gets or sets the unit cost display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.MinimumPriceAllowed">
+            <summary>Gets or sets the minimum price allowed.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.MinimumPriceAllowedDisplay">
+            <summary>Gets or sets the minimum price allowed display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.MaxDiscountPct">
+            <summary>Gets or sets the max discount percent.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.MinMarginAllowed">
+            <summary>Gets or sets the min margin allowed.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.ShowListPrice">
+            <summary>Gets or sets a value indicating whether show list price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.ShowCustomerPrice">
+            <summary>Gets or sets a value indicating whether show customer price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.ShowUnitCost">
+            <summary>Gets or sets a value indicating whether show unit cost.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.HasAdvancedConfiguration">
+            <summary>Gets or sets a value indicating whether has advanced configuration.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.PriceBreaks">
+            <summary>Gets or sets the price breaks.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.CalculationMethods">
+            <summary>Gets or sets the calculation methods.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Dtos.PricingRfqDto.ValidationMessages">
+            <summary>Gets or sets the validation messages.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Dtos.QuoteLineDto">
+            <summary>The quote line dto.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.AddQuoteHandler">
+            <summary>The add quote handler. Dependency Order 500.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2">
+            <summary>The quote handler base.</summary>
+            <typeparam name="TIn">The input type.</typeparam>
+            <typeparam name="TOut">The result type.</typeparam>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.TranslationLocalizer">
+            <summary>The translation localizer.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.CanUserViewQuote(InSite.Model.Interfaces.IUnitOfWork,System.Guid)">
+            <summary>The can user view quote.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="quoteId">The quote id.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetSalespersonForQuote(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.CustomerOrder)">
+            <summary>The get salesperson.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="quote">The quote.</param>
+            <returns>The <see cref="T:InSite.Model.Salesperson"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.UserCanApproveOrder(InSite.Model.UserProfile)">
+            <summary>The user profile can approve orders.</summary>
+            <param name="userProfile">The user Profile.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetDefaultSalesperson(InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>The get default salesperson.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <returns>The <see cref="T:InSite.Model.Salesperson"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetDisplayName(InSite.Model.UserProfile)">
+            <summary>The get display name.</summary>
+            <param name="userProfile">The user profile.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.T(System.String)">
+            <summary>Returns a translated label based on the <see cref="T:InSite.Model.TranslationDictionary"/> table.</summary>
+            <param name="defaultText">Label text in the default website language. May be of the form "label_context"</param>
+            <returns>Translated label text</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.ClearCurrentQuote(InSite.Model.OrderLineRfq)">
+            <summary>The clear current quote.</summary>
+            <param name="quote">The quote.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetQuoteLineResultCollection(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Results.GetQuoteResult)">
+            <summary>The get quote line result collection.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetQuoteLineResult(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Results.GetQuoteResult,Insite.Cart.Services.Results.GetCartLineResult)">
+            <summary>The get quote line result.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="result">The result.</param>
+            <param name="cartLineResult">The cart line result.</param>
+            <returns>The <see cref="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetQuoteLineResult(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Results.GetQuoteResult,Insite.Cart.Services.Results.GetCartLineResult)"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.QuoteHandlerBase`2.GetCalculationMethods(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Salesperson)">
+            <summary>The get calculation methods.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="salesperson">The salesperson.</param>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.AddQuoteHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.AddQuoteHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.AddQuoteHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.AddQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.AddQuoteParameter,Insite.Rfq.Services.Results.AddQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.AddQuoteResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.AddQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.AddQuoteMessageHandler">
+            <summary>The add quote message handler.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.AddQuoteMessageHandler.MessageService">
+            <summary>The cart service.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.AddQuoteMessageHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Message.Services.IMessageService)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.AddQuoteMessageHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="messageService">The message Service.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.AddQuoteMessageHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.AddMessageParameter,Insite.Rfq.Services.Results.AddMessageResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.AddMessageResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.AddQuoteMessageHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.GetQuoteCollectionHandler">
+            <summary>The get quote collection handler.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.GetQuoteCollectionHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter,Insite.Rfq.Services.Results.GetQuoteCollectionResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteCollectionResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.GetQuoteCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.GetQuoteHandler">
+            <summary>The get quote handler.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.GetQuoteHandler.CartService">
+            <summary>The cart service.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.GetQuoteHandler.MessageService">
+            <summary>The message service.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Cart.Services.ICartService,Insite.Message.Services.IMessageService)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.GetQuoteHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+            <param name="cartService">The cart Service.</param>
+            <param name="messageService">The message Service.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.GetQuoteParameter,Insite.Rfq.Services.Results.GetQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteHandler.GetMessageCollection(System.Guid)">
+            <summary>The get message audit.</summary>
+            <param name="quoteId">The quote id.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.GetQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.GetQuoteLineHandler">
+            <summary>The get quote line handler.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.GetQuoteLineHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteLineHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.GetQuoteLineHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.GetQuoteLineHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.GetQuoteLineParameter,Insite.Rfq.Services.Results.GetQuoteLineResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.GetQuoteLineHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Quote.Services.Handlers.GetQuoteSettingsHandler">
+            <summary>The get quote settings handler.</summary>
+        </member>
+        <member name="M:Insite.Quote.Services.Handlers.GetQuoteSettingsHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Quote.Services.Parameters.GetQuoteSettingsParameter,Insite.Quote.Services.Results.GetQuoteSettingsResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Quote.Services.Results.GetQuoteSettingsResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Quote.Services.Handlers.GetQuoteSettingsHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler">
+            <summary>
+            Accept Job.  Dependency Order 750.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler.PromotionEngine">
+            <summary>The promotion engine.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,Insite.Plugins.PromotionEngine.IPromotionEngine)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="promotionEngine">The promotion Engine.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Cart.Services.Parameters.UpdateCartParameter,Insite.Cart.Services.Results.UpdateCartResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Cart.Services.Results.UpdateCartResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateCartJobAcceptedHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler">
+            <summary>
+            Propose Quote.  Dependency Order 700.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler.PromotionEngine">
+            <summary>The promotion engine.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,Insite.Plugins.PromotionEngine.IPromotionEngine)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="promotionEngine">The promotion Engine.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Cart.Services.Parameters.UpdateCartParameter,Insite.Cart.Services.Results.UpdateCartResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Cart.Services.Results.UpdateCartResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateCartProposeQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler">
+            <summary>
+            Request Quote. Dependency Order 650.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Cart.Services.Parameters.UpdateCartParameter,Insite.Cart.Services.Results.UpdateCartResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Cart.Services.Results.UpdateCartResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.RequestQuote(InSite.Model.Interfaces.IUnitOfWork,Insite.Cart.Services.Results.UpdateCartResult,Insite.Cart.Services.Parameters.UpdateCartParameter)">
+            <summary>The request quote.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="result">The result.</param>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Cart.Services.Results.UpdateCartResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.GetSalesperson(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.CustomerOrder)">
+            <summary>The get salesperson.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="quote">The quote.</param>
+            <returns>The <see cref="T:InSite.Model.Salesperson"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.GetDefaultSalesperson(InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>The get default salesperson.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <returns>The <see cref="T:InSite.Model.Salesperson"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.SetCustomerOrderNumber(InSite.Model.CustomerOrder)">
+            <summary>The set customer order number.</summary>
+            <param name="quote">The quote.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.SetCustomerOrderInfo(InSite.Model.CustomerOrder)">
+            <summary>The set customer order info.</summary>
+            <param name="quote">The quote.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateCartRequestQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler">
+            <summary>The update quote add message handler. Order 650.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteParameter,Insite.Rfq.Services.Results.UpdateQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler.GetMessageUsers(InSite.Model.CustomerOrder,InSite.Model.UserProfile@,InSite.Model.UserProfile@)">
+            <summary>The get message users.</summary>
+            <param name="customerOrder">The customer order.</param>
+            <param name="toUserProfile">The to user profile.</param>
+            <param name="fromUserProfile">The from user profile.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuoteAddMessageHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler">
+            <summary>The update quote handler. Dependency order 550.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler.CartService">
+            <summary>The cart service.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Cart.Services.ICartService,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+            <param name="cartService">The cart Service.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteParameter,Insite.Rfq.Services.Results.UpdateQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler">
+            <summary>The update quote prices handler. Order 700.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteParameter,Insite.Rfq.Services.Results.UpdateQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler.CalculatePrice(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Dtos.PricingRfqDto,System.Decimal,Insite.Rfq.Services.Dtos.RfqCalculationMethod)">
+            <summary>The calculate price.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="pricingRfq">The order line.</param>
+            <param name="percent">The percent.</param>
+            <param name="calculationMethod">The calculation method.</param>
+            <returns>The <see cref="T:System.Decimal"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler.ValidateQuotePrice(System.Decimal,Insite.Rfq.Services.Dtos.PricingRfqDto)">
+            <summary>Ensure that a price meets rfq pricing requirements.</summary>
+            <param name="quotedPrice">The price to be validated.</param>
+            <param name="pricingRfq">The pricing Rfq.</param>
+            <returns>False if the price is invalid.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuotePricesHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuoteHandler">
+            <summary>The update quote handler. Dependency order 500.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteHandler"/> class. Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteParameter,Insite.Rfq.Services.Results.UpdateQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuoteLineHandler">
+            <summary>The update quote line handler. Order 500.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteLineHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteLineHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteLineHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteLineHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter,Insite.Rfq.Services.Results.UpdateQuoteLineResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuoteLineHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuoteLinePriceHandler">
+            <summary>The update quote line price handler. Order 550.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteLinePriceHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteLinePriceHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,InSite.Model.Interfaces.IPricingServiceFactory,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteLinePriceHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="pricingServiceFactory">The pricing Service Factory.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteLinePriceHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter,Insite.Rfq.Services.Results.UpdateQuoteLineResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuoteLinePriceHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler">
+            <summary>The update quote send email handler. Order 600.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.EmailService">
+            <summary>The cart service.</summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.BuildEmailValues">
+            <summary>The build email values.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,InSite.Model.Interfaces.IEmailService,InSite.Model.IBuildEmailValues)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="emailService">The email Service.</param>
+            <param name="buildEmailValues">The build Email Values.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Rfq.Services.Parameters.UpdateQuoteParameter,Insite.Rfq.Services.Results.UpdateQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.GetRfqEmailListName(InSite.Model.CustomerOrder)">
+            <summary>Get the name of the email template to use based on the status of the Quote.</summary>
+            <param name="customerOrder">A <see cref="T:InSite.Model.CustomerOrder"/>.</param>
+            <returns>Name of the email template.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.PopulateRfqEmailModel(InSite.Model.Interfaces.IUnitOfWork,System.Object,InSite.Model.CustomerOrder)">
+            <summary>Populate a dynamic object that will later get used in a razor view.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="emailModel">Dynamic object to store data to be used in a razor view.</param>
+            <param name="customerOrder"><see cref="T:InSite.Model.CustomerOrder"/>CustomerOrder to be used to send order confirmation</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.PopulateOrderLineEmailModel(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.CustomerOrder,System.String)">
+            <summary>The populate order line email model.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="customerOrder">The customer order.</param>
+            <param name="url">The url.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.GetRouteValues(InSite.Model.Product,InSite.Model.Category)">
+            <summary>The get route values.</summary>
+            <param name="product">The product.</param>
+            <param name="category">The category.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.GetRouteValues(InSite.Model.Product)">
+            <summary>The get route values.</summary>
+            <param name="product">The product.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="P:Insite.Rfq.Services.Handlers.UpdateQuoteSendEmailHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.GetQuoteLineParameter">
+            <summary>The get quote line parameter.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.GetQuoteLineParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteLineParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteLineParameter.QuoteLineId">
+            <summary>Gets or sets the quote line id.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.GetQuoteParameter">
+            <summary>The get quote parameter.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.GetQuoteParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+            <param name="quoteId">The quote id.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteParameter.GetShipTos">
+            <summary>Gets or sets a value indicating whether to populate the ShipTo <see cref="T:InSite.Model.Customer"/>s.</summary>
+        </member>
+        <member name="T:Insite.Quote.Services.Parameters.GetQuoteSettingsParameter">
+            <summary>The get quote settings parameter.</summary>
+        </member>
+        <member name="M:Insite.Quote.Services.Parameters.GetQuoteSettingsParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Quote.Services.Parameters.GetQuoteSettingsParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.UpdateQuoteParameter">
+            <summary>The update quote parameter.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.UpdateQuoteParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.Status">
+            <summary>Gets or sets the status.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.ExpirationDate">
+            <summary>Gets or sets the expiration date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.CalculationMethod">
+            <summary>Gets or sets the calculation method.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.Percent">
+            <summary>Gets or sets the percent.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.Note">
+            <summary>Gets or sets the note.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.UserId">
+            <summary>Gets or sets the user id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.IsJobQuote">
+            <summary>Gets or sets a value indicating whether its job quote.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.JobName">
+            <summary>Gets or sets the job name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteParameter.OrderQuantities">
+            <summary>Gets or sets the order quantities.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.GetQuoteLineResult">
+            <summary>The get quote line result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteLineResult.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteLineResult.QuoteLineId">
+            <summary>Gets or sets the quote line id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteLineResult.PricingRfq">
+            <summary>Gets or sets the pricing rfq.</summary>
+        </member>
+        <member name="T:Insite.Quote.Services.Results.GetQuoteSettingsResult">
+            <summary>The get quote settings result.</summary>
+        </member>
+        <member name="P:Insite.Quote.Services.Results.GetQuoteSettingsResult.JobQuoteEnabled">
+            <summary>
+            Gets or sets a value indicating whether job quote enabled.
+            </summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.GetRfqMessageResult">
+            <summary>The get rfq message result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetRfqMessageResult.CreatedDate">
+            <summary>Gets or sets the created date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetRfqMessageResult.Body">
+            <summary>Gets or sets the body.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetRfqMessageResult.DisplayName">
+            <summary>Gets or sets the display name.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.UpdateQuoteResult">
+            <summary>The update quote result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.UpdateQuoteResult.QuoteResult">
+            <summary>Gets or sets the quote result.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Rfq.Services.IRfqService.GetQuoteCollection(Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.UserProfileId">
+            <summary>Gets or sets the user profile id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.SalesRepNumber">
+            <summary>Gets or sets the sales rep number.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.CustomerId">
+            <summary>Gets or sets the customer id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.Statuses">
+            <summary>Gets or sets the statuses.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.QuoteNumber">
+            <summary>Gets or sets the quote number.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.FromDate">
+            <summary>Gets or sets the from date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.ToDate">
+            <summary>Gets or sets the to date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.ExpireFromDate">
+            <summary>Gets or sets the expire from date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.ExpireToDate">
+            <summary>Gets or sets the expire to date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.GetSalespersonList">
+            <summary>Gets or sets a value indicating whether get salesperson list.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter.Types">
+            <summary>Gets or sets the types.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.GetQuoteResult">
+            <summary>The get quote result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteResult.QuoteLineResults">
+            <summary>Gets or sets the quote line results.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteResult.QuoteExpireDays">
+            <summary>Gets or sets the quote expire days.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteResult.MessageCollection">
+            <summary>Gets or sets the message audits.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteResult.CalculationMethods">
+            <summary>Gets or sets the calculation methods.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteResult.IsEditable">
+            <summary>Gets or sets a value indicating whether is editable.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.GetQuoteCollectionResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Rfq.Services.IRfqService.GetQuoteCollection(Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteCollectionResult.Quotes">
+            <summary>Gets or sets the quotes.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.GetQuoteCollectionResult.SalespersonList">
+            <summary>Gets or sets the salesperson list.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.IRfqService">
+            <summary>The RfqService interface.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.GetQuoteSettings(Insite.Quote.Services.Parameters.GetQuoteSettingsParameter)">
+            <summary>The get quote settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Quote.Services.Results.GetQuoteSettingsResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.AddQuote(Insite.Rfq.Services.Parameters.AddQuoteParameter)">
+            <summary>Submit quote.</summary>
+            <param name="parameter">The <see cref="T:Insite.Rfq.Services.Parameters.AddQuoteParameter"/></param>
+            <returns>A <see cref="T:Insite.Rfq.Services.Results.AddQuoteResult"/></returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.UpdateQuote(Insite.Rfq.Services.Parameters.UpdateQuoteParameter)">
+            <summary>Decline quote.</summary>
+            <param name="parameter">The <see cref="T:Insite.Rfq.Services.Parameters.UpdateQuoteParameter"/></param>
+            <returns>A <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/></returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.GetQuoteCollection(Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter)">
+            <summary>Gets a collection of <see cref="T:InSite.Model.CustomerOrder"/>s matching the provided search parameters.</summary>
+            <param name="parameter">The <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter"/>.</param>
+            <returns>A <see cref="T:Insite.Rfq.Services.Results.GetQuoteCollectionResult"/> containing the collection of <see cref="T:InSite.Model.CustomerOrder"/>s.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.GetQuote(Insite.Rfq.Services.Parameters.GetQuoteParameter)">
+            <summary>Gets the quote details.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.AddQuoteMessage(Insite.Rfq.Services.Parameters.AddMessageParameter)">
+            <summary>Sends a notification regarding an order.</summary>
+            <param name="parameter">The <see cref="T:Insite.Rfq.Services.Parameters.AddMessageParameter"/></param>
+            <returns>A <see cref="T:Insite.Rfq.Services.Results.AddMessageResult"/></returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.UpdateQuoteLine(Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter)">
+            <summary>Update quote line: quantity, note and costcode.</summary>
+            <param name="parameter">The <see cref="T:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter"/></param>
+            <returns>A <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteLineResult"/></returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.IRfqService.GetQuoteLine(Insite.Rfq.Services.Parameters.GetQuoteLineParameter)">
+            <summary>The get quote line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteLineResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Services.RfqService">
+            <summary>
+            The rfq service.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.Services.RfqService.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.RfqService"/> class.</summary>
+            <param name="handlerFactory">The handler Factory.</param>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.GetQuoteSettings(Insite.Quote.Services.Parameters.GetQuoteSettingsParameter)">
+            <summary>The get quote settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Quote.Services.Results.GetQuoteSettingsResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.AddQuote(Insite.Rfq.Services.Parameters.AddQuoteParameter)">
+            <summary>The add quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.AddQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.GetQuoteCollection(Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter)">
+            <summary>Gets a collection of <see cref="T:InSite.Model.CustomerOrder"/>s matching the provided search parameters.</summary>
+            <param name="parameter">The <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter"/>.</param>
+            <returns>A <see cref="T:Insite.Rfq.Services.Results.GetQuoteCollectionResult"/> containing the collection of <see cref="T:InSite.Model.CustomerOrder"/>s.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.GetQuote(Insite.Rfq.Services.Parameters.GetQuoteParameter)">
+            <summary>The get quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.UpdateQuote(Insite.Rfq.Services.Parameters.UpdateQuoteParameter)">
+            <summary>The update quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.GetQuoteLine(Insite.Rfq.Services.Parameters.GetQuoteLineParameter)">
+            <summary>The get quote line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.UpdateQuoteLine(Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter)">
+            <summary>The update quote line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.UpdateQuoteLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.Services.RfqService.AddQuoteMessage(Insite.Rfq.Services.Parameters.AddMessageParameter)">
+            <summary>The add quote message.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.AddMessageResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.AddMessageParameter">
+            <summary>The add message parameter.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.AddMessageParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.AddMessageParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddMessageParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddMessageParameter.Message">
+            <summary>Gets or sets the message.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddMessageParameter.Subject">
+            <summary>Gets or sets the subject.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddMessageParameter.ToUserProfile">
+            <summary>Gets or sets the to user profile.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.AddMessageResult">
+            <summary>The add message result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.AddMessageResult.MessageAudit">
+            <summary>Gets or sets the message audit.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.AddQuoteParameter">
+            <summary>The add quote parameter.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.AddQuoteParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.AddQuoteParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddQuoteParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddQuoteParameter.UserId">
+            <summary>Gets or sets the user id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddQuoteParameter.Note">
+            <summary>Gets or sets the note.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddQuoteParameter.IsJobQuote">
+            <summary>Gets or sets a value indicating whether its job quote.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.AddQuoteParameter.JobName">
+            <summary>Gets or sets the job name.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.AddQuoteResult">
+            <summary>The add quote result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.AddQuoteResult.QuoteResult">
+            <summary>Gets or sets the customer order.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter">
+            <summary>The update quote line parameter.</summary>
+        </member>
+        <member name="M:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter.QuoteLineDto">
+            <summary>Gets or sets the order line dto.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter.PricingRfq">
+            <summary>Gets or sets the pricing rfq.</summary>
+        </member>
+        <member name="T:Insite.Rfq.Services.Results.UpdateQuoteLineResult">
+            <summary>The update quote line result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.UpdateQuoteLineResult.QuoteLineResult">
+            <summary>Gets or sets the get quote line result.</summary>
+        </member>
+        <member name="P:Insite.Rfq.Services.Results.UpdateQuoteLineResult.QuoteLine">
+            <summary>Gets or sets the quote line dto.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel">
+            <summary>The rfq price break model.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.StartQty">
+            <summary>Gets or sets the break qty.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.StartQtyDisplay">
+            <summary>Gets or sets the break qty.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.EndQty">
+            <summary>Gets or sets the end qty.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.EndQtyDisplay">
+            <summary>Gets or sets the end qty.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.Price">
+            <summary>Gets or sets the price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.PriceDispaly">
+            <summary>Gets or sets the price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.Percent">
+            <summary>Gets or sets the percent.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.BreakPriceRfqModel.CalculationMethod">
+            <summary>Gets or sets the calculation method.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.CalculationMethod">
+            <summary>The calculation method.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.CalculationMethod.Value">
+            <summary>Gets or sets the value.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.CalculationMethod.Name">
+            <summary>Gets or sets the value.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.CalculationMethod.DisplayName">
+            <summary>Gets or sets the name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.CalculationMethod.MaximumDiscount">
+            <summary>Gets or sets the maximum discount.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.CalculationMethod.MinimumMargin">
+            <summary>Gets or sets the minimum margin.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter">
+            <summary>
+            The Get quote collection parameter
+            </summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.UserId">
+            <summary>Gets or sets the user id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.SalesRepNumber">
+            <summary>Gets or sets the sales rep number.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.CustomerId">
+            <summary>Gets or sets the customer id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.Statuses">
+            <summary>Gets or sets the statuses.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.QuoteNumber">
+            <summary>Gets or sets the quote number.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.FromDate">
+            <summary>Gets or sets the from date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.ToDate">
+            <summary>Gets or sets the to date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.ExpireFromDate">
+            <summary>Gets or sets the expire from date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.ExpireToDate">
+            <summary>Gets or sets the expire to date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.StartPage">
+            <summary>Gets or sets the start page.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.PageSize">
+            <summary>Gets or sets the page size.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter.Types">
+            <summary>Gets or sets the types.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.MessageModel">
+            <summary>The message model.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.ApiModels.MessageModel.CreatedDate">
+            <summary>The created date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.MessageModel.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.MessageModel.Message">
+            <summary>Gets or sets the message.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.MessageModel.DisplayName">
+            <summary>Gets or sets the display name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.MessageModel.Body">
+            <summary>Gets or sets the body.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter">
+            <summary>The patch quote parameter.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.QuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.Status">
+            <summary>Gets or sets the status.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.Note">
+            <summary>Gets or sets the note.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.UserId">
+            <summary>Gets or sets the user id.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.ExpirationDate">
+            <summary>Gets or sets the expiration date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.CalculationMethod">
+            <summary>Gets or sets the calculation method.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.Percent">
+            <summary>Gets or sets the percent.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.IsJobQuote">
+            <summary>Gets or sets a value indicating whether its job quote.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.JobName">
+            <summary>Gets or sets the job name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter.OrderQuantities">
+            <summary>Gets or sets the order quantities.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionModel">
+            <summary>The quote collection model.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionModel.Quotes">
+            <summary>Gets or sets the quotes.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionModel.Pagination">
+            <summary>Gets or sets the pagination.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionModel.SalespersonList">
+            <summary>Gets or sets the salesperson list.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteLineModel">
+            <summary>The quote line model.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteLineModel.PricingRfq">
+            <summary>Gets or sets the pricing rfq.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteLineModel.MaxQty">
+            <summary>Gets or sets the max quantity.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel">
+            <summary>The quote model.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.QuoteLinesUri">
+            <summary>Gets or sets the quote lines uri.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.QuoteNumber">
+            <summary>Gets or sets the quote number.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.ExpirationDate">
+            <summary>Gets or sets the quote expiration date.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.CustomerNumber">
+            <summary>Gets or sets the customer number.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.CustomerName">
+            <summary>Gets or sets the customer name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.ShipToFullAddress">
+            <summary>Gets or sets the ship to full address.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.QuoteLineCollection">
+            <summary>Gets or sets the quote line collection.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.UserName">
+            <summary>Gets or sets the user name.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.IsEditable">
+            <summary>Gets or sets a value indicating whether is editable.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.QuoteExpireDays">
+            <summary>Gets or sets the quote expire days.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.MessageCollection">
+            <summary>Gets or sets the message audits.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.CalculationMethods">
+            <summary>Gets or sets the calculation methods.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.IsJobQuote">
+            <summary>Gets or sets a value indicating whether its job quote.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel.JobName">
+            <summary>Gets or sets the job name.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel">
+            <summary>The rfq pricing model.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.UnitCost">
+            <summary>Gets or sets the unit cost.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.UnitCostDisplay">
+            <summary>Gets or sets the unit cost display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.ListPrice">
+            <summary>Gets or sets the list price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.ListPriceDisplay">
+            <summary>Gets or sets the list price display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.CustomerPrice">
+            <summary>Gets or sets the customer price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.CustomerPriceDisplay">
+            <summary>Gets or sets the customer price display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.MinimumPriceAllowed">
+            <summary>Gets or sets the minimum price allowed.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.MinimumPriceAllowedDisplay">
+            <summary>Gets or sets the minimum price allowed display.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.MaxDiscountPct">
+            <summary>Gets or sets the max discount percent.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.MinMarginAllowed">
+            <summary>Gets or sets the min margin allowed.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.ShowListPrice">
+            <summary>Gets or sets a value indicating whether show list price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.ShowCustomerPrice">
+            <summary>Gets or sets a value indicating whether show customer price.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.ShowUnitCost">
+            <summary>Gets or sets a value indicating whether show unit cost.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.PriceBreaks">
+            <summary>Gets or sets the price breaks.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.CalculationMethods">
+            <summary>Gets or sets the calculation methods.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.PricingRfqModel.ValidationMessages">
+            <summary>Gets or sets the validation messages.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteSettingsModel">
+            <summary>The quote settings model.</summary>
+        </member>
+        <member name="P:Insite.Rfq.WebApi.V1.ApiModels.QuoteSettingsModel.JobQuoteEnabled">
+            <summary>
+            Gets or sets a value indicating whether job quote enabled.
+            </summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper">
+            <summary>
+            The Get quote collection mapper
+            </summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteCollectionMapper">
+            <summary>The GetQuoteCollectionMapper interface.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper.#ctor(Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper"/> class.</summary>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper.MapParameter(Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="apiParameter">The API parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteCollectionMapper.MapResult(Insite.Rfq.Services.Results.GetQuoteCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteLineMapper">
+            <summary>The get quote line mapper.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteLineMapper">
+            <summary>The GetQuoteLineMapper interface.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteLineMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteLineMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteLineMapper"/> class.</summary>
+            <param name="urlHelper">The url helper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteLineMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteLineMapper.MapResult(Insite.Rfq.Services.Results.GetQuoteLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteLineModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper">
+            <summary>The get quote mapper.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteMapper">
+            <summary>The GetQuoteMapper interface.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.GetQuoteLineMapper">
+            <summary>The get quote line mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.QuantityFormatProvider">
+            <summary>The quantity format provider.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteLineMapper,InSite.Model.Interfaces.IQuantityFormatProvider,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper"/> class.</summary>
+            <param name="urlHelper">The url helper.</param>
+            <param name="getQuoteLineMapper">The get Quote Line Mapper.</param>
+            <param name="quantityFormatProvider">The quantity format provider.</param>
+            <param name="objectToObjectMapper">The object To Object Mapper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="quoteId">The quote id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.GetQuoteParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.MapResult(Insite.Rfq.Services.Results.GetQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.MapResultQuoteLineModel(Insite.Rfq.Services.Results.GetQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result quote line model.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteMapper.GetValue(System.String,System.Boolean)">
+            <summary>The get value.</summary>
+            <param name="value">The value.</param>
+            <param name="isQty">The is qty.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteSettingsMapper">
+            <summary>The GetQuoteSettingsMapper interface.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper.ObjectToObjectMapper">
+            <summary>
+            The object to object mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper.#ctor(Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper"/> class.</summary>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="apiParameter">The API parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Quote.Services.Parameters.GetQuoteSettingsParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.GetQuoteSettingsMapper.MapResult(Insite.Quote.Services.Results.GetQuoteSettingsResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteSettingsModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPatchQuoteLineMapper">
+            <summary>The PatchQuoteLineMapper interface.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPatchQuoteMapper">
+            <summary>The PatchQuoteMapper interface.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPostQuoteMapper">
+            <summary>The PostQuoteMapper interface.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPostMessageMapper">
+            <summary>The PostMessageMapper interface.</summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteLineMapper">
+            <summary>The patch quote line mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteLineMapper.GetQuoteLineMapper">
+            <summary>The get quote line mapper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteLineMapper.#ctor(Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteLineMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteLineMapper"/> class.</summary>
+            <param name="getQuoteLineMapper">The get quote line mapper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteLineMapper.MapParameter(Insite.Rfq.WebApi.V1.ApiModels.QuoteLineModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.UpdateQuoteLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteLineMapper.MapResult(Insite.Rfq.Services.Results.UpdateQuoteLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Cart.WebApi.V1.ApiModels.CartLineModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper">
+            <summary>The patch quote mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper.GetQuoteMapper">
+            <summary>The get quote mapper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper.#ctor(Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper"/> class.</summary>
+            <param name="getQuoteMapper">The get quote mapper.</param>
+            <param name="objectToObjectMapper">The object To Object Mapper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper.MapParameter(Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.UpdateQuoteParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PatchQuoteMapper.MapResult(Insite.Rfq.Services.Results.UpdateQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:System.Object"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.PostQuoteMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.PostQuoteMapper.GetQuoteMapper">
+            <summary>The get quote mapper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PostQuoteMapper.#ctor(Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.PostQuoteMapper"/> class.</summary>
+            <param name="getQuoteMapper">The get Quote Mapper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PostQuoteMapper.MapParameter(Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The http request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.AddQuoteParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PostQuoteMapper.MapResult(Insite.Rfq.Services.Results.AddQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.WebApi.V1.ApiModels.QuoteModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.PostMessageMapper">
+            <summary>The post rfq message mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.Mappers.PostMessageMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PostMessageMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.Mappers.PostMessageMapper"/> class.</summary>
+            <param name="urlHelper">The url helper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PostMessageMapper.MapParameter(Insite.Rfq.WebApi.V1.ApiModels.MessageModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Parameters.AddMessageParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.PostMessageMapper.MapResult(Insite.Rfq.Services.Results.AddMessageResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Rfq.WebApi.V1.ApiModels.MessageModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.Mappers.QuoteMapperStartupTask">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.Mappers.QuoteMapperStartupTask.Run">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller">
+            <summary>
+            The Quote Lines WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller.getQuoteLineMapper">
+            <summary>The get quote line mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller.patchQuoteLineMapper">
+            <summary>The patch quote line mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller.rfqService">
+            <summary>
+            The rfq service.
+            </summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Rfq.Services.IRfqService,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPatchQuoteLineMapper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteLineMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="rfqService">The rfq service.</param>
+            <param name="patchQuoteLineMapper">The patch quote line mapper.</param>
+            <param name="getQuoteLineMapper">The get Quote Line Mapper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller.Get(System.String,System.String)">
+            <summary>Gets the specified quote identifier.</summary>
+            <param name="quoteId">The quote identifier.</param>
+            <param name="quoteLineId">The quote line identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuoteLinesV1Controller.Patch(System.Guid,System.Guid,Insite.Rfq.WebApi.V1.ApiModels.QuoteLineModel)">
+            <summary>Patches the specified quote identifier.</summary>
+            <param name="quoteId">The quote identifier.</param>
+            <param name="quoteLineId">The quote line identifier.</param>
+            <param name="quoteLineModel">The quote line model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Rfq.WebApi.V1.QuotesV1Controller">
+            <summary>
+            The Quotes WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.getQuoteCollectionMapper">
+            <summary>The get quote collection mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.getQuoteMapper">
+            <summary>The get quote mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.getQuoteSettingsMapper">
+            <summary>The get quote settings mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.patchQuoteMapper">
+            <summary>The patch quote mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.postQuoteMapper">
+            <summary>The post quote mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.postRfqMessageMapper">
+            <summary>The post rfq message mapper.</summary>
+        </member>
+        <member name="F:Insite.Rfq.WebApi.V1.QuotesV1Controller.rfqService">
+            <summary>The rfq service.</summary>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Rfq.Services.IRfqService,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteMapper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteCollectionMapper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPostQuoteMapper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPatchQuoteMapper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IPostMessageMapper,Insite.Rfq.WebApi.V1.Mappers.Interfaces.IGetQuoteSettingsMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Rfq.WebApi.V1.QuotesV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context unwrapper.</param>
+            <param name="cookieManager">The cookie manager.</param>
+            <param name="rfqService">The rfq service.</param>
+            <param name="getQuoteMapper">The get quote mapper.</param>
+            <param name="getQuoteCollectionMapper">The get quote collection mapper.</param>
+            <param name="postQuoteMapper">The post quote mapper.</param>
+            <param name="patchQuoteMapper">The patch quote mapper.</param>
+            <param name="postRfqMessageMapper">The post rfq message mapper.</param>
+            <param name="getQuoteSettingsMapper">The get quote settings mapper.</param>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.GetSettings">
+            <summary>The get settings.</summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.Get(Insite.Rfq.WebApi.V1.ApiModels.QuoteCollectionParameter)">
+            <summary>Gets the specified quote parameter.</summary>
+            <param name="quoteParameter">The quote parameter.</param>
+            <returns>A <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.Get(System.String)">
+            <summary>Gets the specified quote identifier.</summary>
+            <param name="quoteId">The quote identifier.</param>
+            <returns>A <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.Post(Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter)">
+            <summary>Posts the specified quote parameter.</summary>
+            <param name="quoteParameter">The quote parameter.</param>
+            <returns>A <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.Patch(System.Guid,Insite.Rfq.WebApi.V1.ApiModels.QuoteParameter)">
+            <summary>Patch the specified quote parameter.</summary>
+            <param name="quoteId">The quote Id.</param>
+            <param name="quoteParameter">The quote parameter.</param>
+            <returns>A <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Rfq.WebApi.V1.QuotesV1Controller.Post(System.Guid,Insite.Rfq.WebApi.V1.ApiModels.MessageModel)">
+            <summary>Posts the specified RFQ message parameter.</summary>
+            <param name="quoteId">The quote Id.</param>
+            <param name="messageParameter">The RFQ message parameter.</param>
+            <returns>A <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+    </members>
+</doc>

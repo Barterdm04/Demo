@@ -1,0 +1,17 @@
+﻿@model Insite.Dealers.Content.DealerLocatorPage
+
+@section BodyClass { dealer-locator }
+@section Styles
+{
+    @Html.RequireCss(Url.ThemedContent("/Styles/template/dealer-locator.css"))
+    @Html.RequireScript("//maps.googleapis.com/maps/api/js?libraries=weather,visualization&sensor=false&language=en&v=3.13")
+    @Html.RequireScript("/Scripts/Libraries/richMarker/0.0.0/richmarker.js")
+    @Html.RequireCss("/Scripts/libraries/zurb-responsive-tables/0.0.0/responsive-tables.css")
+    @Html.RequireScript("/Scripts/libraries/zurb-responsive-tables/0.0.0/responsive-tables.js")
+}
+
+<div class="row main-row">
+    <div class="medium-12 large-12 columns">
+        @Html.Zone(Model, "Content")
+    </div>
+</div>

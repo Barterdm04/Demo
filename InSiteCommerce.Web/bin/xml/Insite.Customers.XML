@@ -1,0 +1,2171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Customers</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Customers.Services.Handlers.AddBillToHandler">
+            <summary>The add bill to handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddBillToHandler.ContextProvider">
+            <summary>The context provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddBillToHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddBillToHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddBillToHandler.CustomerNumberProvider">
+            <summary>The customer number provider</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.AddBillToHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.ICustomerNumberProvider,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.AddBillToHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="customerNumberProvider">The customer number provider.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.AddBillToHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.AddBillToParameter,Insite.Customers.Services.Results.AddBillToResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.AddBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.AddBillToHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.AddShipToHandler">
+            <summary>The add ship to handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddShipToHandler.ContextProvider">
+            <summary>The context provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddShipToHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddShipToHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddShipToHandler.DefaultShipToProvider">
+            <summary>The default ship to provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.AddShipToHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.AddShipToHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,Insite.Core.Services.Handlers.IHandlerFactory,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.AddShipToHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.AddShipToHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.AddShipToParameter,Insite.Customers.Services.Results.AddShipToResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.AddShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.AddShipToHandler.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="result">The result.</param>
+            <param name="billToId">The BillTo <see cref="P:InSite.Model.Customer.CustomerNumber"/> to find.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.AddShipToHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2">
+            <summary>The customer handler base.</summary>
+            <typeparam name="TIn"></typeparam>
+            <typeparam name="TOut"></typeparam>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.CustomerNumberProvider">
+            <summary>The customer number provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.DefaultCustomerProvider">
+            <summary>The default customer provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.TranslationLocalizer">
+            <summary>The translation localizer.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.ICustomerNumberProvider,InSite.Model.Interfaces.ITranslationLocalizer)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="customerNumberProvider">The customer Number Provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.T(System.String)">
+            <summary>Returns a translated label based on the <see cref="T:InSite.Model.TranslationDictionary"/> table.</summary>
+            <param name="defaultText">Label text in the default website language. May be of the form "label_context"</param>
+            <returns>Translated label text</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="result">The result.</param>
+            <param name="billToId">The BillTo <see cref="P:InSite.Model.Customer.CustomerNumber"/> to find.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.SetBillToInitialValues(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Customer)">
+            <summary>Extension point to allow extending or overriding setting the BillTo <see cref="T:InSite.Model.Customer"/> initial values.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="billTo">The bill To.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.SetShipToInitialValues(InSite.Model.Customer,InSite.Model.Customer,System.Boolean)">
+            <summary>Extension point to allow extending or overriding setting the ShipTo <see cref="T:InSite.Model.Customer"/> initial values.</summary>
+            <param name="billTo">The bill To.</param>
+            <param name="shipTo">The ship To.</param>
+            <param name="assignSequence">Set to true to assign a new <see cref="P:InSite.Model.Customer.CustomerSequence"/>.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.PopulateBillToValidation(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer)">
+            <summary>Populates the bill to validation.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="settings">The settings.</param>
+            <param name="billTo">The bill to.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Dtos.CustomerValidationDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.PopulateShipToValidation(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer)">
+            <summary>Populates the ship to validation.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="settings">The settings.</param>
+            <param name="billTo">The bill to.</param>
+            <param name="shipTo">The ship to.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Dtos.CustomerValidationDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetBillToRequiredFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,System.Collections.Generic.List{System.String})">
+            <summary>Looks at the provided relevant BillTo required settings and provided disabled field list to determine the elements that are required.</summary>
+            <param name="settings">The settings.</param>
+            <param name="disabledList">Disabled list resulting for the ShipTo <see cref="T:InSite.Model.Customer"/> in question.</param>
+            <returns>A collection of of field names that are required.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetShipToRequiredFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,System.Collections.Generic.List{System.String})">
+            <summary>Looks at the provided relevant ShipTo required settings and current disabled field list to determine the elements that are required.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="shipTo">ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="disabledList">Disabled list resulting for the ShipTo <see cref="T:InSite.Model.Customer"/> in question.</param>
+            <returns>A collection of of field names that are required.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetBillToDisabledFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided relevant BillTo <see cref="T:InSite.Model.Customer"/> values and editability settings to determine the elements that are disabled.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>A collection of of field names that are disabled.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetShipToDisabledFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided relevant ShipTo <see cref="T:InSite.Model.Customer"/> values and editability settings to determine the elements that are disabled.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="shipTo">ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>A collection of of field names that are disabled.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.StateIsValid(InSite.Model.Customer)">
+            <summary>Looks at the provided <see cref="T:InSite.Model.Customer"/> state and determines if it is valid for the customer country</summary>
+            <param name="customer"><see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <returns>An indication if the current customer state is valid.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.CountryIsValid(InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided <see cref="T:InSite.Model.Customer"/> country and determines if it is valid for the current website</summary>
+            <param name="customer"><see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>An indication if the current customer state is valid.</returns>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult">
+            <summary>
+            Result class for calling the protected method <see cref="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult.#ctor(InSite.Model.UserProfile,InSite.Model.Customer,Insite.Core.Services.ResultBase)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/> class.</summary>
+            <param name="userProfile">The user profile.</param>
+            <param name="billTo">The bill to.</param>
+            <param name="errorResult">The error result.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult.UserProfile">
+            <summary>Gets or sets the user profile.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult.BillTo">
+            <summary>Gets or sets the bill to.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult.ErrorResult">
+            <summary>Gets or sets the error result.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetBillToCollectionHandler">
+            <summary>The get bill to collection handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToCollectionHandler.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToCollectionHandler.DefaultCustomerProvider">
+            <summary>The default customer provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToCollectionHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.GetBillToCollectionHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetBillToCollectionParameter,Insite.Customers.Services.Results.GetBillToCollectionResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToCollectionResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetBillToCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler">
+            <summary>The get bill to field properties handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter,Insite.Customers.Services.Results.GetBillToFieldPropertiesResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToFieldPropertiesResult"/>.</returns>
+            <remarks>Returns an ErrorResult if the parameter BillToId or WebsiteId cannot be found.</remarks>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetBillToFieldPropertiesHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetBillToHandler">
+            <summary>The get bill to handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToHandler.CurrentCustomerProvider">
+            <summary>The current customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToHandler.DefaultShipToProvider">
+            <summary>The default ship to provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetBillToHandler.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToHandler.#ctor(InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.ICurrentCustomerProvider,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper,InSite.Model.Interfaces.IDefaultShipToProvider,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.GetBillToHandler"/> class.</summary>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="currentCustomerProvider">The current customer provider.</param>
+            <param name="customerHelper">The customer helper.</param>
+            <param name="defaultShipToProvider">The default Ship To Provider.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetBillToParameter,Insite.Customers.Services.Results.GetBillToResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetBillToHandler.GetUserAndBillTo(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetBillToParameter,Insite.Customers.Services.Results.GetBillToResult)">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetBillToHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetCustomerSettingsHandler">
+            <summary>The get customer settings handler.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetCustomerSettingsHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetCustomerSettingsParameter,Insite.Customers.Services.Results.GetCustomerSettingsResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetCustomerSettingsResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetCustomerSettingsHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetShipToCollectionHandler">
+            <summary>The get ship to collection handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.ContextProvider">
+            <summary>The context provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.DefaultShipToProvider">
+            <summary>The default ship to provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.IDefaultShipToProvider,Insite.Core.Services.Handlers.IHandlerFactory,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.GetShipToCollectionHandler"/> class.
+            </summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="defaultShipToProvider">The default Ship To Provider.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetShipToCollectionParameter,Insite.Customers.Services.Results.GetShipToCollectionResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.GetApprovalCount(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Customer,InSite.Model.Customer)">
+            <summary>The get approval count.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="billTo">The bill to.</param>
+            <param name="shipTo">The ship to.</param>
+            <returns>The <see cref="T:System.Int32"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="result">The result.</param>
+            <param name="billToId">The BillTo <see cref="P:InSite.Model.Customer.CustomerNumber"/> to find.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetShipToCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler">
+            <summary>The get ship to field properties handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter,Insite.Customers.Services.Results.GetShipToFieldPropertiesResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToFieldPropertiesResult"/>.</returns>
+            <exception cref="T:Insite.Core.Exceptions.NotFoundException"></exception>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetShipToFieldPropertiesHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.GetShipToHandler">
+            <summary>The get ship to handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToHandler.DefaultShipToProvider">
+            <summary>The default ship to provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToHandler.ContextProvider">
+            <summary>The context provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.GetShipToHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.IDefaultShipToProvider,Insite.Core.Services.Handlers.IHandlerFactory,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.GetShipToHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="defaultShipToProvider">The default Ship To Provider.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.GetShipToParameter,Insite.Customers.Services.Results.GetShipToResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.GetShipToHandler.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="result">The result.</param>
+            <param name="billToId">The BillTo <see cref="P:InSite.Model.Customer.CustomerNumber"/> to find.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.GetShipToHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.Helpers.CustomerHelper">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.T(System.String)">
+            <summary>Returns a translated label based on the <see cref="T:InSite.Model.TranslationDictionary"/> table.</summary>
+            <param name="defaultText">Label text in the default website language. May be of the form "label_context"</param>
+            <returns>Translated label text</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.SetBillToInitialValues(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Customer)">
+            <summary>Extension point to allow extending or overriding setting the BillTo <see cref="T:InSite.Model.Customer"/> initial values.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="billTo">The bill To.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.SetShipToInitialValues(InSite.Model.Customer,InSite.Model.Customer,System.Boolean)">
+            <summary>Extension point to allow extending or overriding setting the ShipTo <see cref="T:InSite.Model.Customer"/> initial values.</summary>
+            <param name="billTo">The bill To.</param>
+            <param name="shipTo">The ship To.</param>
+            <param name="assignSequence">Set to true to assign a new <see cref="P:InSite.Model.Customer.CustomerSequence"/>.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.PopulateBillToValidation(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer)">
+            <summary>Populates the bill to validation.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="settings">The settings.</param>
+            <param name="billTo">The bill to.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Dtos.CustomerValidationDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.PopulateShipToValidation(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,System.Boolean)">
+            <summary>Populates the ship to validation.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="settings">The settings.</param>
+            <param name="billTo">The bill to.</param>
+            <param name="shipTo">The ship to.</param>
+            <param name="isNew">True if new ship to.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Dtos.CustomerValidationDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.GetBillToRequiredFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,System.Collections.Generic.IList{System.String})">
+            <summary>Looks at the provided relevant BillTo required settings and provided disabled field list to determine the elements that are required.</summary>
+            <param name="settings">The settings.</param>
+            <param name="disabledList">Disabled list resulting for the ShipTo <see cref="T:InSite.Model.Customer"/> in question.</param>
+            <returns>A collection of of field names that are required.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.GetShipToRequiredFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Looks at the provided relevant ShipTo required settings and current disabled field list to determine the elements that are required.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="shipTo">ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="disabledList">Disabled list resulting for the ShipTo <see cref="T:InSite.Model.Customer"/> in question.</param>
+            <returns>
+            A collection of of field names that are required.
+            </returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.GetBillToDisabledFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided relevant BillTo <see cref="T:InSite.Model.Customer"/> values and editability settings to determine the elements that are disabled.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>A collection of of field names that are disabled.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.GetShipToDisabledFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided relevant ShipTo <see cref="T:InSite.Model.Customer"/> values and editability settings to determine the elements that are disabled.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="shipTo">ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>A collection of of field names that are disabled.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.ICustomerHelper.MakeAddressFormat(InSite.Model.Customer)">
+            <summary>
+            Gets the standardized text for the customer and shipto dropdowns.
+            </summary>
+            <param name="customer">Get the text for this particular <see cref="T:InSite.Model.Customer"/>.</param>
+            <returns>A string with relevant <see cref="T:InSite.Model.Customer"/> information</returns>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.CustomerNumberProvider">
+            <summary>The customer number provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.DefaultCustomerProvider">
+            <summary>The default customer provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.TranslationLocalizer">
+            <summary>The translation localizer.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.ICustomerNumberProvider,InSite.Model.Interfaces.ITranslationLocalizer)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="customerNumberProvider">The customer Number Provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.T(System.String)">
+            <summary>Returns a translated label based on the <see cref="T:InSite.Model.TranslationDictionary"/> table.</summary>
+            <param name="defaultText">Label text in the default website language. May be of the form "label_context"</param>
+            <returns>Translated label text</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.SetBillToInitialValues(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Customer)">
+            <summary>Extension point to allow extending or overriding setting the BillTo <see cref="T:InSite.Model.Customer"/> initial values.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="billTo">The bill To.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.SetShipToInitialValues(InSite.Model.Customer,InSite.Model.Customer,System.Boolean)">
+            <summary>Extension point to allow extending or overriding setting the ShipTo <see cref="T:InSite.Model.Customer"/> initial values.</summary>
+            <param name="billTo">The bill To.</param>
+            <param name="shipTo">The ship To.</param>
+            <param name="assignSequence">Set to true to assign a new <see cref="P:InSite.Model.Customer.CustomerSequence"/>.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.PopulateBillToValidation(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer)">
+            <summary>Populates the bill to validation.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="settings">The settings.</param>
+            <param name="billTo">The bill to.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Dtos.CustomerValidationDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.PopulateShipToValidation(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,System.Boolean)">
+            <summary>Populates the ship to validation.</summary>
+            <param name="unitOfWork">The unit Of Work.</param>
+            <param name="settings">The settings.</param>
+            <param name="billTo">The bill to.</param>
+            <param name="shipTo">The ship to.</param>
+            <param name="isNew">True if new ship to.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Dtos.CustomerValidationDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.GetBillToRequiredFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,System.Collections.Generic.IList{System.String})">
+            <summary>Looks at the provided relevant BillTo required settings and provided disabled field list to determine the elements that are required.</summary>
+            <param name="settings">The settings.</param>
+            <param name="disabledList">Disabled list resulting for the ShipTo <see cref="T:InSite.Model.Customer"/> in question.</param>
+            <returns>A collection of of field names that are required.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.GetShipToRequiredFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,System.Collections.Generic.ICollection{System.String})">
+            <summary>Looks at the provided relevant ShipTo required settings and current disabled field list to determine the elements that are required.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="shipTo">ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="disabledList">Disabled list resulting for the ShipTo <see cref="T:InSite.Model.Customer"/> in question.</param>
+            <returns>A collection of of field names that are required.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.GetBillToDisabledFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided relevant BillTo <see cref="T:InSite.Model.Customer"/> values and editability settings to determine the elements that are disabled.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>A collection of of field names that are disabled.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.GetShipToDisabledFields(Insite.Customers.Services.Results.GetCustomerSettingsResult,InSite.Model.Customer,InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided relevant ShipTo <see cref="T:InSite.Model.Customer"/> values and editability settings to determine the elements that are disabled.</summary>
+            <param name="settings">The settings.</param>
+            <param name="billTo">BillTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="shipTo">ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>A collection of of field names that are disabled.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.MakeAddressFormat(InSite.Model.Customer)">
+            <summary>
+            Gets the standardized text for the customer and shipto dropdowns.
+            </summary>
+            <param name="customer">Get the text for this particular <see cref="T:InSite.Model.Customer"/>.</param>
+            <returns>A string with relevant <see cref="T:InSite.Model.Customer"/> information</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.StateIsValid(InSite.Model.Customer)">
+            <summary>Looks at the provided <see cref="T:InSite.Model.Customer"/> state and determines if it is valid for the customer country</summary>
+            <param name="customer"><see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <returns>An indication if the current customer state is valid.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.CustomerHelper.CountryIsValid(InSite.Model.Customer,InSite.Model.WebSite)">
+            <summary>Looks at the provided <see cref="T:InSite.Model.Customer"/> country and determines if it is valid for the current website</summary>
+            <param name="customer"><see cref="T:InSite.Model.Customer"/> to be inspected.</param>
+            <param name="website"><see cref="T:InSite.Model.WebSite"/> to be used during validation.</param>
+            <returns>An indication if the current customer state is valid.</returns>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.Helpers.GetUserAndBillToResult">
+            <summary>Result class for calling the protected method <see><cref>GetUserAndBillTo</cref></see>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.Helpers.GetUserAndBillToResult.#ctor(InSite.Model.UserProfile,InSite.Model.Customer,Insite.Core.Services.ResultBase)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/> class.</summary>
+            <param name="userProfile">The user profile.</param>
+            <param name="billTo">The bill to.</param>
+            <param name="errorResult">The error result.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.Helpers.GetUserAndBillToResult.UserProfile">
+            <summary>Gets or sets the user profile.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.Helpers.GetUserAndBillToResult.BillTo">
+            <summary>Gets or sets the bill to.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.Helpers.GetUserAndBillToResult.ErrorResult">
+            <summary>Gets or sets the error result.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.UpdateBillToHandler">
+            <summary>The update bill to handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateBillToHandler.ContextProvider">
+            <summary>The context provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateBillToHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateBillToHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.UpdateBillToHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.UpdateBillToHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.UpdateBillToHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.UpdateBillToParameter,Insite.Customers.Services.Results.UpdateBillToResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.UpdateBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.UpdateBillToHandler.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="result">The result.</param>
+            <param name="billToId">The BillTo <see cref="P:InSite.Model.Customer.CustomerNumber"/> to find.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.UpdateBillToHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Handlers.UpdateShipToHandler">
+            <summary>The update ship to handler.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateShipToHandler.DefaultShipToProvider">
+            <summary>The default ship to provider.</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateShipToHandler.ContextProvider">
+            <summary>The context provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateShipToHandler.DefaultCustomerProvider">
+            <summary>The default customer provider</summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Handlers.UpdateShipToHandler.CustomerHelper">
+            <summary>The customer helper</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.UpdateShipToHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.IDefaultCustomerProvider,InSite.Model.Interfaces.IDefaultShipToProvider,Insite.Customers.Services.Handlers.Helpers.ICustomerHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Handlers.UpdateShipToHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="defaultCustomerProvider">The default customer provider.</param>
+            <param name="defaultShipToProvider">The default Ship To Provider.</param>
+            <param name="customerHelper">The customer helper.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.UpdateShipToHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Customers.Services.Parameters.UpdateShipToParameter,Insite.Customers.Services.Results.UpdateShipToResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.UpdateShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.Handlers.UpdateShipToHandler.GetUserAndBillTo(Insite.Core.Services.ResultBase,System.Nullable{System.Guid})">
+            <summary>Gets the <see cref="T:InSite.Model.UserProfile"/> and BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+            <param name="result">The result.</param>
+            <param name="billToId">The BillTo <see cref="P:InSite.Model.Customer.CustomerNumber"/> to find.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Handlers.CustomerHandlerBase`2.GetUserAndBillToResult"/>.</returns>
+        </member>
+        <member name="P:Insite.Customers.Services.Handlers.UpdateShipToHandler.Order">
+            <summary>
+            Gets the order in which the handler is executed,
+            lower values are executed first.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.AddBillToParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.AddBillTo(Insite.Customers.Services.Parameters.AddBillToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.AddBillToParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.AddBillToParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.UserProfileId">
+            <summary>Gets or sets the UserProfileId passed in for creating a new account because ContextProvider.CurrentUserProfile is not set yet.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.IsGuest">
+            <summary>Gets or sets indicating whether the new BillTo <see cref="T:InSite.Model.Customer"/> should be added as a guest account.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.Company">
+            <summary>
+            Gets or sets the company.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddBillToParameter.Email">
+            <summary>Gets or set the Email Address for the new BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetCustomerSettingsParameter">
+            <summary>The get customer settings parameter.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetCustomerSettingsParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetCustomerSettingsParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.AddBillToResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.AddBillTo(Insite.Customers.Services.Parameters.AddBillToParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.AddBillToResult.BillTo">
+            <summary>Gets or sets the newly created BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.AddShipToParameter">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.AddShipTo(Insite.Customers.Services.Parameters.AddShipToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.AddShipToParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.AddShipToParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.BillToId">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/>Id to retrive (leave null for the current BillTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.CompanyName">
+            <summary>
+            Gets or sets the company name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.AddShipToParameter.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.AddShipToResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.AddShipTo(Insite.Customers.Services.Parameters.AddShipToParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.AddShipToResult.BillTo">
+            <summary>Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/> for the ShipTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.AddShipToResult.ShipTo">
+            <summary>Gets or sets the newly created ShipTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.AddShipToResult.Label">
+            <summary>The label to show.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.AddShipToResult.Validation">
+            <summary>Gets or sets the field level validation information if requested.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.CustomerService">
+            <summary>
+            The default implementation of <see cref="T:Insite.Customers.Services.ICustomerService"/> that offers methods related to <see cref="T:InSite.Model.Customer"/>s.
+            The implementations primary responsibility is encapsulating the logic required to manipulate <see cref="T:InSite.Model.Customer"/> records and their related data
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.ICustomerService">
+            <summary>The CustomerService interface.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetCustomerSettings(Insite.Customers.Services.Parameters.GetCustomerSettingsParameter)">
+            <summary>The get customer settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetCustomerSettingsResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetBillToCollection(Insite.Customers.Services.Parameters.GetBillToCollectionParameter)">
+            <summary>Get the BillTo <see cref="T:InSite.Model.Customer"/>s for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.GetBillToCollectionParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetBillTo(Insite.Customers.Services.Parameters.GetBillToParameter)">
+            <summary>Gets the requested BillTo <see cref="T:InSite.Model.Customer"/> for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.GetBillToParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.AddBillTo(Insite.Customers.Services.Parameters.AddBillToParameter)">
+            <summary>Adds a new BillTo <see cref="T:InSite.Model.Customer"/> with initial values set for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.AddBillToParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.AddBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.UpdateBillTo(Insite.Customers.Services.Parameters.UpdateBillToParameter)">
+            <summary>Updates the BillTo <see cref="T:InSite.Model.Customer"/> for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.UpdateBillToParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.UpdateBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetShipToCollection(Insite.Customers.Services.Parameters.GetShipToCollectionParameter)">
+            <summary>Get the ShipTo <see cref="T:InSite.Model.Customer"/>s for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.GetShipToCollectionParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetShipTo(Insite.Customers.Services.Parameters.GetShipToParameter)">
+            <summary>Gets the requested ShipTo <see cref="T:InSite.Model.Customer"/> for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.GetShipToParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.AddShipTo(Insite.Customers.Services.Parameters.AddShipToParameter)">
+            <summary>Adds a new ShipTo <see cref="T:InSite.Model.Customer"/> with initial values set for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.AddShipToParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.AddShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.UpdateShipTo(Insite.Customers.Services.Parameters.UpdateShipToParameter)">
+            <summary>Updates the ShipTo <see cref="T:InSite.Model.Customer"/> for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter"><see cref="T:Insite.Customers.Services.Parameters.UpdateBillToParameter"/></param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.UpdateShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetBillToFieldProperties(Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter)">
+            <summary>Gets the field properties for the given BillTo <see cref="T:InSite.Model.CustomerInfo"/>.</summary>
+            <param name="parameter">The <see cref="T:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter"/>.</param>
+            <returns>A <see cref="T:Insite.Customers.Services.Results.GetBillToFieldPropertiesResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.ICustomerService.GetShipToFieldProperties(Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter)">
+            <summary>Gets the field properties for the given ShipTo <see cref="T:InSite.Model.CustomerInfo"/>.</summary>
+            <param name="parameter">The <see cref="T:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter"/>.</param>
+            <returns>A <see cref="T:Insite.Customers.Services.Results.GetShipToFieldPropertiesResult"/>.</returns>
+        </member>
+        <member name="F:Insite.Customers.Services.CustomerService.handlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.CustomerService"/> class.</summary>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetCustomerSettings(Insite.Customers.Services.Parameters.GetCustomerSettingsParameter)">
+            <summary>The get customer settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetCustomerSettingsResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetBillToCollection(Insite.Customers.Services.Parameters.GetBillToCollectionParameter)">
+            <summary>Get the BillTo <see cref="T:InSite.Model.Customer"/>s for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetBillTo(Insite.Customers.Services.Parameters.GetBillToParameter)">
+            <summary>Gets the requested BillTo <see cref="T:InSite.Model.Customer"/> for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.AddBillTo(Insite.Customers.Services.Parameters.AddBillToParameter)">
+            <summary>Adds a new BillTo <see cref="T:InSite.Model.Customer"/> with initial values set for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.AddBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.UpdateBillTo(Insite.Customers.Services.Parameters.UpdateBillToParameter)">
+            <summary>Updates the BillTo <see cref="T:InSite.Model.Customer"/> for the current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.UpdateBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetShipToCollection(Insite.Customers.Services.Parameters.GetShipToCollectionParameter)">
+            <summary>Get the ShipTo <see cref="T:InSite.Model.Customer"/>s for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetShipTo(Insite.Customers.Services.Parameters.GetShipToParameter)">
+            <summary>Gets the requested ShipTo <see cref="T:InSite.Model.Customer"/> for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.AddShipTo(Insite.Customers.Services.Parameters.AddShipToParameter)">
+            <summary>Adds a new ShipTo <see cref="T:InSite.Model.Customer"/> with initial values set for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.AddShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.UpdateShipTo(Insite.Customers.Services.Parameters.UpdateShipToParameter)">
+            <summary>Updates the ShipTo <see cref="T:InSite.Model.Customer"/> for the BillTo <see cref="T:InSite.Model.Customer"/> and current <see cref="T:InSite.Model.UserProfile"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.UpdateShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetBillToFieldProperties(Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter)">
+            <summary>Gets the field properties for the given BillTo <see cref="T:InSite.Model.CustomerInfo"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>A <see cref="T:Insite.Customers.Services.Results.GetBillToFieldPropertiesResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.Services.CustomerService.GetShipToFieldProperties(Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter)">
+            <summary>Gets the field properties for the given ShipTo <see cref="T:InSite.Model.CustomerInfo"/>.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>A <see cref="T:Insite.Customers.Services.Results.GetShipToFieldPropertiesResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.Services.Dtos.CustomerValidationDto">
+            <summary>
+            Data Transfer Object defining validation fields for <see cref="T:InSite.Model.Customer"/>.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.CompanyName">
+            <summary>
+            Gets or sets the company.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.CustomerValidationDto.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Dtos.FieldValidationDto">
+            <summary>
+            Data Transfer Object defining field validation.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.Services.Dtos.FieldValidationDto.SettingPrefix">
+            <summary>The setting prefix.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Dtos.FieldValidationDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Customers.Services.Dtos.FieldValidationDto"/> class.
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Dtos.FieldValidationDto.#ctor(InSite.Model.Interfaces.IUnitOfWork,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Dtos.FieldValidationDto"/> class.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="fieldName">Name of the field.</param>
+            <param name="requiredFields">The required fields.</param>
+            <param name="disabledFields">The disabled fields.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.FieldValidationDto.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is required.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.FieldValidationDto.IsDisabled">
+            <summary>
+            Gets or sets a value indicating whether this instance is disabled.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Dtos.FieldValidationDto.MaxLength">
+            <summary>
+            Gets or sets the maximum length.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.GetBillToFieldProperties(Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter"/> class. The constructor that defines the required parameters.</summary>
+            <param name="currentContext">The current Context.</param>
+            <param name="billToId"><see cref="P:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter.BillToId"/></param>
+            <param name="websiteId"><see cref="P:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter.WebsiteId"/></param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter.BillToId">
+            <summary>The Id of the BillTo <see cref="T:InSite.Model.Customer"/> to be inspected</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter.WebsiteId">
+            <summary>The Id of the <see cref="T:InSite.Model.WebSite"/> to be used during validation.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetBillToFieldPropertiesResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.GetBillToFieldProperties(Insite.Customers.Services.Parameters.GetBillToFieldPropertiesParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToFieldPropertiesResult.RequiredFields">
+            <summary>Collection of field names that are required for the given BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToFieldPropertiesResult.DisabledFields">
+            <summary>Collection of field names that are disabled for the given BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetBillToParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.GetBillTo(Insite.Customers.Services.Parameters.GetBillToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetBillToParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetBillToParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToParameter.BillToId">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/>Id to retrive (leave null for the current BillTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToParameter.GetShipTos">
+            <summary>Set to true to populate the ShipTo <see cref="T:InSite.Model.Customer"/>s.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToParameter.GetValidation">
+            <summary>Set to true to populate the field validation information.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToParameter.SkipUserBillToValidation">
+            <summary>Set to true to skip validating this user can access this bill to when you pass in a BillToId, used from GetBillToCollection for performance.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToParameter.CustomerSettings">
+            <summary>If populated, skips the settings lookup, used from GetBillToCollection for performance.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetBillToResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.GetBillTo(Insite.Customers.Services.Parameters.GetBillToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Results.GetBillToResult.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Results.GetBillToResult"/> class. 
+            Default constructor.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToResult.BillTo">
+            <summary>The requested BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToResult.Label">
+            <summary>The label to show.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToResult.CustomerCurrencySymbol">
+            <summary>Gets or sets the customer currency symbol.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToResult.GetShipToResults">
+            <summary>The ShipTo <see cref="T:InSite.Model.Customer"/> results if requested.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToResult.Validation">
+            <summary>The field level validation information if requested.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToResult.IsDefault">
+            <summary>Gets or sets a value indicating whether this instance is default. </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetBillToCollectionParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.GetBillToCollection(Insite.Customers.Services.Parameters.GetBillToCollectionParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetBillToCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetBillToCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToCollectionParameter.Filter">
+            <summary>Gets or sets the filter.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToCollectionParameter.GetShipTos">
+            <summary>Set to true to populate the ShipTo <see cref="T:InSite.Model.Customer"/>s.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetBillToCollectionParameter.GetValidation">
+            <summary>Set to true to populate the field validation information.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetBillToCollectionResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.GetBillToCollection(Insite.Customers.Services.Parameters.GetBillToCollectionParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetBillToCollectionResult.GetBillToResults">
+            <summary>The <see cref="T:Insite.Customers.Services.Results.GetBillToResult"/>s.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.GetShipToFieldProperties(Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid,System.Guid,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter"/> class. The constructor that defines the required parameters.</summary>
+            <param name="currentContext">The current Context.</param>
+            <param name="billToId"><see cref="P:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.BillToId"/></param>
+            <param name="shipToId"><see cref="P:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.ShipToId"/></param>
+            <param name="websiteId"><see cref="P:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.WebsiteId"/></param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.BillToId">
+            <summary>The Id of the BillTo <see cref="T:InSite.Model.Customer"/> to be inspected</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.ShipToId">
+            <summary>The Id of the ShipTo <see cref="T:InSite.Model.Customer"/> to be inspected</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter.WebsiteId">
+            <summary>The Id of the <see cref="T:InSite.Model.WebSite"/> to be used during validation.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetCustomerSettingsResult">
+            <summary>The get customer settings result.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.AllowBillToAddressEdit">
+            <summary>Gets or sets a value indicating whether allow bill to address edit.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.AllowBillToForShipTo">
+            <summary>Gets or sets a value indicating whether allow bill to for ship to.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.AllowShipToAddressEdit">
+            <summary>Gets or sets a value indicating whether allow ship to address edit.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.AllowCreateNewShipToAddress">
+            <summary>Gets or sets a value indicating whether allow create new ship to address.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.BillToCompanyRequired">
+            <summary>Gets or sets a value indicating whether bill to company required.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.BillToFirstNameRequired">
+            <summary>Gets or sets a value indicating whether bill to first name required.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.BillToLastNameRequired">
+            <summary>Gets or sets a value indicating whether bill to last name required.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.ShipToCompanyRequired">
+            <summary>Gets or sets a value indicating whether ship to company required.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.ShipToFirstNameRequired">
+            <summary>Gets or sets a value indicating whether ship to first name required.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.ShipToLastNameRequired">
+            <summary>Gets or sets a value indicating whether ship to last name required.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetCustomerSettingsResult.BudgetsFromOnlineOnly">
+            <summary>Gets or sets a value indicating whether budgets from online only.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetShipToFieldPropertiesResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.GetShipToFieldProperties(Insite.Customers.Services.Parameters.GetShipToFieldPropertiesParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToFieldPropertiesResult.RequiredFields">
+            <summary>Collection of field names that are required for the given BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToFieldPropertiesResult.DisabledFields">
+            <summary>Collection of field names that are disabled for the given BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetShipToParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.GetShipTo(Insite.Customers.Services.Parameters.GetShipToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetShipToParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetShipToParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToParameter.BillToId">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/>Id to retrive (leave null for the current BillTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToParameter.ShipToId">
+            <summary>The ShipTo <see cref="T:InSite.Model.Customer"/>Id to retrive (leave null for the current ShipTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToParameter.GetValidation">
+            <summary>Set to true to populate the field validation information.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetShipToResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.GetShipTo(Insite.Customers.Services.Parameters.GetShipToParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToResult.BillTo">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/> for the ShipTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToResult.ShipTo">
+            <summary>The requested ShipTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToResult.Label">
+            <summary>The label to show.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToResult.IsNew">
+            <summary>True if this is the new "template" ShipTo <see cref="T:InSite.Model.Customer"/> with initial values and validation populated.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToResult.Validation">
+            <summary>The field level validation information if requested.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.GetShipToCollectionParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.GetShipToCollection(Insite.Customers.Services.Parameters.GetShipToCollectionParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.GetShipToCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.BillToId">
+            <summary>Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/>Id of the ShipTos to retrive (leave null for the current BillTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.Filter">
+            <summary>Gets or sets the filter.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.GetValidation">
+            <summary>Gets or sets a value indicating whether to populate the field validation information.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.GetApprovalCounts">
+            <summary>Gets or sets a value indicating whether to populate order approval counts by ShipTo.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.ExcludeShowAll">
+            <summary>Gets or sets a value indicating whether exclude show all from the list.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.ExcludeBillTo">
+            <summary>Gets or sets a value indicating whether exclude bill to.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.GetShipToCollectionParameter.AssignedOnly">
+            <summary>
+            Gets or sets a value indicating whether to only include ShipTos that are actually assigned to this user.  Users
+            will see all ShipTos if they have no ShipTos assigned.  If this is set to true, and no ShipTos are returned, it
+            tells you that this user has access to all the ShipTos.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.GetShipToCollectionResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.GetShipToCollection(Insite.Customers.Services.Parameters.GetShipToCollectionParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Results.GetShipToCollectionResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Customers.Services.Results.GetShipToCollectionResult"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToCollectionResult.BillTo">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/> you are getting the ShipTo <see cref="T:InSite.Model.Customer"/>s for.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.GetShipToCollectionResult.GetShipToResults">
+            <summary>The ShipTo <see cref="T:InSite.Model.Customer"/>s for the <see cref="T:InSite.Model.UserProfile"/> and <see cref="P:Insite.Customers.Services.Results.GetShipToCollectionResult.BillTo"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.UpdateBillToParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.UpdateBillTo(Insite.Customers.Services.Parameters.UpdateBillToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.UpdateBillToParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.UpdateBillToParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.BillToId">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/>Id to retrive (leave null for the current BillTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.IsGuest">
+            <summary>
+            Gets or sets a value indicating whether this instance is guest.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.CompanyName">
+            <summary>
+            Gets or sets the company.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.BudgetEnforcementLevel">
+            <summary>Gets or sets the budget enforcement level.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.CostCodeTitle">
+            <summary>Gets or sets the cost code title.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateBillToParameter.CostCodes">
+            <summary>Gets or sets the cost codes.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.UpdateBillToResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.UpdateBillTo(Insite.Customers.Services.Parameters.UpdateBillToParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.UpdateBillToResult.BillTo">
+            <summary>Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Parameters.UpdateShipToParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Customers.Services.ICustomerService.UpdateShipTo(Insite.Customers.Services.Parameters.UpdateShipToParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Customers.Services.Parameters.UpdateShipToParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.Services.Parameters.UpdateShipToParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.BillToId">
+            <summary>The BillTo <see cref="T:InSite.Model.Customer"/>Id to update (leave null for the current BillTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.ShipToId">
+            <summary>The ShipTo <see cref="T:InSite.Model.Customer"/>Id to update (leave null for the current ShipTo).</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.CompanyName">
+            <summary>
+            Gets or sets the company.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Parameters.UpdateShipToParameter.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.Services.Results.UpdateShipToResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Customers.Services.ICustomerService.UpdateShipTo(Insite.Customers.Services.Parameters.UpdateShipToParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.UpdateShipToResult.BillTo">
+            <summary>Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/> for the ShipTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="P:Insite.Customers.Services.Results.UpdateShipToResult.ShipTo">
+            <summary>Gets or sets the ShipTo <see cref="T:InSite.Model.Customer"/>.</summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel">
+            <summary>
+            The Base Address Model returned from the WebApi call.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.CustomerNumber">
+            <summary>
+            Gets or sets the customer number.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.CustomerSequence">
+            <summary>
+            Gets or sets the customer sequence.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.CustomerName">
+            <summary>
+            Gets or sets the name of the customer.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.CompanyName">
+            <summary>
+            Gets or sets the company.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BaseAddressModel.FullAddress">
+            <summary>
+            Gets or sets the full address.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionModel">
+            <summary>The bill to collection model.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionModel.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionModel"/> class.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionModel.Pagination">
+            <summary>Gets or sets the pagination.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionModel.BillTos">
+            <summary>Gets or sets the bill tos.</summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter">
+            <summary>The bill to collection parameter.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter.Expand">
+            <summary>Gets or sets the expand.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter.Filter">
+            <summary>Gets or sets the filter.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter.Page">
+            <summary>Gets or sets the start page.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter.PageSize">
+            <summary>Gets or sets the page size.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter.Sort">
+            <summary>Gets or sets the sort.</summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.CostCodeModel">
+            <summary>The cost code model.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.CostCodeModel.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.CostCodeModel.CostCode">
+            <summary>Gets or sets the cost code.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.CostCodeModel.Description">
+            <summary>Gets or sets the description.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.CostCodeModel.IsActive">
+            <summary>Gets or sets a value indicating whether is active.</summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter">
+            <summary>The ship to collection parameter.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter.BillToId">
+            <summary>Gets or sets the bill to id.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter.Expand">
+            <summary>Gets or sets the expand.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter.Filter">
+            <summary>Gets or sets the filter.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter.Page">
+            <summary>Gets or sets the start page.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter.PageSize">
+            <summary>Gets or sets the page size.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter.Sort">
+            <summary>Gets or sets the sort.</summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionModel">
+            <summary>The ship to collection model.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionModel.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionModel"/> class.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionModel.Pagination">
+            <summary>Gets or sets the pagination.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionModel.ShipTos">
+            <summary>Gets or sets the ship tos.</summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.BillTosV1Controller">
+            <summary>
+            The BillTos WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.BillTosV1Controller.customerService">
+            <summary>The customer service.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.BillTosV1Controller.getBillToCollectionMapper">
+            <summary>The get bill to collection mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.BillTosV1Controller.getBillToMapper">
+            <summary>The get bill to mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.BillTosV1Controller.patchBillToMapper">
+            <summary>The patch bill to mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.BillTosV1Controller.postBillToMapper">
+            <summary>The post bill to mapper.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.BillTosV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Customers.Services.ICustomerService,Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToCollectionMapper,Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToMapper,Insite.Customers.WebApi.V1.Mappers.Interfaces.IPostBillToMapper,Insite.Customers.WebApi.V1.Mappers.Interfaces.IPatchBillToMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.BillTosV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="customerService">The customer service.</param>
+            <param name="getBillToCollectionMapper">The get bill to collection mapper.</param>
+            <param name="getBillToMapper">The get bill to mapper.</param>
+            <param name="postBillToMapper">The post bill to mapper.</param>
+            <param name="patchBillToMapper">The patch bill to mapper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.BillTosV1Controller.Get(Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter)">
+            <summary>Gets the bill tos.</summary>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.BillTosV1Controller.Get(System.String)">
+            <summary>Gets the bill to for the specified bill to identifier.</summary>
+            <param name="billToId">The bill to identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.BillTosV1Controller.Post(Insite.Customers.WebApi.V1.ApiModels.BillToModel)">
+            <summary>Posts the specified bill to model.</summary>
+            <param name="billToModel">The bill to model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.BillTosV1Controller.Patch(System.String,Insite.Customers.WebApi.V1.ApiModels.BillToModel)">
+            <summary>Patches the bill to for the specified bill to identifier.</summary>
+            <param name="billToId">The bill to identifier.</param>
+            <param name="billToModel">The bill to model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.CustomerMapperStartupTask">
+            <summary>
+            Tasks to run on application startup.
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.CustomerMapperStartupTask.Run">
+            <summary>
+            Method that gets executed by the <see cref="T:InSite.Model.BootStrapper.IBootStrapper"/>.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.GetCountryMapper">
+            <summary>
+            The get country mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.GetShipToMapper">
+            <summary>
+            The get ship to mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.GetStateMapper">
+            <summary>
+            The get state mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.ObjectToObjectMapper">
+            <summary>
+            The object to object mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.UrlHelper">
+            <summary>
+            The URL helper
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToMapper,Insite.Websites.WebApi.V1.Mappers.Interfaces.IGetCountryMapper,Insite.Websites.WebApi.V1.Mappers.Interfaces.IGetStateMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper"/> class.</summary>
+            <param name="getShipToMapper">The get ship to mapper.</param>
+            <param name="getCountryMapper">The get country mapper.</param>
+            <param name="getStateMapper">The get state mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+            <param name="urlHelper">The URL helper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="billToId">The bill to identifier.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.GetBillToParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToMapper.MapResult(Insite.Customers.Services.Results.GetBillToResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.BillToModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToCollectionMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper.GetBillToMapper">
+            <summary>
+            The get bill to mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper"/> class.</summary>
+            <param name="getBillToMapper">The get bill to mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper.MapParameter(Insite.Customers.WebApi.V1.ApiModels.BillToCollectionParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="parameter">The parameter.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.GetBillToCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper.MapResult(Insite.Customers.Services.Results.GetBillToCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.BillToCollectionModel"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetBillToCollectionMapper.GetLink(Insite.Customers.Services.Results.GetBillToCollectionResult,System.Net.Http.HttpRequestMessage,System.Int32)">
+            <summary>The get link.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="page">The page.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.GetCountryMapper">
+            <summary>
+            The get country mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.GetStateMapper">
+            <summary>
+            The get state mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.ObjectToObjectMapper">
+            <summary>
+            The object to object mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.UrlHelper">
+            <summary>
+            The URL helper
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.#ctor(Insite.Websites.WebApi.V1.Mappers.Interfaces.IGetCountryMapper,Insite.Websites.WebApi.V1.Mappers.Interfaces.IGetStateMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper"/> class.</summary>
+            <param name="getCountryMapper">The get country mapper.</param>
+            <param name="getStateMapper">The get state mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+            <param name="urlHelper">The URL helper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="shipToId">The ship to identifier.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.GetShipToParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToMapper.MapResult(Insite.Customers.Services.Results.GetShipToResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.ShipToModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToCollectionMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper.GetShipToMapper">
+            <summary>
+            The get ship to mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper"/> class.</summary>
+            <param name="getShipToMapper">The get ship to mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper.MapParameter(Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="parameter">The ship to collection parameter.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.GetShipToCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper.MapResult(Insite.Customers.Services.Results.GetShipToCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionModel"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.GetShipToCollectionMapper.GetLink(Insite.Customers.Services.Results.GetShipToCollectionResult,System.Net.Http.HttpRequestMessage,System.Int32)">
+            <summary>The get link.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="page">The page.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IPatchBillToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IPatchShipToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IPostBillToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.Interfaces.IPostShipToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper.GetBillToMapper">
+            <summary>The get bill to mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper"/> class.</summary>
+            <param name="getBillToMapper">The get Bill To Mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper.MapParameter(Insite.Customers.WebApi.V1.ApiModels.BillToModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.UpdateBillToParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PatchBillToMapper.MapResult(Insite.Customers.Services.Results.UpdateBillToResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:System.Object"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper.GetShipToMapper">
+            <summary>The get ship to mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper"/> class.</summary>
+            <param name="getShipToMapper">The get Ship To Mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper.MapParameter(Insite.Customers.WebApi.V1.ApiModels.ShipToModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.UpdateShipToParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PatchShipToMapper.MapResult(Insite.Customers.Services.Results.UpdateShipToResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.ShipToModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper.GetBillToMapper">
+            <summary>
+            The get bill to mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper.ObjectToObjectMapper">
+            <summary>
+            The object to object mapper
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetBillToMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper"/> class.</summary>
+            <param name="getBillToMapper">The get bill to mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper.MapParameter(Insite.Customers.WebApi.V1.ApiModels.BillToModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.AddBillToParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PostBillToMapper.MapResult(Insite.Customers.Services.Results.AddBillToResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.BillToModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper.GetShipToMapper">
+            <summary>
+            The get ship to mapper
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper.ObjectToObjectMapper">
+            <summary>
+            The object to object mapper
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper.#ctor(Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper"/> class.</summary>
+            <param name="getShipToMapper">The get ship to mapper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper.MapParameter(Insite.Customers.WebApi.V1.ApiModels.ShipToModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Parameters.AddShipToParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.Mappers.PostShipToMapper.MapResult(Insite.Customers.Services.Results.AddShipToResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.WebApi.V1.ApiModels.ShipToModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.BillToModel">
+            <summary>
+            The BillTo Model returned from the WebApi call.
+            </summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ApiModels.BillToModel.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.ApiModels.BillToModel"/> class.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.ShipTosUri">
+            <summary>Gets or sets the shiptos uri.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.IsGuest">
+            <summary>Gets or sets a value indicating whether is guest.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.Email">
+            <summary>Gets or sets the email.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.Label">
+            <summary>Gets or sets the label.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.BudgetEnforcementLevel">
+            <summary>Gets or sets the budget enforcement level.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.CostCodeTitle">
+            <summary>Gets or sets the cost code title.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.CustomerCurrencySymbol">
+            <summary>Gets or sets the customer currency symbol.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.CostCodes">
+            <summary>Gets or sets the cost codes.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.ShipTos">
+            <summary>Gets or sets the ship tos.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.Validation">
+            <summary>Gets or sets the validation.</summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.BillToModel.IsDefault">
+            <summary>Gets or sets a value indicating whether this instance is default. </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ApiModels.ShipToModel">
+            <summary>
+            The ShipTo Model returned from the WebApi call.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToModel.IsNew">
+            <summary>
+            Gets or sets a value indicating whether this instance is new.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToModel.Label">
+            <summary>
+            Gets or sets the label.
+            </summary>
+        </member>
+        <member name="P:Insite.Customers.WebApi.V1.ApiModels.ShipToModel.Validation">
+            <summary>
+            Gets or sets the validation.
+            </summary>
+        </member>
+        <member name="T:Insite.Customers.WebApi.V1.ShipTosV1Controller">
+            <summary>
+            The ShipTos WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.ShipTosV1Controller.customerService">
+            <summary>The customer service.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.ShipTosV1Controller.getShipToCollectionMapper">
+            <summary>The get ship to collection mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.ShipTosV1Controller.getShipToMapper">
+            <summary>The get ship to mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.ShipTosV1Controller.patchShipToMapper">
+            <summary>The patch ship to mapper.</summary>
+        </member>
+        <member name="F:Insite.Customers.WebApi.V1.ShipTosV1Controller.postShipToMapper">
+            <summary>The post ship to mapper.</summary>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ShipTosV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Customers.Services.ICustomerService,Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToCollectionMapper,Insite.Customers.WebApi.V1.Mappers.Interfaces.IGetShipToMapper,Insite.Customers.WebApi.V1.Mappers.Interfaces.IPostShipToMapper,Insite.Customers.WebApi.V1.Mappers.Interfaces.IPatchShipToMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Customers.WebApi.V1.ShipTosV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="customerService">The customer service.</param>
+            <param name="getShipToCollectionMapper">The get ship to collection mapper.</param>
+            <param name="getShipToMapper">The get ship to mapper.</param>
+            <param name="postShipToMapper">The post ship to mapper.</param>
+            <param name="patchShipToMapper">The patch ship to mapper.</param>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ShipTosV1Controller.Get(Insite.Customers.WebApi.V1.ApiModels.ShipToCollectionParameter)">
+            <summary>Gets the ship tos for the specified bill to identifier.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ShipTosV1Controller.Get(System.String,System.String)">
+            <summary>Gets the ship to for the specified bill to and ship to identifier.</summary>
+            <param name="billToId">The bill to identifier.</param>
+            <param name="shipToId">The ship to identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ShipTosV1Controller.Post(System.String,Insite.Customers.WebApi.V1.ApiModels.ShipToModel)">
+            <summary>Posts the ship to to the bill to for the specified bill to identifier.</summary>
+            <param name="billToId">The bill to identifier.</param>
+            <param name="shipToModel">The ship to model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Customers.WebApi.V1.ShipTosV1Controller.Patch(System.String,System.String,Insite.Customers.WebApi.V1.ApiModels.ShipToModel)">
+            <summary>Patches the ship to for the specified bill to and ship to identifier.</summary>
+            <param name="billToId">The bill to identifier.</param>
+            <param name="shipToId">The ship to identifier.</param>
+            <param name="shipToModel">The ship to model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+    </members>
+</doc>

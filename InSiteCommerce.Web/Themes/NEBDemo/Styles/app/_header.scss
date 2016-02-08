@@ -1,0 +1,422 @@
+﻿@import "_colors.scss";
+
+@media (max-width:64.063em) {
+    header {
+        .isc-nav-bar {
+            display:block;
+            height:0;
+        }
+
+        .contact-info {
+            height:0;
+        }
+        .isc-nav-wrap {
+            max-width:65px;
+            position:absolute;
+            top: -162px;
+
+        }
+
+        [role="masthead"] > .row, [role="masthead"] > * .row, .row.logo-row {
+            float:none;
+        }
+
+        .widget.nav-right-links.right {
+                position: relative;
+                top: 25px;
+                padding-right: 1rem;
+                right: -1.5em;
+
+                a {
+                    font-size:20px !important;
+                    width:30px;
+                    height:30px;
+                }
+
+                ul {
+                    li.left a {
+                        margin-right: 1rem;
+                    }
+                }
+        }
+
+        label.toggle.burger {
+            color:$tarawera; 
+            text-indent:0; 
+            margin-left:0;
+                top: 92px;
+            &:after{
+                content:"";
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .isc-primary-nav .nebdemo-nav > ul > li .nav-item-container a,
+    .isc-primary-nav .nebdemo-nav > ul > li > a {
+            font-size:14px !important;
+        }
+    }
+@media (max-width:960px){
+    .contact-info a {
+            font-size:12px !important;
+        }
+}
+
+@media (max-width: 768px) {
+
+    .inside-header .isc-primary-nav {
+        display:none;
+    }
+
+    .isc-primary-nav {
+            background:$alabaster !important;
+            .toggle-sub:before {
+                color:$black;
+            }
+            .toggle-sub {
+            background-color:$alabaster !important;
+            }
+            li a, .subnav {
+                background:$alabaster;
+                color:$black;
+            }
+            li a:hover, .toggle-sub:hover {
+                background-color: #FFFFFF !important;
+                border-left: 6px solid $dove-gray;
+                color:$mine-shaft;
+            }
+    }
+
+    .logo-column {
+        height:100%;
+        width:100%;
+        padding:5px 10%;
+    }
+    .widget.nav-right-links.right {
+        width:80px;
+        top:-60px !important;
+        right:-9rem !important;
+    }
+
+
+}
+
+@media (max-width: 640px){
+    .widget.nav-right-links.right {
+                position: relative;
+                a {
+                    font-size:20px !important;
+                }
+        }
+    .logo-column {
+        width:100%;
+        padding-right:.25em;
+        padding-left:.25em;
+    }
+}
+
+@media (max-width:430px) {
+    .widget.nav-right-links.right {
+        right:-6.5rem !important;
+    }
+}
+
+.logo-column {
+    padding-right:0;
+    padding-left:0;
+}
+
+.isc-nav-bar, .top-nav, #wideNav {
+    background: none;
+}
+
+body {
+    font-family: 'Slabo 27px', serif;
+    background-color:$white;
+}
+
+.search-inline {
+    display: inline-block !important;
+    height: 2.7em;
+    width: auto !important;
+}
+
+.search-field {
+    width: 100% !important;
+}
+
+.search-btn {
+    background-color: $wattle !important;
+    color: $black !important;
+    width: auto !important;
+    height: 2.7em;
+}
+
+.search-container {
+    padding-top: 4px;
+    width: 75% !important;
+}
+
+.nav-list-ul {
+    width: inherit !important;
+    background-color: $wild-sand;
+
+    a {
+        color: $black !important;
+    }
+}
+
+[role="user-nav"] {
+    height: 25px;
+    border:none;
+    color:$tundora;
+    float: right;
+    li {
+        border:none !important;
+        :hover {
+            background-color:$tundora !important;
+            color:$white !important;
+        }
+        a {
+            color:$tundora !important;
+        }
+    }
+    li[role="user-options"] {
+        border:none;
+        a {
+            color:$tundora;
+        }
+    }
+}
+
+.top-nav {
+    border-top: none;
+    border-bottom: none;
+}
+.top-div{
+    height:40px;
+    width:100%;
+}
+
+#header {
+    background: none !important;
+    z-index: 2;
+}
+
+.inside-header {
+    height: 110px;
+    background: $tundora;
+    margin-bottom: 0 !important;
+    margin-top:2px;
+
+    box-shadow: 0 4px 7px -2px $tundora;
+
+    .columns:last-child {
+        padding-left:0;
+    }
+}
+
+.sec-nav {
+    background-color: $mine-shaft;
+    color: $white;
+    height: 15px !important;
+    line-height: 0;
+    display:none !important;
+    a:link, a:visited {
+        color: $white !important;
+    }
+    ul {
+        border: none;
+    }
+}
+
+.sign-in {
+    border-right: 0;
+}
+
+a:link, a:visited, a:active {
+    color: $blue;
+}
+
+.nav-right-links {
+    ul li + li {
+        border: none;
+    }
+    ul {
+        margin-top: 1.2em;
+    }
+    li i:hover {
+        color:$steelblue;
+    }
+}
+
+nav ul:not(.side-nav) li[role="sign-in"] {
+    border-right: none;
+    border-left: none;
+    color: $white;
+}
+
+.contain-to-grid.isc-primary-nav {
+    ul:first-child {
+        margin-top: 7em;
+    }
+    ul li {
+        background: none;
+        min-width:110px;
+    }
+    ul li a {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing:2px;
+    }
+    ul li a:hover {
+        font-weight: bold;
+        color:$mine-shaft;
+    }
+    ul li.right {
+        background: none !important;
+    }
+} 
+
+.isc-primary-nav, .isc-primary-nav .subnav {
+    background: #F8F8F8;
+}
+
+.isc-primary-nav .subnav.sub-tier-panel li {
+
+    a {
+        text-align: left;
+        font-size: 16px;
+        text-transform: none;
+        color:$mine-shaft;
+
+    }
+}
+
+.isc-primary-nav .subnav.sub-tier-panel li a:hover {
+    background-color: #FFFFFF !important;
+    border-left: 6px solid $dove-gray;
+}
+
+.isc-primary-nav li a:hover, .isc-primary-nav .toggle-sub:hover {
+    background-color: $wild-sand !important;
+}
+
+.isc-primary-nav .nebdemo-nav > ul > li .nav-item-container a,
+.isc-primary-nav .nebdemo-nav > ul > li > a {
+    /*padding-top: 35px !important;
+    padding-left:.5em !important;
+    padding-right:.5em !important;*/
+    line-height:45px;
+}
+
+.isc-primary-nav .toggle-sub, .isc-primary-nav .toggle-sub:hover {
+    z-index:-1;
+}
+.isc-nav-bar {
+    display:none;
+} 
+
+/*Mobile subheadings */
+.isc-primary-nav .sub-heading, #narrowNav .isc-primary-nav-top {
+    background-color:$tarawera;
+}
+
+.sub-tier-panel a {
+    background: $alabaster;
+}
+
+.isc-primary-nav .subnav.sub-tier-panel {
+    box-shadow: 5px 5px 5px $dusty-gray;
+    ul {
+        box-shadow: 5px 5px 5px $dusty-gray;
+    }
+}
+
+.nav-list-ul li:nth-of-type(-n+2) {
+    background-color: $tarawera;
+    color: white !important;
+}
+
+.nav-list-ul li:first-child a:first-child {
+    background-color: $tarawera;
+    color: white !important;
+    text-transform: uppercase;
+}
+
+.has-form {
+    width: inherit;
+}
+
+header[role="masthead"] .logo-container {
+    margin: 0;
+}
+
+.user-nav {
+    width: inherit;
+    height: rem-cal(1) !important;
+    line-height: 1 !important;
+    background: $mine-shaft;
+}
+
+.contact-info {
+    height: 90px;
+    a:link, a:visited {
+        color:$dusty-gray;
+    }
+    a:hover {
+        color:$tarawera;
+    }
+    i {
+        color:$tarawera;
+    }
+    i:hover {
+        color:$chambray;
+    }
+}
+
+
+.nav-item-container {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    max-height: 100%;
+    /* overflow: hidden;
+	*/
+    height: 100%;
+}
+
+.nebdemo-nav {
+    ul {
+        border:none !important;
+        li {
+            border:none !important;
+        }
+    }
+}
+
+.secondary-nav {
+    background:none;
+    border:none !important;
+    .row {
+        background:$dusty-gray;
+        border:none;
+    }
+}
+
+.head-row .search-container .search-button button {
+    background-color:$dusty-gray;
+    color:$tundora;
+}
+
+.isc-primary-nav .toggle-sub:before {
+    display:none;
+}
+
+.isc-primary-nav .toggle-sub {
+    display:none;
+}

@@ -1,0 +1,44 @@
+﻿@model string
+
+@{
+    Layout = "_ConsoleLayout.cshtml";
+}
+
+@* The following javascript methods will automatically be wired up. *@
+@Html.Script(@<script type="text/javascript">
+    function setWebsiteId(websiteId) {
+        alert("The websiteId is " + websiteId);
+    }
+    function saveClick() {
+        alert("The MC save button was clicked.");
+    }
+    function cancelClick() {
+        alert("The MC cancel button was clicked.");
+    }
+    function newClick() {
+        alert("The MC new button was clicked.");
+    }
+    function deleteClick() {
+        alert("The MC delete button was clicked.");
+    }
+    function filterClick() {
+        alert("The MC filter button was clicked.");
+    }
+    function importClick() {
+        // If we want flex to import the file for us and send us the filename of the
+        // uploaded file. Return the an object with an action member equal to "flexImport".
+        // Otherwise do whatever and don't return anything.
+        return { action: "flexImport" };
+    }
+    function importFileUploaded(filename) {
+        alert("The MC imported uploaded an import file with the filename " + filename);
+    }
+    function exportClick() {
+        alert("The MC export button was clicked.");
+    }
+</script>)
+
+<div id="mcSampleMvcPage" style="background-color: white;">
+    <h2>Sample Management Console MVC Page</h2>
+    <p>@Model</p>
+</div>

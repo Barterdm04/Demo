@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "/Views/Shared/_ConsoleLayout.cshtml";
+}
+
+@section Styles{
+    <link href="/Scripts/Libraries/jquery.fancytree/2.2.0/ui.fancytree.min.css" rel="stylesheet" />
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #SeoSettings {
+            margin: 10px;
+        }
+
+        #SeoSettings .seo-option-heading {
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        #SeoSettings .seo-option-sub-heading {
+            font-size: 10px;
+            font-style: italic;
+        }
+
+        #SeoSettings ul.fancytree-container, #SeoSettings .fancytree-title {
+            font-size: 11px !important;
+        }
+
+        #SeoSettings .success-message, #SeoSettings .change-message {
+            border: 2px solid green;
+            font-weight: bold;
+            padding: 2px;
+            margin: 5px;
+        }
+
+        #SeoSettings .error-message {
+            border: 2px solid red;
+            font-weight: bold;
+            padding: 2px;
+            margin: 5px;
+        }
+
+        #SeoSettings .select-all {
+            margin-top: 10px;
+            font-size: 11px;
+        }
+
+        #SeoSettings .select-all a {
+            padding-right: 4px;
+        }
+
+        #SeoSettings .select-all a:not(:first-child) {
+            padding: 0 4px;
+            border-left: 1px solid black;
+        }
+
+    </style>
+}
+
+<script src="/Scripts/console/insite.seosettings.service.js"></script>
+<script src="/Scripts/console/insite.seosettings.controller.js"></script>
+
+<div id="SeoSettings" ng-controller="SeoSettingsController as vm">
+    @Html.Script(@<script src="/Scripts/Libraries/jquery.fancytree/2.2.0/jquery.fancytree.min.js"></script>)
+    @Html.Script(@<script type="text/javascript">
+                      function setWebsiteId(websiteId) {
+                          var vm = angular.element($("#SeoSettings")).controller();
+                          vm.getSeoSettings(websiteId);
+                      }
+
+                      function saveClick() {
+                          var vm = angular.element($("#SeoSettings")).controller();
+                          vm.saveSeoSettings();
+                      }
+                  </script>)
+
+    <div ng-class="vm.isLoading ? '' : 'hidden'">
+        Loading...
+    </div>
+    <div class="hidden" ng-class="vm.isLoading? 'hidden' : ''">        
+        <div class="success-message" ng-show="vm.successMessage" ng-bind="vm.successMessage"></div>
+        <div class="change-message" ng-show="vm.changeMessage" ng-bind="vm.changeMessage"></div>
+        <div class="error-message" ng-show="vm.errorMessage" ng-bind="vm.errorMessage"></div>
+        <div ng-show="!vm.errorMessage">
+            <div>
+                <input id="ExcludeProducts" type="checkbox" ng-model="vm.settings.HideProductsFromSearch" ng-click="vm.changed()"/>
+                <label for="ExcludeProducts" class="seo-option-heading">Hide all products from search engines on this website</label>
+            </div>
+
+            <div>
+                <input id="UseProductCanonicalLinks" type="checkbox" ng-model="vm.settings.UseProductCanonicalLinks" ng-click="vm.changed()"/>
+                <label for="UseProductCanonicalLinks" class="seo-option-heading">Use canonical links for product pages in the sitemap for this website</label>
+            </div>
+
+            <div ng-if="vm.settings.IsMicroSite">
+                <input id="MicrositeCanonicalProducts" type="checkbox" ng-model="vm.settings.MicrositeCanonicalProducts" ng-click="vm.changed()"/>
+                <label for="MicrositeCanonicalProducts" class="seo-option-heading">Products on this microsite have their own canonical urls</label>
+            </div>
+
+            <div ng-show="vm.tree.length > 0">
+                <div class="seo-option-heading">@T("CMS pages visible to search engines")</div>
+                <div class="seo-option-sub-heading">@T("Deselect CMS pages to hide from search engines")</div>
+
+                <div id="cmsTree">
+                    <div class="select-all">
+                        <a href="javascript:void(0);" ng-click="vm.cmsSelectAllClick(true)">Select All</a>
+                        <a href="javascript:void(0);" ng-click="vm.cmsSelectAllClick(false)">Deselect All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model InSiteCommerce.Web.NEBCustomizations.Widgets.LinkListFooter
+<div class="footer-list show-for-medium-up">
+    <ul>
+        <li><h4>@Model.ListTitle</h4></li>
+        @foreach (var pageKey in Model.Pages)
+        {
+            var getPageResult = Content.GetPage<AbstractPage>(pageKey);
+            if (getPageResult.Page != null && !getPageResult.Page.IsRetracted && getPageResult.DisplayLink)
+            {
+                <li><a class="cms-linklist-linkitem" href="@GenerateUrl(getPageResult.Page)">@getPageResult.Page.Title</a></li>
+            }
+        }
+        @if (!String.IsNullOrEmpty(Model.AdditionalLinks))
+        {
+            @Html.Raw(Model.AdditionalLinks)
+        }
+    </ul>
+</div>
+<div class="footer-list show-for-small-only mobile-footer">
+    <dl class="accordion" data-accordion>
+        <dd class="accordion-navigation">
+            <a href="#@Model.ListTitle.Replace(" ", "")"><h4>@Model.ListTitle<span class="fa accordion-icon pull-right"></span></h4></a>
+            <div id="@Model.ListTitle.Replace(" ", "")" class="content">
+                <ul>
+                    @foreach (var pageKey in Model.Pages)
+                    {
+                        var getPageResult = Content.GetPage<AbstractPage>(pageKey);
+                        if (getPageResult.Page != null && !getPageResult.Page.IsRetracted && getPageResult.DisplayLink)
+                        {
+                            <li><a class="cms-linklist-linkitem" href="@GenerateUrl(getPageResult.Page)">@getPageResult.Page.Title</a></li>
+                        }
+                    }
+                    @if (!String.IsNullOrEmpty(Model.AdditionalLinks))
+                    {
+                        @Html.Raw(Model.AdditionalLinks)
+                    }
+                </ul>
+            </div>
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+<title>@T("Editor")</title>
+    <meta http-equiv="Cache-control" content="no-store"/>
+    <meta http-equiv="Cache-control" content="no-cache"/>
+<script type="text/javascript" src="/console/editor/ckeditor.js" ></script>
+<script type="text/javascript" src="/console/editor/ckfinder/ckfinder.js"></script>
+<script language="Javascript" type="text/javascript">
+
+    function init() {
+        try {
+            CKEDITOR.config.customConfig = '/console/editor/console_config.js';
+            CKEDITOR.on('instanceReady', instanceReady);
+        }
+        catch (e) {
+            alert(e);
+        }
+    }
+
+    function instanceReady(evt) {
+        var editor = evt.editor;
+        editor.execCommand('maximize');
+        editor.setData(window.opener.htmlData);
+
+        CKFinder.setupCKEditor(null, '/console/editor/ckfinder/', 'UserFiles');
+
+        editor.getCommand("save").exec = function (evt) {
+            try {
+                newData = editor.getData();
+                window.opener.saveContent(newData);
+            }
+            catch (e) {
+                alert(e);
+            }
+        };
+    }
+		  
+</script>
+</head>
+<body onload="init()" >
+    <form id="form1" runat="server">
+    <div id="alerts">
+		<noscript>
+			<p>
+				<strong>CKEditor requires JavaScript to run</strong>. In a browser with no JavaScript
+				support, like yours, you should still see the contents (HTML data) and you should
+				be able to edit it normally, without a rich editor interface.
+			</p>
+		</noscript>
+	</div>
+
+
+	<textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
+    </form>
+</body>
+</html>

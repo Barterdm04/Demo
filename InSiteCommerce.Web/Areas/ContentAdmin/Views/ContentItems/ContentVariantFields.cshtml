@@ -1,0 +1,48 @@
+﻿@using Insite.ContentAdmin.Models.ContentItems
+@using InSite.Model
+@using Insite.WebFramework.Content.Services.Interfaces
+@using Microsoft.Practices.ServiceLocation
+@model ContentItem
+
+@functions {
+    private bool IsMismatch(ContentItemField contentItemField, Language language, Persona persona, string deviceType)
+    {
+        if (contentItemField.FieldType == FieldType.General)
+            return false;
+        if (contentItemField.Language.Id != language.Id)
+            return true;
+        if (language.HasPersonaSpecificContent && persona.Id != contentItemField.Persona.Id)
+            return true;
+        if (language.HasDeviceSpecificContent && !(deviceType.EqualsIgnoreCase(contentItemField.DeviceType.IsBlank() ? DeviceType.Desktop.ToString() : contentItemField.DeviceType)))
+            return true;
+
+        return false;
+    }
+}
+
+@{
+    var currentLanguage = ContextProvider.CurrentLanguage;
+    var currentPersona = ContextProvider.CurrentPersona;
+    var currentDeviceType = ContextProvider.CurrentDeviceType.ToString();
+    var adminService = ServiceLocator.Current.GetInstance<IAdminService>();
+    var contentItemFields = adminService.GetSortedVariantFields(Model).ToList();
+}
+
+@helper RenderField(ContentItemField contentItemField, IAdminService adminService, bool isMismatch)
+{
+    <div class="cms-@(contentItemField.FieldType == FieldType.General ? "general" : "variant" )Field @(isMismatch ? "cms-variantMismatchField" : "")">
+        @{
+            var contentFieldAttribute = adminService.GetContentFieldAttributeFor(Model, contentItemField);
+            var template = adminService.GetTemplateFor(Model, contentItemField);
+            var generic = typeof(EditContentFieldModel<>);
+            var specific = generic.MakeGenericType(contentFieldAttribute.GenericType);
+            var model = specific.GetConstructors().First().Invoke(new object[] { Model, contentItemField, contentFieldAttribute });
+            Html.RenderPartial("ContentItemFields/" + template, model);   
+        }
+    </div>
+}
+
+@foreach (var contentItemField in contentItemFields)
+{
+    @RenderField(contentItemField, adminService, IsMismatch(contentItemField, currentLanguage, currentPersona, currentDeviceType))
+}

@@ -1,0 +1,12 @@
+﻿@using InSite.Model
+<isc-requisition-view update-item-message="@MessageProvider.Current.Requisition_ItemUpdated"
+                      delete-item-message="@MessageProvider.Current.Requisition_ItemDeleted"
+                      delete-order-line-message="@MessageProvider.Current.Requisition_OrderLineDeleted">
+</isc-requisition-view>
+
+<script type="text/ng-template" id="/Directives/Requisitions/RequisitionView">
+    @Html.ThemedPartial("/Views/Directives/Requisitions/RequisitionView.cshtml")
+</script>
+<script type="text/ng-template" id="/Directives/Requisitions/RequisitionLines">
+    @Html.ThemedPartial("/Views/Directives/Requisitions/RequisitionLines.cshtml")
+</script>

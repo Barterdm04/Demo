@@ -1,0 +1,22 @@
+﻿@media all and (min-width: 768px) {
+  .widget-careersform {
+    max-width: 600px;
+
+    .cf-form label {
+        width: 45%;
+        float: left;
+      }
+    .successMessage {
+        text-align:center;
+        p{
+            font-weight:bold;
+        }
+    }
+  }
+
+  .widget-careersform .cf-form input,
+  .widget-careersform .cf-form select {
+    width: 50%;
+    float: right;
+  }
+}

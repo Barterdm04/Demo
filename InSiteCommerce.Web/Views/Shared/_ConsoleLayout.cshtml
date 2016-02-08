@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html data-isCustomErrorEnabled="@Html.IsCustomErrorEnabled()">
+    <head>
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        @Html.RequireCss("/Scripts/Libraries/jquery-ui/1.9.2/jquery-ui.custom.css")
+        @Html.RequireCss(Url.ThemedContent("/Styles/foundation.min.css"))
+        @RenderSection("Styles", false)
+
+        @Html.RequireScript("/Scripts/Libraries/angular/1.3.15/angular.min.js", false)
+        @Html.RequireScript("/Scripts/console/insite.console.module.js", false)
+    </head>
+    <body>
+        <div class="consolePage" ng-app="insite.console">
+            @RenderBody()
+        </div>
+        
+        @Html.RequireScript("/Scripts/Libraries/jquery/1.10.2/jquery.min.js", false)
+        @Html.RequireScript("/Scripts/Libraries/foundation/5.4.6/foundation.min.js", false)
+        @Html.RequireScript("/Scripts/Libraries/jquery-ui/1.9.2/jquery-ui.custom.min.js", false)
+        @Html.RenderDeferredScripts()
+        <script>
+            jQuery(document).foundation();
+        </script>
+    </body>
+    @RenderSection("AfterBodyContent", false)
+</html>

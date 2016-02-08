@@ -1,0 +1,1292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.WishLists</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.WishLists.Content.WishListPage">
+            <summary>
+            The Wish List Page
+            </summary>
+        </member>
+        <member name="T:Insite.WishLists.Content.WishListPageCreator">
+            <summary>
+            Responsible for creating the Wish List Page
+            </summary>
+        </member>
+        <member name="M:Insite.WishLists.Content.WishListPageCreator.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns>The newly created wish list page</returns>
+        </member>
+        <member name="T:Insite.WishLists.Content.WishListView">
+            <summary>The Wish List View</summary>
+        </member>
+        <member name="P:Insite.WishLists.Content.WishListView.DeleteWishlistMessage">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Dtos.WishListLineDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListLineDto.WishListLineId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListLineDto.ProductId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListLineDto.UnitOfMeasure">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListLineDto.Qty">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.AddUpdateWishListLineCollectionHandler">
+            <summary>Adds or updates wish list line collection handler. Order 600</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddUpdateWishListLineCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter,Insite.WishLists.Services.Results.WishListResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.AddUpdateWishListLineCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.AddWishListHandler">
+            <summary>The add wish list handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListHandler.DefaultName">
+            <summary>The default name.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListHandler.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListHandler.TranslationLocalizer">
+            <summary>The translation localizer.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListHandler.WishListHandlerMapper">
+            <summary>The wish list handler mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.AddWishListHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="wishListHandlerMapper">The wish list handler mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.AddWishListParameter,Insite.WishLists.Services.Results.WishListResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListHandler.T(System.String)">
+            <summary>Returns a translated label based on the <see cref="T:InSite.Model.TranslationDictionary"/> table.</summary>
+            <param name="defaultText">Label text in the default website language. May be of the form "label_context"</param>
+            <returns>Translated label text</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.AddWishListHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.AddWishListHandler.DefaultWishListName">
+            <summary>
+            Default wishlist name when only one wishlist per user is allowed.
+            </summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.AddWishListLineCollectionHandler">
+            <summary>The add wish list line collection handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListLineCollectionHandler.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListLineCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.AddWishListLineCollectionHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListLineCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter,Insite.WishLists.Services.Results.WishListResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.AddWishListLineCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.AddWishListLineHandler">
+            <summary>The add wish list line handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListLineHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.AddWishListLineHandler.WishListHandlerMapper">
+            <summary>The wish list handler mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListLineHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.AddWishListLineHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="wishListHandlerMapper">The wish list handler mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListLineHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.AddWishListLineParameter,Insite.WishLists.Services.Results.WishListLineResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.AddWishListLineHandler.GetWishListResult(InSite.Model.Interfaces.IUnitOfWork,System.Guid)">
+            <summary>The get wish list result.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="wishListId">The wish list id.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.AddWishListLineHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler">
+            <summary>The get wish list collection handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler.WishListHandlerMapper">
+            <summary>The wish list handler mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider,Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="wishishListHandlerMapper">The wishish List Handler Mapper.</param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.GetWishListCollectionParameter,Insite.WishLists.Services.Results.GetWishListCollectionResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.GetWishListCollectionResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.GetWishListCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.GetWishListHandler">
+            <summary>The get wish list handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListHandler.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListHandler.WishListHandlerMapper">
+            <summary>The wish list handler mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListHandler.#ctor(InSite.Model.Interfaces.IContextProvider,Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.GetWishListHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="wishishListHandlerMapper">The wishish list handler mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.GetWishListParameter,Insite.WishLists.Services.Results.WishListResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.GetWishListHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.GetWishListLineHandler">
+            <summary>The get wish list line handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListLineHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.GetWishListLineHandler.WishListHandlerMapper">
+            <summary>The wish list handler mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListLineHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.GetWishListLineHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="wishListHandlerMapper">The wish list handler mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListLineHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.GetWishListLineParameter,Insite.WishLists.Services.Results.WishListLineResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.GetWishListLineHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.GetWishListSettingsHandler">
+            <summary>The get wish list settings handler.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.GetWishListSettingsHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.GetWishListSettingsParameter,Insite.WishLists.Services.Results.GetWishListSettingsResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.GetWishListSettingsResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.GetWishListSettingsHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper.MapWishListResult(InSite.Model.WishList,Insite.WishLists.Services.Results.WishListResult)">
+            <summary>
+            Maps the wish list result.
+            </summary>
+            <param name="wishList">The wish list.</param>
+            <param name="wishListResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper.MapWishListLineCollectionResult(System.Collections.Generic.IList{InSite.Model.WishListProduct},Insite.WishLists.Services.Results.WishListResult)">
+            <summary>
+            Maps the wish list line collection result.
+            </summary>
+            <param name="wishListProducts">The wish list.</param>
+            <param name="wishListResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.IWishListHandlerMapper.MapWishListLineResult(InSite.Model.WishListProduct,Insite.WishLists.Services.Results.WishListLineResult)">
+            <summary>
+            Maps the wish list line result.
+            </summary>
+            <param name="wishListProduct">The wish list product.</param>
+            <param name="wishListLineResult"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.RemoveWishListHandler">
+            <summary>The remove wish list handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.RemoveWishListHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.RemoveWishListHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.RemoveWishListHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.RemoveWishListHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.RemoveWishListParameter,Insite.WishLists.Services.Results.RemoveWishListResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.RemoveWishListResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.RemoveWishListHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.RemoveWishListLineHandler">
+            <summary>The remove wish list line handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.RemoveWishListLineHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.RemoveWishListLineHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.RemoveWishListLineHandler"/> class.</summary>
+            <param name="handlerFarctory">The handler farctory.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.RemoveWishListLineHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.RemoveWishListLineParameter,Insite.WishLists.Services.Results.RemoveWishListLineResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.RemoveWishListLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.RemoveWishListLineHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.UpdateWishListLineHandler">
+            <summary>The update wish list line handler.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.UpdateWishListLineHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.UpdateWishListLineHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.UpdateWishListLineHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.UpdateWishListLineHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.WishLists.Services.Parameters.UpdateWishListLineParameter,Insite.WishLists.Services.Results.UpdateWishListLineResult)">
+            <summary>Executes the specified unit of work.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.UpdateWishListLineResult"/>.</returns>
+        </member>
+        <member name="P:Insite.WishLists.Services.Handlers.UpdateWishListLineHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper">
+            <summary>The wish list handler mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.ContextProvider">
+            <summary>The context provider.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.ProductService">
+            <summary>The product service.</summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.TranslationLocalizer">
+            <summary>The translation localizer.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Catalog.Services.IProductService)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="productService">The product service.</param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.MapWishListResult(InSite.Model.WishList,Insite.WishLists.Services.Results.WishListResult)">
+            <summary>Maps the wish list result.</summary>
+            <param name="wishList">The wish list.</param>
+            <param name="wishListResult"></param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.MapWishListLineCollectionResult(System.Collections.Generic.IList{InSite.Model.WishListProduct},Insite.WishLists.Services.Results.WishListResult)">
+            <summary>Maps the wish list line collection result.</summary>
+            <param name="wishListProducts">The wish list.</param>
+            <param name="wishListResult"></param>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.MapWishListLineResult(InSite.Model.WishListProduct,Insite.WishLists.Services.Results.WishListLineResult)">
+            <summary>Maps the wish list line result.</summary>
+            <param name="wishListProduct">The wish list product.</param>
+            <param name="wishListLineResult"></param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.MapWishListLine(InSite.Model.WishListProduct,Insite.Catalog.Services.Dtos.ProductDto,Insite.WishLists.Services.Results.WishListLineResult)">
+            <summary>The map wish list line.</summary>
+            <param name="wishListProduct">The wish list product.</param>
+            <param name="productDto">The product dto.</param>
+            <param name="wishListLineResult">The wish list line result.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.Handlers.Mappers.WishListHandlerMapper.GetProductDtos(System.Collections.Generic.IList{InSite.Model.WishListProduct})">
+            <summary>Get Product Dtos for the specified <see cref="T:InSite.Model.OrderLine"/>s.</summary>
+            <param name="wishListProducts">List of <see cref="T:InSite.Model.OrderLine"/>s.</param>
+            <returns>The <see cref="T:Insite.Catalog.Services.Results.GetProductCollectionResult"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter">
+            <summary>The add wish list line collection parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter.WishListLineDtoCollection">
+            <summary>Gets or sets the wish list line dto collection.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.GetWishListLineParameter">
+            <summary>The get wish list line parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.GetWishListLineParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.GetWishListLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.GetWishListLineParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.GetWishListLineParameter.WishListLineId">
+            <summary>Gets or sets the wish list line id.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.GetWishListSettingsParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.WishLists.Services.IWishListService.GetWishListSettings(Insite.WishLists.Services.Parameters.GetWishListSettingsParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.GetWishListSettingsParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.GetWishListSettingsParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.RemoveWishListParameter">
+            <summary>The remove wish list parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.RemoveWishListParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.RemoveWishListParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+            <param name="wishListId">The wish list id.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.RemoveWishListParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.GetWishListSettingsResult">
+            <summary>
+            The Get wish list settings result
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.GetWishListSettingsResult.AllowMultipleWishLists">
+            <summary>Gets or sets a value indicating whether allow multiple wish lists.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.GetWishListSettingsResult.AllowEditingOfWishLists">
+            <summary>Gets or sets a value indicating whether allow editing of wish lists.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.GetWishListSettingsResult.AllowWishListsByCustomer">
+            <summary>Gets or sets a value indicating whether allow wish lists by customer.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.RemoveWishListResult">
+            <summary>
+            The remove wish list result
+            </summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter">
+            <summary>The update wish list line parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid,Insite.WishLists.Services.Dtos.WishListLineDto)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+            <param name="wishListId">The wish list id.</param>
+            <param name="wishListLineDto">The wish list line dto.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter.WishListLineDto">
+            <summary>Gets or sets the wish list line dto.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.UpdateWishListLineResult">
+            <summary>
+            The update wish list line result
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.UpdateWishListLineResult.Quantity">
+            <summary>Gets or sets a quantity of wish list line.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.UpdateWishListLineResult.UnitOfMeasure">
+            <summary>Gets or sets a value of unit of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.UpdateWishListLineResult.UnitOfMeasureDisplay">
+            <summary>Gets or sets a value of unit of measure display.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.WishListLineResult">
+            <summary>
+            The wish list line result
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.LineId">
+            <summary>Gets or sets a value of line id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.ProductDto">
+            <summary>Gets or sets a value of product dto.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.UnitOfMeasure">
+            <summary>Gets or sets a value of units of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.UnitOfMeasureDisplay">
+            <summary>Gets or sets a value of unit of measure display.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.QtyOrdered">
+            <summary>Gets or sets a value of quantity order.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.BreakPrices">
+            <summary>Gets or sets a value of break prices.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListLineResult.MicroSite">
+            <summary>Gets or sets a value of microsite.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.ApiModels.WishListCollectionModel">
+            <summary> The wish list collection model. </summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListCollectionModel.WishListCollection">
+            <summary>Gets or sets the wish list collection.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineCollectionModel">
+            <summary>The wish list line collection model.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineCollectionModel.WishListLines">
+            <summary>Gets or sets the wish list lines.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.ApiModels.WishListParameter">
+            <summary>The wish list parameter.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListParameter.CurrentPage">
+            <summary>Gets or sets the start page.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListParameter.PageSize">
+            <summary>Gets or sets the page size.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.ApiModels.WishListSettingsModel">
+            <summary> The wish list settings model. </summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListSettingsModel.AllowMultipleWishLists">
+            <summary>Gets or sets a value indicating whether allow multiple wish lists.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListSettingsModel.AllowEditingOfWishLists">
+            <summary>Gets or sets a value indicating whether allow editing of wish lists.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListSettingsModel.AllowWishListsByCustomer">
+            <summary>Gets or sets a value indicating whether allow wish lists by customer.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.BatchWishListLineMapper">
+            <summary>Maps the parameter for calling the service and the result returned from the service.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IBatchWishListLineMapper">
+            <summary>The BatchWishListLineMapper interface.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.BatchWishListLineMapper.MapParameter(Insite.WishLists.WebApi.V1.ApiModels.WishListLineCollectionModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The http request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.BatchWishListLineMapper.MapResult(Insite.WishLists.Services.Results.WishListResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineCollectionModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.DeleteWishListLineMapper">
+            <summary>The delete wish list line mapper.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IDeleteWishListLineMapper">
+            <summary>The DeleteWishListLineMapper interface.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.DeleteWishListLineMapper.MapParameter(System.Guid,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="wishListLineId">The wish list line id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.RemoveWishListLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.DeleteWishListLineMapper.MapResult(Insite.WishLists.Services.Results.RemoveWishListLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.DeleteWishListMapper">
+            <summary>The delete wish list mapper.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IDeleteWishListMapper">
+            <summary>The DeleteWishListMapper interface.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.DeleteWishListMapper.MapParameter(System.Guid,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="wishListId">The wish list id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.RemoveWishListParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.DeleteWishListMapper.MapResult(Insite.WishLists.Services.Results.RemoveWishListResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper">
+            <summary>The get wish list line mapper.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineMapper">
+            <summary>The GetWishListLineMapper interface.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper"/> class.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="wishListLineId">The wish list line id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.GetWishListLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper.MapResult(Insite.WishLists.Services.Results.WishListLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="lineResult">The line result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineCollectionMapper">
+            <summary>The get wish list line collection mapper.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineCollectionMapper">
+            <summary>The GetWishListLineCollectionMapper interface.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineCollectionMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineCollectionMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineCollectionMapper"/> class.</summary>
+            <param name="urlHelper">The url helper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineCollectionMapper.MapParameter(System.Guid,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="wishListId">The wish list id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.GetWishListParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineCollectionMapper.MapResult(Insite.WishLists.Services.Results.WishListResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineCollectionModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper">
+            <summary>The get wish list mapper.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListMapper">
+            <summary>The GetWishListMapper interface.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper.GetWishListLineCollectionMapper">
+            <summary>The get wish list line collection mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper.#ctor(Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineCollectionMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper"/> class.</summary>
+            <param name="getWishListLineCollectionMapper">The get wish list line collection mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper.MapParameter(Insite.WishLists.WebApi.V1.ApiModels.WishListParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.GetWishListParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListMapper.MapResult(Insite.WishLists.Services.Results.WishListResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper">
+            <summary>The get wish list collection mapper.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListCollectionMapper">
+            <summary>The GetWishListCollectionMapper interface.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper.GetWishListLineCollectionMapper">
+            <summary>The get wish list line collection mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper.#ctor(Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineCollectionMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper"/> class.</summary>
+            <param name="getWishListLineCollectionMapper">The get wish list line collection mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.GetWishListCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListCollectionMapper.MapResult(Insite.WishLists.Services.Results.GetWishListCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListCollectionModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListSettingsMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListSettingsMapper">
+            <summary>
+            Maps the parameter for calling the service and the result returned from the service.
+            </summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.GetWishListSettingsMapper.ObjectToObjectMapper">
+            <summary>
+            The object to object mapper
+            </summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListSettingsMapper.#ctor(Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListSettingsMapper"/> class.</summary>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListSettingsMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="apiParameter">The API parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.GetWishListSettingsParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.GetWishListSettingsMapper.MapResult(Insite.WishLists.Services.Results.GetWishListSettingsResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListSettingsModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IPatchWishListLineMapper">
+            <summary>The PatchWishListLineMapper interface.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IPostWishListLineMapper">
+            <summary>The PostWishListLineMapper interface.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.Interfaces.IPostWishListMapper">
+            <summary>The PostWishListMapper interface.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.PatchWishListLineMapper">
+            <summary>The patch wish list line mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PatchWishListLineMapper.MapParameter(Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PatchWishListLineMapper.MapResult(Insite.WishLists.Services.Results.UpdateWishListLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:System.Object"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.PostWishListLineMapper">
+            <summary>The post wish list line mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.PostWishListLineMapper.GetWishListLineMapper">
+            <summary>The get wish list line mapper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PostWishListLineMapper.#ctor(Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.PostWishListLineMapper"/> class.</summary>
+            <param name="getWishLineMpper">The get wish line mpper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PostWishListLineMapper.MapParameter(Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The http request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.AddWishListLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PostWishListLineMapper.MapResult(Insite.WishLists.Services.Results.WishListLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.PostWishListMapper">
+            <summary>The post wish list mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.Mappers.PostWishListMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PostWishListMapper.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.Mappers.GetWishListLineMapper"/> class.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PostWishListMapper.MapParameter(Insite.WishLists.WebApi.V1.ApiModels.WishListModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="model">The model.</param>
+            <param name="request">The http request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Parameters.AddWishListParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.PostWishListMapper.MapResult(Insite.WishLists.Services.Results.WishListResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.WishLists.WebApi.V1.ApiModels.WishListModel"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel">
+            <summary>
+            The wish list line collection model.
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ProductUri">
+            <summary>Gets or sets the product uri.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ProductId">
+            <summary>Gets or sets the product id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.SmallImagePath">
+            <summary>Gets or sets the small image path.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.AltText">
+            <summary>Gets or sets the alt text.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ProductName">
+            <summary>Gets or sets the product name.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ManufacturerItem">
+            <summary> Gets or sets the manufacturer item. </summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.CustomerName">
+            <summary>Gets or sets the customer name.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ShortDescription">
+            <summary>Gets or sets the short description.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.QtyOrdered">
+            <summary>Gets or sets the qty ordered.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ErpNumber">
+            <summary>Gets or sets the erp number.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.Pricing">
+            <summary>Gets or sets the pricing.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.QuoteRequired">
+            <summary>Gets or sets a value indicating whether quote required.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.IsActive">
+            <summary>Gets or sets a value indicating whether is active.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.CanEnterQuantity">
+            <summary>Gets or sets a value indicating whether can enter quantity.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.CanShowPrice">
+            <summary>Gets or sets a value indicating whether can show price.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.CanAddToCart">
+            <summary>Gets or sets a value indicating whether can add to cart.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.CanShowUnitOfMeasure">
+            <summary>Gets or sets a value indicating whether can show unit of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.Availability">
+            <summary> Gets or sets the inventory availability information. </summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.BreakPrices">
+            <summary>Gets or sets the break prices.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.UnitOfMeasure">
+            <summary>Gets or sets the unit of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.UnitOfMeasureDisplay">
+            <summary>Gets or sets the unit of measure display.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.BaseUnitOfMeasure">
+            <summary>Gets or sets the base unit of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.BaseUnitOfMeasureDisplay">
+            <summary>Gets or sets the base unit of measure display.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.QtyPerBaseUnitOfMeasure">
+            <summary>Gets or sets the qty per base unit of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.SelectedUnitOfMeasure">
+            <summary>Gets or sets the selected unit of measure.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.ProductUnitOfMeasures">
+            <summary>Gets or sets the product unit of measures.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel.PackDescription">
+            <summary>Gets or sets the pack description.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.ApiModels.WishListModel">
+            <summary>
+            The wish list model.
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.WishListLinesUri">
+            <summary>Gets or sets the wish list lines uri.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.Name">
+            <summary>Gets or sets the name.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.CanAddAllToCart">
+            <summary>Gets or sets a value indicating whether can add all to cart.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.CanAddToCart">
+            <summary>Gets or sets a value indicating whether can add any item to cart.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.Pagination">
+            <summary>Gets or sets the pagination.</summary>
+        </member>
+        <member name="P:Insite.WishLists.WebApi.V1.ApiModels.WishListModel.WishListLineCollection">
+            <summary>Gets or sets the wish list line collection.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.AddWishListLineParameter">
+            <summary>The add wish list line parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.AddWishListLineParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.AddWishListLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.AddWishListLineParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.AddWishListLineParameter.WishListLineDto">
+            <summary>Gets or sets the wish list line dto.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Dtos.WishListDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListDto.WishListId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListDto.Name">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Dtos.WishListDto.Products">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.AddWishListParameter">
+            <summary>The add wish list parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.AddWishListParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.AddWishListParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.AddWishListParameter.Name">
+            <summary>
+            The name for the new <see cref="T:InSite.Model.WishList"/>
+            </summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.GetWishListCollectionParameter">
+            <summary>The get wish list collection parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.GetWishListCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.GetWishListCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.GetWishListCollectionParameter.IncludeWishListLines">
+            <summary>Gets or sets a value indicating whether include wish list lines.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.GetWishListCollectionResult">
+            <summary>
+            The Get wish list collection result
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.GetWishListCollectionResult.WishListResults">
+            <summary>Gets or sets the wish lists.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.GetWishListParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.WishLists.Services.IWishListService.GetWishList(Insite.WishLists.Services.Parameters.GetWishListParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.GetWishListParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.GetWishListParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.GetWishListParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.WishListResult">
+            <summary>
+            The wish list result
+            </summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListResult.Id">
+            <summary>Gets or sets a value of wish list's id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListResult.WishList">
+            <summary>Gets or sets the Wish List.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListResult.Name">
+            <summary>Gets or sets a Name.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListResult.UserProfile">
+            <summary>Gets or sets a user profile.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListResult.Customer">
+            <summary>Gets or sets a customer.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Results.WishListResult.WishListLineResults">
+            <summary>Gets or sets a wish list line results.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.IWishListService">
+            <summary>The WishListService interface.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.GetWishListCollection(Insite.WishLists.Services.Parameters.GetWishListCollectionParameter)">
+            <summary>The get wish list collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.GetWishListCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.GetWishList(Insite.WishLists.Services.Parameters.GetWishListParameter)">
+            <summary>The get wish list.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.AddWishList(Insite.WishLists.Services.Parameters.AddWishListParameter)">
+            <summary>The add wish list.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.RemoveWishList(Insite.WishLists.Services.Parameters.RemoveWishListParameter)">
+            <summary>The remove wish list.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.RemoveWishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.GetWishListLine(Insite.WishLists.Services.Parameters.GetWishListLineParameter)">
+            <summary>The get wish list line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.AddWishListLine(Insite.WishLists.Services.Parameters.AddWishListLineParameter)">
+            <summary>The add wish list line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.AddWishListLineCollection(Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter)">
+            <summary>The add wish list line collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.UpdateWishListLine(Insite.WishLists.Services.Parameters.UpdateWishListLineParameter)">
+            <summary>The update wish list line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.UpdateWishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.RemoveWishListLine(Insite.WishLists.Services.Parameters.RemoveWishListLineParameter)">
+            <summary>The remove wish list line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.RemoveWishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.IWishListService.GetWishListSettings(Insite.WishLists.Services.Parameters.GetWishListSettingsParameter)">
+            <summary>The get wish list settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.GetWishListSettingsResult"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.Services.Parameters.RemoveWishListLineParameter">
+            <summary>The remove wish list line parameter.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.Parameters.RemoveWishListLineParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.Parameters.RemoveWishListLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+            <param name="wishListId">The wish list id.</param>
+            <param name="wishListLineId">The wish list line id.</param>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.RemoveWishListLineParameter.WishListId">
+            <summary>Gets or sets the wish list id.</summary>
+        </member>
+        <member name="P:Insite.WishLists.Services.Parameters.RemoveWishListLineParameter.WishListLineId">
+            <summary>Gets or sets the wish list line id.</summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.Results.RemoveWishListLineResult">
+            <summary>
+            The remove wish list line result
+            </summary>
+        </member>
+        <member name="T:Insite.WishLists.Services.WishListService">
+            <summary>
+            The default implementation of <see cref="T:Insite.WishLists.Services.IWishListService"/> that offers functions for managing Wish Lists.
+            </summary>
+        </member>
+        <member name="F:Insite.WishLists.Services.WishListService.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.Services.WishListService"/> class. Dependency injection constructor.</summary>
+            <param name="unitOfWorkFactory"><see cref="T:InSite.Model.Interfaces.IUnitOfWorkFactory"/></param>
+            <param name="contextProvider"><see cref="T:InSite.Model.Interfaces.IContextProvider"/></param>
+            <param name="translationLocalizer"><see cref="T:InSite.Model.Interfaces.ITranslationLocalizer"/></param>
+            <param name="handlerFactory"></param>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.GetWishListCollection(Insite.WishLists.Services.Parameters.GetWishListCollectionParameter)">
+            <summary>Gets the wish list collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.GetWishListCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.GetWishList(Insite.WishLists.Services.Parameters.GetWishListParameter)">
+            <summary>Gets the wish list.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.AddWishList(Insite.WishLists.Services.Parameters.AddWishListParameter)">
+            <summary>Adds the wish list.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.RemoveWishList(Insite.WishLists.Services.Parameters.RemoveWishListParameter)">
+            <summary>Remove a wishlist.</summary>
+            <param name="parameter">The <see cref="T:Insite.WishLists.Services.Parameters.RemoveWishListParameter"/></param>
+            <returns>A <see cref="T:Insite.WishLists.Services.Results.RemoveWishListResult"/></returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.GetWishListLine(Insite.WishLists.Services.Parameters.GetWishListLineParameter)">
+            <summary>Gets the wish list line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.AddWishListLine(Insite.WishLists.Services.Parameters.AddWishListLineParameter)">
+            <summary>Add a line to a wishlist.</summary>
+            <param name="parameter">The <see cref="T:Insite.WishLists.Services.Parameters.AddWishListLineParameter"/></param>
+            <returns>A <see cref="T:Insite.WishLists.Services.Results.WishListLineResult"/></returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.AddWishListLineCollection(Insite.WishLists.Services.Parameters.AddWishListLineCollectionParameter)">
+            <summary>Adds the wish list line collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.WishListResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.UpdateWishListLine(Insite.WishLists.Services.Parameters.UpdateWishListLineParameter)">
+            <summary>Update a line from a wishlist.</summary>
+            <param name="parameter">The <see cref="T:Insite.WishLists.Services.Parameters.UpdateWishListLineParameter"/></param>
+            <returns>A <see cref="T:Insite.WishLists.Services.Results.UpdateWishListLineResult"/></returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.RemoveWishListLine(Insite.WishLists.Services.Parameters.RemoveWishListLineParameter)">
+            <summary>Removes the wish list line.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.RemoveWishListLineResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.Services.WishListService.GetWishListSettings(Insite.WishLists.Services.Parameters.GetWishListSettingsParameter)">
+            <summary>Gets the wish list settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.WishLists.Services.Results.GetWishListSettingsResult"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.Mappers.WishListMapperStartupTask">
+            <summary>The wish list mapper startup task.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.Mappers.WishListMapperStartupTask.Run">
+            <summary>The run.</summary>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.WishListsV1Controller">
+            <summary>
+            The WishLists WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListsV1Controller.deleteWishListMapper">
+            <summary>The delete wish list mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListsV1Controller.getWishListCollectionMapper">
+            <summary>The get wish list collection mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListsV1Controller.getWishListMapper">
+            <summary>The get wish list mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListsV1Controller.getWishListSettingsMapper">
+            <summary>The get wish list mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListsV1Controller.postWishListMapper">
+            <summary>The post wish list mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListsV1Controller.wishListService">
+            <summary>The wish list service.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListsV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.WishLists.Services.IWishListService,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListCollectionMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IPostWishListMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IDeleteWishListMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.WishListsV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="wishListService">The wish list service.</param>
+            <param name="getWishListsMapper">The get wish lists mapper.</param>
+            <param name="getWishListMapper">The get wish list mapper.</param>
+            <param name="postWishListMapper">The post wish list mapper.</param>
+            <param name="deleteWishListMapper">The delete wish list mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListsV1Controller.GetSettings">
+            <summary>
+            Gets the cart settings.
+            </summary>
+            <returns>
+            The <see cref="T:System.Web.Http.IHttpActionResult"/>.
+            </returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListsV1Controller.Get">
+            <summary>
+            Gets the wish list collection.
+            </summary>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListsV1Controller.Get(System.Guid,Insite.WishLists.WebApi.V1.ApiModels.WishListParameter)">
+            <summary>Gets the specified wish list identifier.</summary>
+            <param name="wishListId">The wish list Id.</param>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListsV1Controller.Post(Insite.WishLists.WebApi.V1.ApiModels.WishListModel)">
+            <summary>Posts the specified wish list model.</summary>
+            <param name="wishListModel">The wish list model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListsV1Controller.Delete(System.Guid)">
+            <summary>Deletes the specified wish list identifier.</summary>
+            <param name="wishListId">The wish list identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="T:Insite.WishLists.WebApi.V1.WishListLinesV1Controller">
+            <summary>
+            The WishListLines WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.deleteWishListLineMapper">
+            <summary>The delete wish list line mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.getWishListLineCollectionMapper">
+            <summary>The get wish list line collection mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.batchWishListLineMapper">
+            <summary>The batch wish list line collection mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.getWishListLineMapper">
+            <summary>The get wish list line mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.patchWishListLineMapper">
+            <summary>The patch wish list line mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.postWishListLineMapper">
+            <summary>The post wish list line mapper.</summary>
+        </member>
+        <member name="F:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.wishListService">
+            <summary>The wish list service.</summary>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.WishLists.Services.IWishListService,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineCollectionMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IBatchWishListLineMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IGetWishListLineMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IPostWishListLineMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IPatchWishListLineMapper,Insite.WishLists.WebApi.V1.Mappers.Interfaces.IDeleteWishListLineMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.WishLists.WebApi.V1.WishListLinesV1Controller"/> class.
+            </summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="wishListService">The wish list service.</param>
+            <param name="getWishListLineCollectionMapper">The get wish list line collection mapper.</param>
+            <param name="batchWishListLineMapper">The batch wish list line mapper.</param>
+            <param name="getWishListLineMapper">The get wish list line mapper.</param>
+            <param name="postWishListLineMapper">The post wish list line mapper.</param>
+            <param name="patchWishListLineMapper">The patch wish list line mapper.</param>
+            <param name="deleteWishListLineMapper">The delete wish list line mapper.</param>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.Get(System.Guid)">
+            <summary>Gets the specified wish list identifier.</summary>
+            <param name="wishListId">The wish list identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.Get(System.Guid,System.String)">
+            <summary>Gets the specified wish list identifier.</summary>
+            <param name="wishListId">The wish list identifier.</param>
+            <param name="wishListLineId">The wish list line identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.Post(System.String,Insite.WishLists.WebApi.V1.ApiModels.WishListLineCollectionModel)">
+            <summary>The post.</summary>
+            <param name="wishListId">The wish list id.</param>
+            <param name="wishListCollectionModel">The wish list line collection model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.Post(System.Guid,Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel)">
+            <summary>Posts the specified wish list identifier.</summary>
+            <param name="wishListId">The wish list identifier.</param>
+            <param name="wishListLineModel">The wish list line model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.Patch(System.Guid,System.Guid,Insite.WishLists.WebApi.V1.ApiModels.WishListLineModel)">
+            <summary>Patches the specified wish list identifier.</summary>
+            <param name="wishListId">The wish List Id.</param>
+            <param name="wishListLineId">The wish List Line Id.</param>
+            <param name="wishListLineModel">The wish list line model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.WishLists.WebApi.V1.WishListLinesV1Controller.Delete(System.Guid,System.Guid)">
+            <summary>Deletes the specified wish list identifier.</summary>
+            <param name="wishListId">The wish list identifier.</param>
+            <param name="wishListLineId">The wish list line identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+    </members>
+</doc>

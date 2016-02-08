@@ -1,0 +1,304 @@
+/* CSS file */
+
+.appy
+{
+	font-family: Tahoma;
+	font-size: 11;
+	background-gradient-colors: #00226c, #0058a7;
+}
+
+AdvancedDataGrid
+{
+	selection-color: #0a67bf;
+	text-selected-color: #FFFFFF;
+	roll-over-color: #e5e5e5;
+}
+
+Alert
+{
+	color: #000000;
+	header-colors:  #d2d2d2, #f3f3f3;
+	background-color: #f3f3f3;
+	background-alpha: 1;
+	border-color: #f3f3f3;
+	border-alpha: 1;
+	footer-colors:  #f3f3f3, #d2d2d2;
+	highlightAlphas: 0, 0;
+	modal-transparency: .35;
+	modal-transparency-color: #0058a7;
+	modal-transparency-blur: 0;
+}
+
+.roundedCanvas
+{
+	 corner-radius: 5;
+}
+
+.panel
+{
+	padding-top:10;
+	padding-left:10;
+	padding-bottom:10;
+	padding-right:10;
+    drop-shadow-enabled: false;
+}
+
+.form
+{
+	padding-top: 0;
+	padding-left: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+}
+
+.menuTree
+{
+	text-roll-over-color: #000000;
+	roll-over-color: #e5e5e5;
+	selection-color: #0a67bf;
+	text-selected-color: #ffffff;
+	default-leaf-icon: Embed(source="../assets/treeView/icon-gray-dot.png");
+	folder-open-icon: Embed(source="../assets/treeView/icon-folder-open.png");
+	folder-closed-icon: Embed(source="../assets/treeView/icon-folder-closed.png");
+	/*
+	disclosure-open-icon: Embed(source="../assets/treeView/icon-arrow-down.png");
+	disclosure-closed-icon: Embed(source="../assets/treeView/icon-arrow-right.png");
+	padding-left: 4;
+	*/
+}
+
+.mainContent
+{
+	
+}
+
+.module
+{
+	corner-radius: 5;
+	backgroundColor: #e4e4e4;
+	borderColor: #6D6B76; 
+	borderStyle: solid;
+}
+
+.tabNavigator
+{
+	color: #000000;
+	backgroundColor: #cbcbcb;
+}
+
+.screenHeader
+{
+	fontSize: 14;
+	fontWeight: bold;
+	color:#81980a;
+}
+
+.header
+{
+	backgroundColor:#1F1F1F;
+}
+
+.menuBackground
+{
+ 	background-color: #3d4447;
+ 	background-alpha: .9;
+	corner-radius: 5;
+	border-style: solid;
+	border-thickness: 4;
+	border-color:#2E3436;
+	border-sides: 1, 1, 1, 1; 
+}
+
+.smallButton
+{
+	fontSize: 8;
+	letter-spacing:.8;
+	fontWeight: bold;
+	fontFamily: Arial;
+	paddingTop: 3;
+	fillAlphas: 1, 1;
+	fill-colors: #92ac44, #718534;
+	text-roll-over-color: #4a5723;
+	color:#ffffff;
+}
+
+.loginLogo
+{
+	/* background-image: "assets/logoBackground.png";
+	background-size: "100%"; */
+}
+
+.headerButtons
+{
+	fillAlphas: 1, 1;
+	fill-colors: #92ac44, #718534;
+	text-roll-over-color: #4a5723;
+	color:#ffffff;
+}
+
+.leftMenuHeader
+{
+	color:#ffffff;
+	text-roll-over-color: #ffffff;
+	fillAlphas: 1, 1;
+	fill-colors: #0058a7, #00226c;
+	highlightAlphas: 0, 0;
+	font-size: 11;
+	roll-over-color: #0a6b2c;
+	selection-color: #0d3898;
+}
+
+.footer
+{
+	color: #191919;
+	fillAlphas: 1, 1;
+	fill-colors: #f3f3f3, #d2d2d2;
+}
+
+.formLabel
+{
+	text-align: right;
+}
+
+.filteredControl
+{
+	icon-color: #5E6646;
+	color: #FFFFFF;
+	text-roll-over-color: #3B402C;
+	background-color: #2ba600;
+}
+
+.filteredHeader
+{
+	header-colors: #B1BF83, #B1BF83;
+}
+
+.invalidControl
+{
+	background-color: #FFBFC2;
+}
+
+.footerProcessing
+{
+	letter-spacing: 10;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.hTMLEditorTestArea
+{
+	padding-top: 10;
+	padding-right: 10;
+	padding-bottom: 10;
+	padding-left: 10;
+}
+
+.popupWindow
+{
+	padding-top:10;
+	padding-left:10;
+	padding-bottom:10;
+	padding-right:10;
+	drop-shadow-enabled: false;
+	background-alpha: 1;
+	border-alpha: 1;
+	border-color: #999999;
+}
+
+.headline
+{
+	font-weight: bold;
+	font-size: 16;
+	letter-spacing: .6;
+}
+
+.subHead
+{
+	font-size: 14;
+	letter-spacing: .6;
+}
+
+.user
+{
+	icon: Embed(source="shortcutIcons.swf", symbol="user");
+}
+
+.customer
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="customer"); 
+}
+
+.product
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="product"); 
+}
+
+.order
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="order"); 
+}
+
+.promotion
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="promotion"); 
+}
+
+.email
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="email"); 
+}
+
+.category
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="category"); 
+}
+
+.webPage
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="webPage"); 
+}
+
+.creditCardProcessing
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="creditCardProcessing"); 
+}
+
+.batch
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="batch"); 
+}
+
+.fileManager
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="fileManager"); 
+}
+
+.dashBoard
+{
+	 icon: Embed(source="shortcutIcons.swf", symbol="dashBoard");
+}
+
+.processing
+{
+	font-weight: bold;
+	letter-spacing: 1;
+	color: #0058a7;
+}
+
+.errorMessage
+{
+    font-weight: bold;
+    letter-spacing: 1;
+    color: red;
+}
+
+.whatsNewScroll
+{
+	background-gradient-alphas: .5, .5;
+	trackColors: #172732, #172732;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #172732, #172732;
+	borderColor: #172732;
+	cornerRadius: 0;
+}

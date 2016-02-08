@@ -1,0 +1,99 @@
+﻿@using InSite.Model
+@model Insite.WebFramework.Mvc.ZoneViewModel
+
+@functions { //TODO CMS 3.7.1 this is ugly and duplicated with ContentVariantFields
+    private bool IsMismatch(AbstractWidget abstractWidget, Language language, Persona persona, string deviceType)
+    {
+        return abstractWidget.CurrentContentItemFields.Values.Any(o => IsMismatch(o, language, persona, deviceType));
+    }
+    private bool IsMismatch(ContentItemField contentItemField, Language language, Persona persona, string deviceType)
+    {
+        if (contentItemField.FieldType == FieldType.General)
+            return false;
+        if (contentItemField.Language.Id != language.Id)
+            return true;
+        if (language.HasPersonaSpecificContent && persona.Id != contentItemField.Persona.Id)
+            return true;
+        if (language.HasDeviceSpecificContent && !(deviceType.EqualsIgnoreCase(contentItemField.DeviceType.IsBlank() ? DeviceType.Desktop.ToString() : contentItemField.DeviceType)))
+            return true;
+
+        return false;
+    }
+}
+
+@{
+    //TODO CMS 3.7.1 when in review mode, we should still show the div that shows unpublished/mismatched so we can get styling
+    var showEditMode = ContentMode == ContentMode.Editing && CurrentPageContentKey == Model.ContentItem.PageContentKey && Model.ContentItem.LinkedToContentKey == null;
+    var allowEdit = showEditMode && ContextProvider.CurrentUserProfile != null && ContextProvider.CurrentUserProfile.IsContentEditor;
+    var currentWidgets = Content.GetWidgets(Model.ContentItem.LinkedToContentKey != null ? Model.ContentItem.LinkedToContentKey.Value : Model.ContentItem.ContentKey, Model.Zone);
+}
+
+@if (showEditMode)
+{
+    var currentLanguage = ContextProvider.CurrentLanguage;
+    var currentPersona = ContextProvider.CurrentPersona;
+    var currentDeviceType = ContextProvider.CurrentDeviceType.ToString();
+    
+    <div class="cms-zone clearfix cms-editMode" data-zone="@Model.Zone" data-contentitemid="@Model.ContentItem.Id">
+        <span class="cms-zoneName">
+            @if (allowEdit)
+            {
+                <a class="cms-addItem cms-loadSlidePanel"
+                    href="@Url.Action("Add", "ContentItems", new { area = "ContentAdmin", ParentContentKey = Model.ContentItem.ContentKey, returnUrl = Request.ActualUrl(), Model.Zone })">Add Item</a>
+            }
+            <em title="@Model.Zone">@Model.Zone</em>
+        </span>
+
+        @foreach (var childItem in currentWidgets)
+        {
+            //TODO CMS 3.7.1 what about things like three column, they are kind of language agnostic? We don't want them showing as a mismatch when they are mostly just layout, there are probably 0 fields on variant then
+            <div class="cms-contentItem clearfix 
+                 @(!childItem.IsTemplate && (childItem.PublishOn == null || childItem.CurrentContentItemFields.Values.Any(o => o.PublishOn == null)) ? "cms-unpublished" : "") 
+                 @(IsMismatch(childItem, currentLanguage, currentPersona, currentDeviceType) ? "cms-mismatch" : "") cms-editMode"
+                 data-sortorder="@childItem.SortOrder"
+                 data-contentitemid="@childItem.Id">
+                <span class="cms-contentItemInfo">
+                    <a class="cms-displayInfo icon">d</a>
+                    <div class="cms-infoPop">
+                        <a class="cms-closeInfo icon">c</a>
+                        <div class="info-col-1">
+                            <strong>Content Key</strong>
+                            <p>@childItem.ContentKey</p>
+                            @*TODO CMS 3.7.1 how do we show publish dates?*@
+                        </div>
+                        <div class="info-col-2">
+                            <strong>Contexts Displayed</strong>
+                            @*TODO CMS 3.7.1 we need to take into account persona/device specific here*@
+                            @foreach (var context in childItem.CurrentContentItemFields.Values.Where(o => o.FieldType == FieldType.Variant).Select(o => new 
+                            {
+                                o.Language.LanguageCode,
+                                o.DeviceType,
+                                o.Persona.Name
+                            }).Distinct())
+                            {
+                                <p>@context.LanguageCode @context.Name @context.DeviceType</p>
+                            }
+                        </div>
+                    </div>
+                    @if (allowEdit)
+                    {
+                        <a class="cms-deleteItem cms-loadShellModal" href="@Url.Action("Delete", "ContentItems", new { area = "ContentAdmin", childItem.ContentKey})">X</a>
+                        <a class="cms-editItem cms-loadSlidePanel" href="@Url.Action("Edit", "ContentItems", new { area = "ContentAdmin", childItem.ContentKey, returnUrl = Request.ActualUrl() })">Edit</a>
+                        <a class="cms-moveHandle">Move</a>
+                    }
+                    <em title="@childItem.DisplayName()">@childItem.DisplayName()</em>
+                </span>
+                @Html.ThemedPartial(childItem.GetViewPath(), childItem)
+            </div>
+        }
+    </div>
+}
+else
+{
+    foreach (var childItem in currentWidgets)
+    {
+        @Html.ThemedPartial(childItem.GetViewPath(), childItem)
+    }
+}
+
+

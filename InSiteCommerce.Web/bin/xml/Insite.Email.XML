@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Email</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Email.Services.EmailService">
+            <summary>
+            Service that offers functions for sending emails and parsing email templates
+            </summary>
+        </member>
+        <member name="T:Insite.Email.Services.IEmailService">
+            <summary>
+            Service that offers functions for sending emails and parsing email templates
+            </summary>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.TellAFriend(Insite.Email.Services.Parameters.TellAFriendParameter)">
+            <summary>The tell a friend.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Email.Services.Results.TellAFriendResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.ProcessEmailQueue">
+            <summary>
+            Looks for any <see cref="T:InSite.Model.EmailMessage"/> that have not been delivered yet and attempts to resend them.
+            </summary>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.SendEmail(InSite.Model.Interfaces.SendEmailParameter)">
+            <summary>
+            Sends an email
+            </summary>
+            <param name="parameter">The <see cref="T:InSite.Model.Interfaces.SendEmailParameter"/>.</param>
+            <remarks>This will create an <see cref="T:InSite.Model.EmailMessage"/> and then try to send the Email with the current SMTP settings. On failure the exception is caught and stored in a related
+            <see cref="T:InSite.Model.EmailMessageDeliveryAttempt"/>. The <see cref="T:InSite.Model.EmailMessage"/> can be resent later using new SMTP settings.</remarks>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.GetOrCreateEmailList(System.String,System.String)">
+            <summary>
+            Gets or creates an <see cref="T:InSite.Model.EmailList"/> for the given <paramref name="name"/>. Will create with <paramref name="defaultSubject"/>.
+            </summary>
+            <param name="name"></param>
+            <param name="defaultSubject"></param>
+            <returns><see cref="T:InSite.Model.EmailList"/></returns>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.SendEmailList(InSite.Model.EmailList,System.Collections.Generic.IList{System.String},System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            Sends the given <see cref="T:InSite.Model.EmailList"/> to the supplied <paramref name="toAddresses"/> parsing the <see cref="T:InSite.Model.EmailTemplate"/> with the given <paramref name="templateModel"/>.
+            and using the given <paramref name="subject"/>, falling back to the <see cref="T:InSite.Model.EmailList"/>.Subject if the <paramref name="subject"/> is not supplied.
+            </summary>
+            <param name="emailList"></param>
+            <param name="toAddresses"></param>
+            <param name="templateModel"></param>
+            <param name="subject"></param>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.SendEmailList(InSite.Model.EmailList,System.String,System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            Sends the given <see cref="T:InSite.Model.EmailList"/> to the supplied <paramref name="toAddress"/> parsing the <see cref="T:InSite.Model.EmailTemplate"/> with the given <paramref name="templateModel"/>
+            and using the given <paramref name="subject"/>, falling back to the <see cref="T:InSite.Model.EmailList"/>.Subject if the <paramref name="subject"/> is not supplied.
+            </summary>
+            <param name="emailList"></param>
+            <param name="toAddress"></param>
+            <param name="templateModel"></param>
+            <param name="subject"></param>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.SubscribeEmailToList(System.Guid,System.String,InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>
+            Subscribes the given <paramref name="email"/> to the <see cref="T:InSite.Model.EmailList"/> identified by <paramref name="emailListId"/>
+            </summary>
+            <param name="emailListId"></param>
+            <param name="email"></param>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:Insite.Email.Services.IEmailService.UnsubscribeEmailFromList(System.Guid,System.String,InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>
+            Unsubscribes the given <paramref name="email"/> to the <see cref="T:InSite.Model.EmailList"/> identified by <paramref name="emailListId"/>
+            </summary>
+            <param name="emailListId"></param>
+            <param name="email"></param>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="F:Insite.Email.Services.EmailService.UnitOfWorkFactory">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory)">
+            <summary>
+            Dependency Injection constructor.
+            </summary>
+            <param name="unitOfWorkFactory"><see cref="T:InSite.Model.Interfaces.IUnitOfWork"/></param>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.TellAFriend(Insite.Email.Services.Parameters.TellAFriendParameter)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.ParseTemplate(System.String,System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            Parse the template represented by the <paramref name="template"/> using the given <paramref name="model"/> parameter
+            </summary>
+            <param name="template">A template in string form that uses Razor syntax</param>
+            <param name="model">An <see cref="T:System.Dynamic.ExpandoObject"/> that represents the model for the email.</param>
+            <param name="templateName">template name for caching (required for good performance)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.ProcessEmailQueue">
+            <summary>
+            Looks for any <see cref="T:InSite.Model.EmailMessage"/> that have not been delivered yet and attempts to resend them.
+            </summary>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.SendEmail(InSite.Model.Interfaces.SendEmailParameter)">
+            <summary>
+            Sends an email
+            </summary>
+            <param name="parameter">The <see cref="T:InSite.Model.Interfaces.SendEmailParameter"/>.</param>
+            <remarks>This will create an <see cref="T:InSite.Model.EmailMessage"/> and then try to send the Email with the current SMTP settings. On failure the exception is caught and stored in a related
+            <see cref="T:InSite.Model.EmailMessageDeliveryAttempt"/>. The <see cref="T:InSite.Model.EmailMessage"/> can be resent later using new SMTP settings.</remarks>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.GetOrCreateEmailList(System.String,System.String)">
+            <summary>
+            Gets or creates an <see cref="T:InSite.Model.EmailList"/> for the given <paramref name="name"/>. Will create with <paramref name="defaultSubject"/>.
+            </summary>
+            <param name="name"></param>
+            <param name="defaultSubject"></param>
+            <returns><see cref="T:InSite.Model.EmailList"/></returns>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.SendEmailList(InSite.Model.EmailList,System.Collections.Generic.IList{System.String},System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            Sends the given <see cref="T:InSite.Model.EmailList"/> to the supplied <paramref name="toAddresses"/> parsing the <see cref="T:InSite.Model.EmailTemplate"/> with the given <paramref name="templateModel"/>.
+            and using the given <paramref name="subject"/>, falling back to the <see cref="T:InSite.Model.EmailList"/>.Subject if the <paramref name="subject"/> is not supplied.
+            </summary>
+            <param name="emailList"></param>
+            <param name="toAddresses"></param>
+            <param name="templateModel"></param>
+            <param name="subject"></param>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.ParseAndSendEmail(System.String,System.Dynamic.ExpandoObject,System.String,InSite.Model.Interfaces.SendEmailParameter)">
+            <summary>
+            Creates an email from a Razor template and sends it
+            </summary>
+            <param name="htmlTemplate">Razor template</param>
+            <param name="templateModel">data to apply to template</param>
+            <param name="emailTemplateName">caching key for template</param>
+            <param name="sendEmailParamter">email parameters</param>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.SendEmailList(InSite.Model.EmailList,System.String,System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            Sends the given <see cref="T:InSite.Model.EmailList"/> to the supplied <paramref name="toAddress"/> parsing the <see cref="T:InSite.Model.EmailTemplate"/> with the given <paramref name="templateModel"/>
+            and using the given <paramref name="subject"/>, falling back to the <see cref="T:InSite.Model.EmailList"/>.Subject if the <paramref name="subject"/> is not supplied.
+            </summary>
+            <param name="emailList"></param>
+            <param name="toAddress"></param>
+            <param name="templateModel"></param>
+            <param name="subject"></param>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.SubscribeEmailToList(System.Guid,System.String,InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>
+            Subscribes the given <paramref name="email"/> to the <see cref="T:InSite.Model.EmailList"/> identified by <paramref name="emailListId"/>
+            </summary>
+            <param name="emailListId"></param>
+            <param name="email"></param>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.UnsubscribeEmailFromList(System.Guid,System.String,InSite.Model.Interfaces.IUnitOfWork)">
+            <summary>
+            Unsubscribes the given <paramref name="email"/> to the <see cref="T:InSite.Model.EmailList"/> identified by <paramref name="emailListId"/>
+            </summary>
+            <param name="emailListId"></param>
+            <param name="email"></param>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.DoActualSend(InSite.Model.EmailMessage,InSite.Model.EmailMessageDeliveryAttempt)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.ConvertEmailMessageToMailMessage(InSite.Model.EmailMessage)">
+            <summary>
+            Converts the given <paramref name="emailMessage"/> into a <see cref="T:System.Net.Mail.MailMessage"/>
+            </summary>
+            <param name="emailMessage"></param>
+            <returns><see cref="T:System.Net.Mail.MailMessage"/></returns>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.GetTemplateFile(System.String)">
+            <summary>
+            Gets the template file.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>The file information.</returns>
+        </member>
+        <member name="M:Insite.Email.Services.EmailService.GetHtmlTemplate(InSite.Model.EmailList)">
+            <summary>
+            Gets the HTML template.
+            </summary>
+            <param name="emailList">The email list.</param>
+            <returns>The html template.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:Insite.Email.Services.Parameters.TellAFriendParameter">
+            <summary>The tell a friend parameter.</summary>
+        </member>
+        <member name="M:Insite.Email.Services.Parameters.TellAFriendParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Email.Services.Parameters.TellAFriendParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Email.Services.Parameters.TellAFriendParameter.FriendsEmailAddress">
+            <summary>Gets or sets the friends email address.</summary>
+        </member>
+        <member name="P:Insite.Email.Services.Parameters.TellAFriendParameter.EmailModel">
+            <summary>Gets or sets the email model.</summary>
+        </member>
+        <member name="T:Insite.Email.Services.Results.TellAFriendResult">
+            <summary>The tell a friend result.</summary>
+        </member>
+        <member name="T:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel">
+            <summary>The tell a friend model.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.FriendsName">
+            <summary>Gets or sets the friends name.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.FriendsEmailAddress">
+            <summary>Gets or sets the friends email address.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.YourName">
+            <summary>Gets or sets the your name.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.YourEmailAddress">
+            <summary>Gets or sets the your email address.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.YourMessage">
+            <summary>Gets or sets the your message.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.ProductId">
+            <summary>Gets or sets the product id.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.ProductImage">
+            <summary>Gets or sets the product image.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.ProductShortDescription">
+            <summary>Gets or sets the product short description.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.AltText">
+            <summary>Gets or sets the alt text.</summary>
+        </member>
+        <member name="P:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel.ProductUrl">
+            <summary>Gets or sets the product url.</summary>
+        </member>
+        <member name="T:Insite.Email.WebApi.V1.EmailV1Controller">
+            <summary>The email v 1 controller.</summary>
+        </member>
+        <member name="F:Insite.Email.WebApi.V1.EmailV1Controller.emailService">
+            <summary>The email service.</summary>
+        </member>
+        <member name="F:Insite.Email.WebApi.V1.EmailV1Controller.postTellAFriendMapper">
+            <summary>The post tell a friend mapper.</summary>
+        </member>
+        <member name="M:Insite.Email.WebApi.V1.EmailV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Email.Services.IEmailService,Insite.Email.WebApi.V1.Mappers.Interfaces.IPostTellAFriendMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Email.WebApi.V1.EmailV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="emailService">The email service.</param>
+            <param name="postTellAFriendMapper">The post tell a friend mapper.</param>
+        </member>
+        <member name="M:Insite.Email.WebApi.V1.EmailV1Controller.Get">
+            <summary>The get.</summary>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Email.WebApi.V1.EmailV1Controller.Post(Insite.Email.WebApi.V1.ApiModels.TellAFriendModel)">
+            <summary>The post.</summary>
+            <param name="tellAFriendModel">The tell a friend model.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Email.WebApi.V1.Mappers.Interfaces.IPostTellAFriendMapper">
+            <summary>The PostTellAFriendMapper interface.</summary>
+        </member>
+        <member name="T:Insite.Email.WebApi.V1.Mappers.PostTellAFriendMapper">
+            <summary>The post tell a friend mapper.</summary>
+        </member>
+        <member name="M:Insite.Email.WebApi.V1.Mappers.PostTellAFriendMapper.MapParameter(Insite.Email.WebApi.V1.ApiModels.TellAFriendModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="tellAFriendModel">The tell a friend model.</param>
+            <param name="request">The http request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Email.Services.Parameters.TellAFriendParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Email.WebApi.V1.Mappers.PostTellAFriendMapper.MapResult(Insite.Email.Services.Results.TellAFriendResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Email.WebApi.V1.ApiModels.TellAFriendModel"/>.</returns>
+        </member>
+        <member name="M:Insite.Email.WebApi.V1.Mappers.PostTellAFriendMapper.GetProductImage(System.String,System.String)">
+            <summary>The get product image.</summary>
+            <param name="productImage">The product image.</param>
+            <param name="websiteUrl">The website Url.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+    </members>
+</doc>

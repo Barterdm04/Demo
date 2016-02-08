@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.JobQuote</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.JobQuote.Content.JobQuoteDetailsPage">
+            <summary>The job quote details page.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Content.JobQuotePage">
+            <summary>The job quote page.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Content.JobDetailsPageCreator">
+            <summary>The job details page creator.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Content.JobDetailsPageCreator.Create">
+            <summary>The create.</summary>
+            <returns>The <see cref="T:Insite.JobQuote.Content.JobQuoteDetailsPage"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.Content.JobQuoteDetailsView">
+            <summary>The job quote details view.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Content.MyJobQuotesPageIsEnabledFilter">
+            <summary>The my job quotes page is enabled filter.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Content.MyJobQuotesPageIsEnabledFilter.#ctor(Insite.WebFramework.Mvc.IActionResultFactory,InSite.Model.Interfaces.IUnitOfWorkFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Content.MyJobQuotesPageIsEnabledFilter"/> class.</summary>
+            <param name="actionResultFactory">The action result factory.</param>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+        </member>
+        <member name="M:Insite.JobQuote.Content.MyJobQuotesPageIsEnabledFilter.Execute(Insite.JobQuote.Content.JobQuotePage,InSite.Model.Interfaces.IContextProvider)">
+            <summary>
+            Executes the specified page.
+            </summary>
+            <param name="page">The page.</param>
+            <param name="contextProvider">The context provider.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Insite.JobQuote.Content.MyJobQuotesPageIsEnabledFilter.WebSiteConfigurationName">
+            <summary>Gets the web site configuration name.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Content.MyJobQuotesPage">
+            <summary>The my job quotes page.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Content.MyJobQuotesPageCreator">
+            <summary>The my job quotes page creator.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Content.MyJobQuotesPageCreator.Create">
+            <summary>The create.</summary>
+            <returns>The <see cref="T:Insite.JobQuote.Content.MyJobQuotesPage"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.Content.MyJobQuotesView">
+            <summary>The my job quotes view.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Handlers.GetJobQuoteCollectionHandler">
+            <summary>The get job quote collection handler.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.Services.Handlers.GetJobQuoteCollectionHandler.RfqService">
+            <summary>The rfq service.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.GetJobQuoteCollectionHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Rfq.Services.IRfqService)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Handlers.GetJobQuoteCollectionHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="rfqService">The rfq service.</param>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.GetJobQuoteCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter,Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult"/>.</returns>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Handlers.GetJobQuoteCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Handlers.GetJobQuoteHandler">
+            <summary>The get job quote handler.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.Services.Handlers.GetJobQuoteHandler.CartService">
+            <summary>The cart service.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.GetJobQuoteHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Cart.Services.ICartService)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Handlers.GetJobQuoteHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="cartService">The cart service.</param>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.GetJobQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.JobQuote.Services.Parameters.GetJobQuoteParameter,Insite.JobQuote.Services.Results.GetJobQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Rfq.Services.Results.GetQuoteResult"/>.</returns>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Handlers.GetJobQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler">
+            <summary>The update job quote handler. Dependency order 500.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.#ctor(InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler"/> class. Initializes a new instance of
+            the <see cref="T:Insite.Rfq.Services.Handlers.UpdateQuoteStatusHandler"/> class.</summary>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation Localizer.</param>
+            <param name="handlerFactory">The handler Factory.</param>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter,Insite.JobQuote.Services.Results.UpdateJobQuoteResult)">
+            <summary>The execute.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.UpdateJobQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.CopyOrderLineRfq(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.CustomerOrder,InSite.Model.OrderLine)">
+            <summary>The copy order line rfq.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="originalJobOrder">The original job order.</param>
+            <param name="orderLine">The order line.</param>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.ValidateQuantities(InSite.Model.CustomerOrder,System.Collections.Generic.List{Insite.Cart.Services.Dtos.CartLineDto})">
+            <summary>The validate quantities.</summary>
+            <param name="originalJobOrder">The original job order.</param>
+            <param name="orderQuantities">The order quantities.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.AddOrderLines(InSite.Model.CustomerOrder,System.Collections.Generic.List{Insite.Cart.Services.Dtos.CartLineDto})">
+            <summary>The add order lines.</summary>
+            <param name="originalJobOrder">The original job order.</param>
+            <param name="orderQuantities">The order quantities.</param>
+            <returns>The <see cref="!:List"/>.</returns>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Handlers.UpdateJobQuoteHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.IJobQuoteService">
+            <summary>The JobQuoteService interface.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.IJobQuoteService.GetJobQuoteCollection(Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter)">
+            <summary>The get job quote collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.Services.IJobQuoteService.GetJobQuote(Insite.JobQuote.Services.Parameters.GetJobQuoteParameter)">
+            <summary>The get job quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.GetJobQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.Services.IJobQuoteService.UpdateJobQuote(Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter)">
+            <summary>The update job quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.UpdateJobQuoteResult"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.Services.JobQuoteService">
+            <summary>The job quote service.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.Services.JobQuoteService.HandlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.JobQuoteService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.JobQuoteService"/> class.</summary>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.JobQuote.Services.JobQuoteService.GetJobQuoteCollection(Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter)">
+            <summary>The get job quote collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.Services.JobQuoteService.GetJobQuote(Insite.JobQuote.Services.Parameters.GetJobQuoteParameter)">
+            <summary>The get job quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.GetJobQuoteResult"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.Services.JobQuoteService.UpdateJobQuote(Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter)">
+            <summary>The update job quote.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Results.GetJobQuoteResult"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Parameters.GetJobQuoteLineParameter">
+            <summary>The get job quote line parameter.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Parameters.GetJobQuoteLineParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Parameters.GetJobQuoteLineParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+            <param name="jobQuoteLineId">The job quote line id.</param>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Parameters.GetJobQuoteLineParameter.JobQuoteLineId">
+            <summary>Gets or sets the job quote line id.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter">
+            <summary>The update job quote parameter.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter.JobQuoteLineCollection">
+            <summary>Gets or sets the job quote line collection.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter.JobQuoteId">
+            <summary>Gets or sets the job quote id.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Parameters.GetJobQuoteParameter">
+            <summary>The get job quote parameter.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Parameters.GetJobQuoteParameter.#ctor(InSite.Model.Core.CurrentContext,System.Guid)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Parameters.GetJobQuoteParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+            <param name="jobQuoteId">The job quote id.</param>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Parameters.GetJobQuoteParameter.JobQuoteId">
+            <summary>Gets or sets the job quote id.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter">
+            <summary>The get job quote collection parameter.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Results.GetJobQuoteLineResult">
+            <summary>The get job quote result.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteLineResult.JobQuoteId">
+            <summary>Gets or sets the quote id.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteLineResult.JobQuoteLineId">
+            <summary>Gets or sets the quote line id.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteLineResult.PricingRfq">
+            <summary>Gets or sets the pricing rfq.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Results.GetJobQuoteResult">
+            <summary>The get job quote result.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteResult.JobQuoteLineResults">
+            <summary>Gets or sets the job quote line results.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteResult.IsEditable">
+            <summary>Gets or sets a value indicating whether is editable.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteResult.ExpirationDate">
+            <summary>Gets or sets the expiration date.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteResult.JobName">
+            <summary>Gets or sets the job name.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteResult.CurrencySymbol">
+            <summary>Gets or sets the currency symbol.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Results.UpdateJobQuoteResult">
+            <summary>The update job quote result.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.UpdateJobQuoteResult.JobQuoteResult">
+            <summary>Gets or sets the job quote result.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult">
+            <summary>The get job quote collection result.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult.JobQuotes">
+            <summary>Gets or sets the quotes.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteLineModel">
+            <summary>The job quote line model.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteLineModel.PricingRfq">
+            <summary>Gets or sets the pricing rfq.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteLineModel.MaxQty">
+            <summary>Gets or sets the max quantity.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteLineModel.QtySold">
+            <summary>Gets or sets the quantity sold.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteLineModel.QtyRequested">
+            <summary>Gets or sets the quantity order.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel">
+            <summary>The job quote model.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.JobQuoteId">
+            <summary>Gets or sets the job quote id.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.IsEditable">
+            <summary>Gets or sets a value indicating whether is editable.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.ExpirationDate">
+            <summary>Gets or sets the expiration date.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.JobName">
+            <summary>Gets or sets the job name.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.JobQuoteLineCollection">
+            <summary>Gets or sets the job quote line collection.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.CustomerName">
+            <summary>Gets or sets the customer name.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.ShipToFullAddress">
+            <summary>Gets or sets the ship to full address.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel.CurrencySymbol">
+            <summary>Gets or sets the currency symbol.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteCollectionParameter">
+            <summary>The job quote collection parameter.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteCollectionModel">
+            <summary>The job quote collection model.</summary>
+        </member>
+        <member name="P:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteCollectionModel.JobQuotes">
+            <summary>Gets or sets the job quotes.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller">
+            <summary>The job quotes v 1 controller.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.getJobQuoteCollectionMapper">
+            <summary>The get job quote collection mapper.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.getJobQuoteMapper">
+            <summary>The get job quote mapper.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.jobQuoteService">
+            <summary>The job quote service.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.patchJobQuoteMapper">
+            <summary>The patch job quote mapper.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.JobQuote.Services.IJobQuoteService,Insite.JobQuote.WebApi.V1.Mappers.Interfaces.IGetJobQuoteCollectionMapper,Insite.JobQuote.WebApi.V1.Mappers.Interfaces.IGetJobQuoteMapper,Insite.JobQuote.WebApi.V1.Mappers.Interfaces.IPatchJobQuoteMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context unwrapper.</param>
+            <param name="cookieManager">The cookie manager.</param>
+            <param name="jobQuoteService">The job Quote Service.</param>
+            <param name="getJobQuoteCollectionMapper">The get job quote collection mapper.</param>
+            <param name="getJobQuoteMapper">The get job quote mapper.</param>
+            <param name="patchJobQuoteMapper">The patch job quote mapper.</param>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.Get(Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteCollectionParameter)">
+            <summary>The get.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.Get(System.String)">
+            <summary>The get.</summary>
+            <param name="jobQuoteId">The job quote id.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.JobQuotesV1Controller.Patch(System.String,Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel)">
+            <summary>The patch.</summary>
+            <param name="jobQuoteId">The job quote id.</param>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteCollectionMapper">
+            <summary>The get job quote collection mapper.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.Interfaces.IGetJobQuoteCollectionMapper">
+            <summary>The GetJobQuoteCollectionMapper interface.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteCollectionMapper.MapParameter(Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteCollectionParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Parameters.GetJobQuoteCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteCollectionMapper.MapResult(Insite.JobQuote.Services.Results.GetJobQuoteCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteCollectionModel"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteLineMapper">
+            <summary>The get job quote line mapper.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteLineMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteLineMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteLineMapper"/> class.</summary>
+            <param name="urlHelper">The url helper.</param>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteLineMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="jobQuoteLineId">The job quote line id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Parameters.GetJobQuoteLineParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteLineMapper.MapResult(Insite.JobQuote.Services.Results.GetJobQuoteLineResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteLineModel"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper">
+            <summary>The get job quote mapper.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper.GetJobQuoteLineMapper">
+            <summary>The get job quote line mapper.</summary>
+        </member>
+        <member name="F:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper.RouteDataProvider">
+            <summary>The route data provider.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper.#ctor(Insite.Core.WebApi.Interfaces.IRouteDataProvider,Insite.JobQuote.WebApi.V1.Mappers.Interfaces.IGetJobQuoteLineMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper"/> class.</summary>
+            <param name="routeDataProvider">The route data provider.</param>
+            <param name="getJobQuoteLineMapper">The get job quote line mapper.</param>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="jobQuoteId">The job quote id.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Parameters.GetJobQuoteParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper.MapResult(Insite.JobQuote.Services.Results.GetJobQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel"/>.</returns>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.GetJobQuoteMapper.MapResultJobQuoteLineModel(Insite.JobQuote.Services.Results.GetJobQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result quote line model.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="!:ICollection"/>.</returns>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.Interfaces.IPatchJobQuoteMapper">
+            <summary>The PatchJobQuoteMapper interface.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.JobQuoteMapperStartupTask">
+            <summary>The job quote mapper startup task.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.JobQuoteMapperStartupTask.Run">
+            <summary>The run.</summary>
+        </member>
+        <member name="T:Insite.JobQuote.WebApi.V1.Mappers.PatchJobQuoteMapper">
+            <summary>The patch job quote mapper.</summary>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.PatchJobQuoteMapper.MapParameter(Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.Services.Parameters.UpdateJobQuoteParameter"/>.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Insite.JobQuote.WebApi.V1.Mappers.PatchJobQuoteMapper.MapResult(Insite.JobQuote.Services.Results.UpdateJobQuoteResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current context.</param>
+            <returns>The <see cref="T:Insite.JobQuote.WebApi.V1.ApiModels.JobQuoteModel"/>.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>

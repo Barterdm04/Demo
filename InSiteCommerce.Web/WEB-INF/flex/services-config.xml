@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<services-config>
+  
+    <channels>
+      <channel-definition id="my-amf-secure" class="mx.messaging.channels.SecureAMFChannel">
+        <endpoint uri="https://{server.name}:{server.port}/{context.root}/Console/Gateway.aspx" class="flex.messaging.endpoints.AMFEndpoint"/>
+        <properties>
+          <add-no-cache-headers>false</add-no-cache-headers>
+          <!-- <legacy-collection>true</legacy-collection> -->
+        </properties>
+      </channel-definition>
+      <channel-definition id="my-amf" class="mx.messaging.channels.AMFChannel">
+        <endpoint uri="http://{server.name}:{server.port}/{context.root}/Console/Gateway.aspx" class="flex.messaging.endpoints.AMFEndpoint"/>
+        <properties>
+          <add-no-cache-headers>false</add-no-cache-headers>
+          <!-- <legacy-collection>true</legacy-collection> -->
+        </properties>
+      </channel-definition>
+    </channels>
+
+    <services>
+      <service id="remoting-service" class="flex.messaging.services.RemotingService" messageTypes="flex.messaging.messages.RemotingMessage">
+
+        <default-channels>
+          <channel ref="my-amf-secure"/>
+          <channel ref="my-amf"/>
+        </default-channels>
+
+        <destination id="fluorine">
+          <properties>
+            <add-no-cache-headers>false</add-no-cache-headers>
+            <source>*</source>
+          </properties>
+          <security>
+            <security-constraint ref="privileged-users"/>
+          </security>
+        </destination>
+
+        <destination id="login">
+          <properties>
+            <source>Insite.ManagementConsole.FlexLoginService</source>
+          </properties>
+        </destination>
+        
+      </service>
+    </services>
+    
+    <!-- Custom authentication -->
+    <security>
+        <!-- A security constraint requires that a user is authorized before accessing a destination.
+		      Here you can declare security constraints globally. When several destinations 
+		      use the same security settings, you should define one security constraint in the 
+		      security section of the services configuration file and refer to it in each destination. 				
+		      -->
+        <security-constraint id="privileged-users">
+            <auth-method>Custom</auth-method>
+            <roles>
+              <role>ISC_System</role>
+              <role>ISC_Admin</role>
+              <role>ISC_User</role>
+            </roles>
+        </security-constraint>
+
+        <!--    
+		      Custom login command, to check a user's credentials and log a principal into the application server
+		      A login command must implement the com.TheSilentGroup.Fluorine.Messaging.Security.ILoginCommand interface
+		      or inherit from com.TheSilentGroup.Fluorine.Messaging.Security.GenericLoginCommand.
+  		
+		      You can use a login command without security constraints defined.
+		      -->
+        <login-command class="Insite.ManagementConsole.FlexLoginCommand" server="asp.net"/>
+    </security>
+</services-config>

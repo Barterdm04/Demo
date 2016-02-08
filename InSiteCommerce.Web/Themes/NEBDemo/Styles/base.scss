@@ -1,0 +1,310 @@
+
+@import 'fontawesome/font-awesome';
+
+@import '../../Responsive/Styles/base';
+@import 'app/colors';
+@import 'app/home';
+@import 'app/header';
+@import 'app/footer';
+
+/* Media */
+@media (max-width: 768px){
+    [role="main"] .main-row {
+        max-width:none;
+    }
+    .breadcrumbs {
+        > *:before {
+            content:"\e605" !important;
+            margin-left:.1em !important;
+            margin-right:.1em !important;
+            font-size:1.15rem !important;
+        }
+        > *:first-child:before {
+            content: " " !important;
+            margin-right:0 !important; 
+        }
+        > *{
+            font-size:0.6875rem !important;
+        }
+        li.current {
+            display:list-item !important;
+        }
+    }
+    h1 {
+        margin:.25em 0 !important;
+        padding-bottom:.25em !important;
+    }
+    .widget-linklist, .widget-navlist {
+        margin-bottom:.5em !important;
+    }
+}
+@media (max-width: 642px){
+    .collapse-half {
+        .columns {
+            padding-right:0rem !important;
+        }
+    }
+    .two-col-format {
+        .columns:nth-child(1) {
+            padding-right:.0rem !important;
+          }
+        /*.columns:last-child {
+              padding-left:0;
+          }*/
+    }
+    .four-col-format {
+        .columns:nth-of-type(-n + 4) {
+            padding-right:0 !important;
+        }
+    }
+}
+
+
+
+/* Link List */
+
+.widget-linklist {
+    display: block;
+    margin: 1em 0;
+    background: $wild-sand;
+    border: 1px solid $mercury;
+    padding-left: .5rem;
+    margin-top: 0px;
+}
+.widget-linklist a {
+    color:$black;
+}
+
+
+.widget-linklist ul {
+    list-style-type: none;
+    width: auto;
+    margin: 0;
+}
+
+.widget-linklist ul .active {
+    font-weight: bold;
+    color:$tarawera;
+}
+
+.widget-linklist.list-vertical ul li {
+    margin-top: .5em;
+    padding-bottom:.5em;
+    line-height: 1.3em;
+    border-bottom: 1px solid $gallery;
+    min-height:30px;
+    padding-right:.5em;
+}
+
+.widget-linklist.list-vertical ul li:last-child {
+    margin-bottom:0;
+}
+
+.widget-linklist.list-horizontal ul li {
+    display: inline-block;
+    float: left;
+    border-right: 1px solid #ddd;
+    padding-right: 1em;
+    margin-right: 1em;
+    margin-bottom: .5em;
+}
+
+.widget-linklist.list-horizontal ul li:last-child {
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+/* Nav Lists (content page left navs) */
+.widget-navlist {
+    display: block;
+    margin: 0 0 0 0;
+    background: $wild-sand;
+    border: 1px solid $mercury;
+    padding: 0;
+}
+.widget-navlist a {
+    color:$black;
+}
+
+.widget-navlist h4 {
+    color:$white;
+    background:$tarawera;
+    padding-left:.6rem;
+    height:45px;
+    line-height:45px;
+    text-transform:uppercase;
+}
+
+.widget-navlist ul {
+    list-style-type: none;
+    width: auto;
+    margin: 0;
+}
+
+.widget-navlist ul .active {
+    font-weight: bold;
+    color:$tarawera;
+}
+
+.widget-navlist ul li {
+    margin-top: .5em;
+    padding-bottom:.5em;
+    line-height: 1.3em;
+    border-bottom: 1px solid $gallery;
+    min-height:30px;
+    padding-left:.5em;
+    padding-right:.5em;
+}
+
+.widget-navlist ul li:last-child {
+    border-bottom: none;
+    margin-bottom:0;
+}
+
+/* breadcrumb */
+.widget-breadcrumb {
+    border-bottom:none;
+}
+.breadcrumbs li {
+    padding:.5em 0 .75em 0;
+}
+.breadcrumbs {
+    padding:0;
+}
+
+.breadcrumb-dead-link {
+    color:$dove-gray;
+}
+
+.breadcrumbs > *:before {
+    color:$black;
+    padding-right:0;
+}
+
+/* Page buttons */
+
+a.btn:link, a.btn:visited, button.btn, div.remove a.btn {
+    font-weight:normal;
+}
+
+/* Content Page Headers */
+h1 {
+    margin-top:0;
+    margin-bottom:.25em;
+    padding-bottom:.5em;
+    border-bottom: 1px solid $mercury;
+}
+
+/* Links global */
+
+a:hover, a:focus {
+    text-decoration:none;
+    font-weight:bold;
+    color:$mine-shaft;
+}
+
+/*Headers*/
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: auto !important;
+}
+
+/* Other */
+
+a.btn.primary:link, a.btn.primary:visited, button.primary, .btn.primary {
+    background-color: $dusty-gray;
+}
+
+a.btn:link, a.btn:visited, button.btn, div.remove a.btn {
+    border-width: 2px;
+    border-color: $tiber;
+}
+
+
+.collapse-half {
+  .columns {
+    padding-left: .0rem;
+    padding-right: .75rem;
+  }
+  .columns:last-child {
+      padding-right:0;
+  }
+}
+
+
+.two-col-format {
+    padding-left: 0.9375rem !important;
+    padding-right: 0.9375rem !important;
+
+  .columns:nth-of-type(-n + 2):nth-child(1) {
+    padding-left:0;
+    padding-right:.75rem;
+  }
+  .columns:nth-of-type(-n + 2):last-child {
+      padding-left:0;
+      padding-right:0;
+  }
+}
+
+.four-col-format {
+    padding-left: 0.9375rem !important;
+    padding-right: 0.9375rem !important;
+
+    .columns:nth-of-type(-n + 4) {
+        padding-left:0;
+        padding-right:.75rem;
+    }
+  .columns:nth-of-type(-n + 4):last-child {
+      padding-right:0;
+  }
+
+}
+
+.content-hero-image img{
+    margin-bottom:.75em;
+}
+
+.news-left-column {
+    padding-left:.0rem;
+    padding-right:1.5rem;
+}
+.news-right-column {
+    padding-left:0;
+    padding-right:0;
+}
+
+.vert-space{
+    margin-top: .5rem;
+}
+
+.widget-emailsubscription {
+
+    input {
+        color:black;
+    }
+    span.successMessage {
+        display:block;
+    }
+}
+
+.main-row {
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+
+.topbar-user [role="secondary-nav"] .user-button {
+    background:none !important;  
+    a, span {
+        color:$white !important;  
+    }
+}
+
+.autocomplete-suggestions {
+    width:400px !important;
+}
+
+@media (min-width: 48em) {
+    .isc-primary-nav ul .subnav {
+        width:300px;
+    }
+}

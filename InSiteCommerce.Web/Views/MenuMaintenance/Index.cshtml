@@ -1,0 +1,118 @@
+﻿@model InSite.Mvc.Models.ViewModels.MenusViewModel
+@{
+    Layout = "/Views/Shared/_ConsoleLayout.cshtml";
+}
+
+@section Styles
+{
+    @Html.RequireCss("/Scripts/Libraries/jquery.fancytree/2.2.0/ui.fancytree.min.css")
+    @Html.RequireCss("/Scripts/Libraries/jquery.fancytree/2.2.0/jquery.contextMenu.css")
+
+    <style type="text/css">
+        .menuMaintPage { min-width: 780px; }
+        .group:after {content: "";display: table;clear: both; }
+        .ui-menu {width: 100px;font-size: 63% !important;z-index: 3; }
+        .treeContainer {float: left;padding: 10px;width: 275px; }
+        .treeContainer .customItem .fancytree-title { color: blue !important; }
+        .menuDetailsContainer {float: left;padding: 10px; }
+
+        .roleContainer {float: left;padding: 10px; }
+        .roleList {border: 1px solid black;width: 200px;height: 200px;vertical-align: top;
+            list-style-type: none;padding: 0 5px;margin: 0;overflow: auto; }
+        .roleList.ui-sortable-disabled { background-color: rgb(235, 235, 228); }
+        .roleList li { border-bottom: 1px dotted Gray; }
+
+        .inputWrap label {display: inline-block;width: 100px; }
+        .inputWrap select {margin: 3px 0;width: auto; }
+        .inputWrap input {display: inline-block;width: 200px; }
+        .inputWrap .button { width: 30px; }
+
+        .fileupload { visibility: hidden; }
+    </style>
+}
+
+@Html.RequireScript("/Scripts/Libraries/jquery.fancytree/2.2.0/jquery.fancytree.min.js")
+@Html.RequireScript("/Scripts/Libraries/jquery.fancytree/2.2.0/jquery.fancytree.dnd.js")
+@Html.RequireScript("/Scripts/Libraries/jquery.fancytree/2.2.0/jquery.fancytree.menu.js")
+@Html.RequireScript("/Scripts/Libraries/knockout/2.1.0/knockout.min.js")
+@Html.RequireScript("/console/editor/ckfinder/ckfinder.js")
+@Html.RequireScript(Url.ThemedContent("/Scripts/App/insite.menumaintenance.js"))
+
+@Html.Script(@<script type="text/javascript">
+    var menuMaintenance = insite.menumaintenance;
+    jQuery(function () {
+        menuMaintenance.setup(['@Html.Raw(String.Join(@"', '", Model.AllRoles))']);
+    });
+</script>)
+<div class="menuMaintPage group">
+    <div class="treeContainer">
+        <input id="addFolder" type="button" value="Add Folder" />
+        <div id="tree"></div>
+    </div>
+    <div class="menuDetailsContainer">
+        <div data-bind="with: menuMaintenance.selectedNodeViewModel">
+            <div class="inputWrap">
+                <label class="nodeLabel">Name:</label>
+                <input data-bind="value: name, enable: !isSystemItem()" />
+            </div>
+                        
+            <div class="inputWrap">
+                <label class="nodeLabel">Type:</label>
+                <select data-bind="options: ko.observableArray(['Flex', 'Folder', 'MVC']), value: menuType, enable: !isSystemItem()">
+                </select>
+            </div>
+                    
+            <div class="inputWrap">
+                <label class="nodeLabel">Image:</label>
+                <input id="imagePath" data-bind="value: imagePath, enable: !isSystemItem() && menuType() != 'Folder'" />
+                <input id="browseImages" class="button tiny" type="button" value="..." data-bind="enable: !isSystemItem() && menuType() != 'Folder'" />
+            </div>
+                    
+            <div class="inputWrap">
+                <label class="nodeLabel">Page Target:</label>
+                <input data-bind="value: target, enable: !isSystemItem() && menuType() != 'Folder'" />
+            </div>
+                            
+            <div class="checkboxWrap">
+                <label class="nodeLabel">
+                    <input type="checkbox" data-bind="checked: isActive, enable: !isSystemItem()" />
+                    Active
+                </label>
+            </div>
+                    
+            <div class="checkboxWrap">
+                <label class="nodeLabel">
+                    <input type="checkbox" data-bind="checked: isGlobalItem, enable: !isSystemItem()" />
+                    Global Menu Item
+                </label>
+            </div>
+                    
+            <div class="checkboxWrap">
+                <label class="nodeLabel">
+                    <input type="checkbox" disabled data-bind="checked: isSystemItem()" />
+                    System Menu Item
+                </label>
+            </div>
+
+            <div>
+                <div class="roleContainer">
+                    <label>Restricted Roles</label>
+                    <ul id="restrictedRoles" class="roleList connectedSortable"></ul>
+                </div>
+                <div class="roleContainer">
+                    <label>Available Roles</label>
+                    <ul id="availableRoles" class="roleList connectedSortable"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Definition of context menu -->
+<ul id="myMenu" class="ui-menu contextMenu ui-helper-hidden">
+    <li class="addFolder"><a href="addFolder">Add Folder</a></li>
+    <li class="addPage"><a href="addPage">Add Page</a></li>
+    <li class="delete"><a href="delete">Delete</a></li>
+</ul>
+
+@Html.Action("GenericPopupPartial", "Shared", new {containerName = "saveInProgress", BodyHtml = "Saving...", Title = ""})
+@Html.Action("GenericPopupPartial", "Shared", new {containerName = "saveError", BodyHtml = "<div id='saveErrorMessage'></div>", Title = ""})

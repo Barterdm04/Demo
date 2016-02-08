@@ -1,0 +1,30 @@
+.video-player {
+  text-align: center;
+}
+.video-player video {
+  width: 640px;
+  height: 480px;
+}
+
+.images-container {
+  background: red;
+  float: left;
+  position: relative;
+}
+
+.images-container:hover .play {
+  display: block;
+}
+
+.play {
+  position: absolute;
+  display: none;
+  top: 20%;
+  width: 40px;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+}
+
+/*# sourceMappingURL=VideoPlayer.css.map */

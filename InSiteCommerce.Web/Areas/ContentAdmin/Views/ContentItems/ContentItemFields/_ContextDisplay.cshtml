@@ -1,0 +1,11 @@
+﻿@using Insite.WebFramework.Content
+@model ContentItemField
+
+@if (Model.FieldType == FieldType.Variant)
+{
+    <em>
+        @Model.Language.Description 
+        @(Model.Language.HasPersonaSpecificContent ? "/ " + Model.Persona.Name : "")
+        @(Model.Language.HasDeviceSpecificContent ? "/ " + Model.DeviceType : "")
+    </em>
+}

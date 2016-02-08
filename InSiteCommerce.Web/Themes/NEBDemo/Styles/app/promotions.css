@@ -1,0 +1,20 @@
+@media (max-width: 642px) {
+  .promotions-row {
+    padding-left: 0.9375rem !important;
+    padding-right: 0.9375rem !important;
+  }
+  .promotions-row .two-col-format {
+    padding: .15em 0 !important;
+  }
+}
+.promotion-summary {
+  margin-top: 1.75em;
+}
+
+.promotions-page-summary img {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 1em 0;
+}
+
+/*# sourceMappingURL=promotions.css.map */

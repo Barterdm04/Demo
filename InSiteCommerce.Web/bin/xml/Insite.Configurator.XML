@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Configurator</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.CfgParameterBase">
+            <summary>The cfg parameter base is a temporary class until the configurator gets converted to 4.0 properly.</summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.CfgParameterBase.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Configurator.Services.Parameters.CfgParameterBase"/> class.</summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.CfgParameterBase.Properties">
+            <summary>Gets or sets the properties.</summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter.#ctor(System.Guid)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter.OrderLineId">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.AddConfigurationToCartResult">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.ConfigurationScriptHelper">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Configurator.Services.ConfigurationScriptHelper.CacheManager">
+            <summary></summary>
+        </member>
+        <member name="F:Insite.Configurator.Services.ConfigurationScriptHelper.Model">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.#ctor(Insite.Configurator.Services.Dtos.ConfigurationDto,InSite.Model.Interfaces.ICacheManager)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.GetOptionValue(System.String,System.Int32)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.SetOptionValue(System.String,System.String,System.Int32)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.GetOptionPriceImpact(System.String,System.Int32)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.SetOptionPriceImpact(System.Decimal,System.String,System.Int32)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.GetPriceImpact">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.SetPriceImpact(System.Decimal)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.GetOption(System.String,System.Int32)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfigurationScriptHelper.ExecuteScriptOnPricingRequest(System.String)">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.ConfiguratorParameter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.ConfiguratorParameter.#ctor(Insite.Configurator.Services.Dtos.ConfigurationDto)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.ConfiguratorParameter.ConfigurationDto">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.ConfiguratorResult">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Results.ConfiguratorResult.ConfigurationDto">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.ConfiguratorService">
+            <summary>
+            The default implementation of <see cref="T:Insite.Configurator.Services.IConfiguratorService"/>. This class encapsulates configurator logic and required functions to create and modify 
+            a <see cref="T:InSite.Model.Configuration"/> as a user goes through the Configurator process
+            </summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.IConfiguratorService">
+            <summary>
+            Public interface that provides the contract for implementing a ConfiguratorService. This service can be used for creating and modifying a <see cref="T:InSite.Model.Configuration"/>
+            as a user goes through the Configurator process
+            </summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.IConfiguratorService.GetNewConfigurationDto(Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult"/>, and generates the appropriate <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter"/> to use for generating the <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.IConfiguratorService.GetConfigurationDto(Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Results.GetConfigurationDtoResult"/>, and retrives the appropriate existing <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter"/> to use for generating the <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.IConfiguratorService.ProcessConditionals(Insite.Configurator.Services.Parameters.ProcessConditionalsParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/>, applies BAQ and bon-BAQ results to filter available values for options based on matching queries.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/> to use for conditial selection and result application.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.ProcessConditionalsResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.IConfiguratorService.UpdateOrderLine(Insite.Configurator.Services.Parameters.UpdateOrderLineParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/>and takes the required steps to add a matching order line for the pair based on the 
+            current configuration state
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/> to use for the line being added.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.UpdateOrderLineResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.IConfiguratorService.AddConfigurationToCart(Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter"/>, and adds the related <see cref="T:InSite.Model.OrderLine"/> to the current cart.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter"/> to use for selecting the appropriate <see cref="T:InSite.Model.OrderLine"/> to add.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.AddConfigurationToCartResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.IConfiguratorService.GetSummary(Insite.Configurator.Services.Parameters.GetSummaryParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.GetSummaryParameter"/>, and gets the information needed to display the configuration summary.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.GetSummaryParameter"/> to use for retriving the summary information.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.GetSummaryResult"/></returns>
+        </member>
+        <member name="F:Insite.Configurator.Services.ConfiguratorService.CacheManager">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,InSite.Model.Interfaces.ICacheManager)">
+            <summary>
+            Dependency Injection constructor.
+            </summary>
+            <param name="unitOfWorkFactory"><see cref="T:InSite.Model.Interfaces.IUnitOfWork"/></param>
+            <param name="contextProvider"><see cref="T:InSite.Model.Interfaces.IContextProvider"/></param>
+            <param name="translationLocalizer"><see cref="T:InSite.Model.Interfaces.ITranslationLocalizer"/></param>
+            <param name="cacheManager"><see cref="T:InSite.Model.Interfaces.ICacheManager"/></param>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.GetNewConfigurationDto(Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult"/>, and generates the appropriate <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter"/> to use for generating the <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.GetConfigurationDto(Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Results.GetConfigurationDtoResult"/>, and retrives the appropriate existing <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter"/> to use for generating the <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.ProcessConditionals(Insite.Configurator.Services.Parameters.ProcessConditionalsParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Dtos.ConfigurationDto"/>, BAQ and non-BAQ results to filter available values for options based on matching queries.  The default implementation does this by 
+            clearing the options for a given option and then finding any matching BAQ query results XML for it and by applying the stored conditional logic via dynamic linq for non-BAQ.  
+            If one exists and the conditions match, the options for that result are added.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/> to use for conditial selection and result application.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.ProcessConditionalsResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.UpdateOrderLine(Insite.Configurator.Services.Parameters.UpdateOrderLineParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/>and takes the required steps to add a matching order line for the pair based on the 
+            current configuration state.  The default implementation first sets the base items such as Quantity and Product and then adds the pricing for all of the products encapsulated 
+            in the configuration.  It updates pricing based on the result of the configurations final pricing impacts after the appropraite steps have been taken.  It also handles
+            Smart Part and line descriptions based on the values in the configuration.  Finally it saves the configuration to the order line for future re-configuration.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter"/> to use for the line being added.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.UpdateOrderLineResult"/></returns>
+            <returns></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.AddOrUpdateSmartPart(System.Guid,InSite.Model.OrderLine)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.UpdatePriceImpact(Insite.Configurator.Services.Dtos.ConfigurationDto)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.AddConfigurationToCart(Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter"/>, and adds the related <see cref="T:InSite.Model.OrderLine"/> to the current cart.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.AddConfigurationToCartParameter"/> to use for selecting the appropriate <see cref="T:InSite.Model.OrderLine"/> to add.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.AddConfigurationToCartResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.GetSummary(Insite.Configurator.Services.Parameters.GetSummaryParameter)">
+            <summary>
+            Takes a given <see cref="T:Insite.Configurator.Services.Parameters.GetSummaryParameter"/>, and gets the information needed to display the configuration summary.
+            </summary>
+            <param name="parameter">The <see cref="T:Insite.Configurator.Services.Parameters.GetSummaryParameter"/> to use for retriving the summary information.</param>
+            <returns>The <see cref="T:Insite.Configurator.Services.Results.GetSummaryResult"/></returns>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.GetConfigurationDisplayValue(InSite.Model.OrderLineConfigurationValue)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.GetProductsFromConfiguration(Insite.Configurator.Services.Dtos.ConfigurationDto)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.ExecuteBaqConditionals(Insite.Configurator.Services.Dtos.ConfigurationDto)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.ExecuteNonBaqConditionals(Insite.Configurator.Services.Dtos.ConfigurationDto)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.CurrentRowMatchesConfiguration(Insite.Configurator.Services.Dtos.ConfigurationDto,System.Data.DataRow,InSite.Model.ConfigurationConditionFilter)">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.ConfiguratorService.ProcessConditionalConfigurationOption(InSite.Model.Interfaces.IUnitOfWork,Insite.Configurator.Services.Dtos.ConfigurationDto,System.Boolean,System.Func{InSite.Model.ConfigurationOptionCondition,Insite.Configurator.Services.Dtos.ConfigurationOptionDto,System.Boolean})">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Dtos.ConfigurationDto">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Dtos.ConfigurationDto.#ctor">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.ParentProductId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.ParentConfigurationId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.OrderLineId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.CurrentPageIndex">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.ConfigurationPages">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.ConfigurationStatuses">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.RegularPrice">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.ActualPrice">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.PriceImpact">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationDto.ExecuteScriptOnPricingRequest">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Dtos.ConfigurationOptionDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.Name">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.LabelValue">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.Type">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.Value">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.ConfigurationScriptCondition">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.Options">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.PriceImpact">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.ConfigurationOptionId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionDto.Sequence">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Dtos.ConfigurationOptionValueDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionValueDto.Text">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationOptionValueDto.Value">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Dtos.ConfigurationPageDto">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Dtos.ConfigurationPageDto.#ctor">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.ProductId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.ConfigurationId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.ConfigurationPageId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.PageNumber">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.BrowserFriendlyPageName">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.ConfigurationOptions">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.IsSubConfigurationPage">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationPageDto.IsAllControlsDisabled">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Dtos.ConfigurationScriptConditionDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationScriptConditionDto.SelectionListDisplays">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationScriptConditionDto.SelectionListValues">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Dtos.ConfigurationStatusDto">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationStatusDto.ConfigurationId">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationStatusDto.ConfigurationKey">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationStatusDto.StartingPageIndex">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationStatusDto.EndingPageIndex">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Dtos.ConfigurationStatusDto.Displayed">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter.#ctor(System.Guid)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.GetConfigurationDtoParameter.OrderLineId">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.GetConfigurationDtoResult">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter.#ctor(System.String)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.GetNewConfigurationDtoParameter.ProductName">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.GetNewConfigurationDtoResult">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.GetSummaryParameter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.GetSummaryParameter.#ctor(System.Guid)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.GetSummaryParameter.OrderLineId">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.GetSummaryResult">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Results.GetSummaryResult.ActualPrice">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Results.GetSummaryResult.OrderLineNotes">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Results.GetSummaryResult.DisplaySummary">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Results.GetSummaryResult.CancelRouteValues">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Results.GetSummaryResult.ConfigurationOptions">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.ProcessConditionalsParameter.#ctor(Insite.Configurator.Services.Dtos.ConfigurationDto)">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.ProcessConditionalsResult">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Parameters.UpdateOrderLineParameter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Configurator.Services.Parameters.UpdateOrderLineParameter.#ctor(Insite.Configurator.Services.Dtos.ConfigurationDto,InSite.Model.CustomerOrder)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Configurator.Services.Parameters.UpdateOrderLineParameter.CustomerOrder">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Configurator.Services.Results.UpdateOrderLineResult">
+            <summary></summary>
+        </member>
+    </members>
+</doc>

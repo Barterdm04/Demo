@@ -1,0 +1,297 @@
+﻿@using System.Globalization
+@using System.Web.Optimization
+@using Insite.IdentityServer.Options
+@using InSite.Model.Interfaces.Repositories
+@using Insite.WebFramework
+@using InSiteCommerce.Web
+@using Microsoft.Practices.ServiceLocation
+@using Newtonsoft.Json
+@using StackExchange.Profiling
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-isCustomErrorEnabled="@Html.IsCustomErrorEnabled()"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" lang="en" data-isCustomErrorEnabled="@Html.IsCustomErrorEnabled()">
+<!--<![endif]-->
+    <head>
+        @{
+            var page = Model as IPage;
+            TemplatePage templatePage = null;
+            if (page is TemplatePage)
+            {
+                templatePage = page as TemplatePage;
+                page = CurrentPage;
+            }
+            var hideHeader = (page != null) ? page.HideHeader : false;
+            var hideFooter = (page != null) ? page.HideFooter : false;
+            var disallowInRobotsTxt = (page != null) ? page.DisallowInRobotsTxt : false;
+            var thirdPartyPersonalization = ContextProvider.CurrentWebSite.UnitOfWork.GetTypedRepository<IWebSiteConfigurationRepository>().GetOrCreateByName<string>("ThirdPartyPersonalization");
+            var trackJsToken = ContextProvider.CurrentWebSite.UnitOfWork.GetTypedRepository<IApplicationSettingRepository>().GetOrCreateByName<string>("TrackJs_Token");
+        }
+        @if (page != null)
+        {
+            <title>@Html.PageTitle(page)</title>
+            <meta name="keywords" content="@page.MetaKeywords" />
+            <meta name="description" content="@page.MetaDescription" />
+            if (disallowInRobotsTxt)
+            {
+                <meta name="robots" content="noindex" />
+            }
+            if (!page.CanonicalUrl.IsBlank())
+            {
+                <link rel="canonical" href="@page.CanonicalUrl"/>
+            }
+            if (!page.PreviousUrl.IsBlank())
+            {
+                <link rel="prev" href="@page.PreviousUrl" />
+            }
+            if (!page.NextUrl.IsBlank())
+            {
+                <link rel="next" href="@page.NextUrl" />
+            }
+        }
+
+        @Html.ThemedPartial("_ThirdPartyHeadCallouts", thirdPartyPersonalization)
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>        
+
+        @Styles.Render(Html.ThemedBundle(BundleConfig.GlobalStyleBundlePath))
+        
+        @Styles.Render(Html.ThemedBundle(BundleConfig.BaseStyleBundlePath))    @* Minified version doesn't work in IE when combined with foundation *@
+        
+        @RenderSection("TemplateCssContent", false) @* for old views*@
+        @RenderSection("Styles", false)
+        @if (templatePage != null)
+        {
+            @Html.Raw(templatePage.Css)
+        }
+        @if (page is ContentPage)
+        {
+            @Html.Raw((page as ContentPage).Css)
+        }
+                
+        @Html.Action("DynamicCssLink", "Shared", new { href = @Url.Action("CssThemeBase", "Shared") })                  
+
+        <style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+        </style>
+    </head>
+<body id="page" class="@RenderSection("BodyClass", false)" ng-app="insite">
+    @if (!HttpContext.Current.IsDebuggingEnabled && !trackJsToken.IsBlank())
+    {
+        <script type="text/javascript" src="//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js" data-token="@trackJsToken"></script>
+    }
+    <div id="narrowNav"></div>
+    <div id="nwrap">
+        <div class="off-canvas panelwrap" role="panel-wrap" ng-controller="SettingsController as settingsController">
+            @* Adding this here to fix multiple partials/widgets that might be on a page that each have an add to cart popup so it will get called multiple times, so just adding this here.*@
+            <isc-add-to-cart-popup></isc-add-to-cart-popup>
+            <isc-address-error-popup></isc-address-error-popup>
+            <isc-api-error-popup></isc-api-error-popup>
+
+            @if (!hideHeader)
+            {
+                @Html.Action("Header", "Layout")
+            }
+            <div class="cms-rearrangeable">
+                @RenderBody()
+            </div>
+        </div>
+        </div>
+        @if (!hideFooter)
+        {
+            @Html.Action("Footer", "Layout")
+        }
+
+        @* Adding this here to fix multiple partials/widgets that might be on a page that each have an add to wish list popup so it will get called multiple times, so just adding this here.*@
+        <isc-add-wishlist-popup popup-id="popup-add-wishlist"></isc-add-wishlist-popup>
+        <isc-spinner name="mainLayout"></isc-spinner>
+
+</div>@* These divs are started in the header.... I think *@
+    </div>
+    @RenderSection("AfterNwrap", required: false)
+
+    <div data-dropdown="dummy" style="display:none"></div> @* fixes popups with foundation + angular *@
+        
+    @Scripts.Render(BundleConfig.LibraryScriptBundlePath)
+    <script>
+        var lodash = _.noConflict();
+    </script>
+
+    @{
+        var currentLanguage = ContextProvider.CurrentLanguage;
+        var localizationCode = currentLanguage.CultureCode.IsBlank() ? currentLanguage.LanguageCode : currentLanguage.CultureCode;
+    }
+    @Html.RequireScriptIfItExists("/Scripts/Libraries/angular-i18n/angular-locale_" + localizationCode + ".js")
+    @Html.RequireScriptIfItExists("/Scripts/Libraries/pickadate/3.5.0-custom/translations/" + localizationCode.Replace("-", "_") + ".js")
+
+    @Scripts.Render(BundleConfig.GlobalScriptBundlePath) 
+    <script type="text/javascript">
+        var insite = insite || {};
+
+        insite.core.generalErrorText = "@InSite.Model.MessageProvider.Current.GeneralError";
+        insite.core.dateTimeFormat = "@CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern";
+        var insiteMicrositeUriPrefix = "";
+        var insiteBasicAuthHeader = "@Html.Raw(SecurityOptions.ClientId + ":" + SecurityOptions.ClientSecret)";
+        var insiteScope = "@SecurityOptions.Scope";
+        @if (!ContextProvider.CurrentMicroSiteIdentifier.IsBlank())
+        {
+            <text>
+            insiteMicrositeUriPrefix = "/@ContextProvider.CurrentMicroSiteIdentifier";
+            </text>
+        }
+        @if (ServiceLocator.Current.GetInstance<ICurrentPunchOutSessionProvider>().HasPunchOutSession())
+        {
+            <text>insite.core.setupPunchoutKeepAlive();</text>
+        }
+        else
+        {
+            <text>insite.core.checkForIFrame();</text>
+        }
+
+        jQuery(function () {
+            insite.core.setup();
+            insite.responsive.setup();
+            insite.nav.setup();
+        });
+    </script>
+    
+    @MiniProfiler.RenderIncludes()
+	@Html.ThemedPartial("_ThirdPartyBodyCallouts", thirdPartyPersonalization)    
+ 
+    @Html.RenderDeferredScripts()
+    @RenderSection("PageScriptBundle", required: false)
+        
+    @if (templatePage != null)
+    {
+        @Html.Raw(templatePage.JavaScript)
+    }
+    @if (page is ContentPage)
+    {
+        @Html.Raw((page as ContentPage).JavaScript)
+    }
+
+    @{ var userProfile = ContextProvider.CurrentUserProfile; }
+    @if (userProfile != null && (userProfile.IsContentApprover || userProfile.IsContentEditor))
+    {
+        @Html.RequireScript("/Scripts/Libraries/porthole/0.0.0/porthole.min.js", false)
+        @Html.RequireScript("/Scripts/Libraries/jquery-ui/1.9.2/jquery-ui.custom.min.js", false)
+        @Html.RequireCss("/Scripts/Libraries/jquery-ui/1.9.2/jquery-ui.custom.css")
+        @Html.RequireScript(Url.VersionCacheQueryString("/Scripts/App/insite.contentCore.js"), false)
+        @Html.RequireScript(Url.VersionCacheQueryString("/Scripts/App/insite.incontext.js"), false)
+        @Html.RequireScript(Url.VersionCacheQueryString("/Scripts/App/insite.predefinedContentEditor.js"), false)
+
+        <script>
+            jQuery(function () {
+                //disable shell in viewports smaller than min-width for skin
+                if ((window.parent != null && window.parent.location.toString().toLowerCase().indexOf("/contentadmin/") != -1) || window.innerWidth > 1024) {
+                    //if the shell is not loaded, load it
+                    if (window.parent === null || window.location === window.parent.location) {
+                        window.location = "@Html.Raw(Url.Action("Index", "Shell", new { area = "ContentAdmin", frameUrl = Request.ActualUrl().ToString(), resetPersona = true }))";
+                    }
+                    //if current action prefix is not in ContentAdmin, reload
+                    else if (window.parent.location.toString().toLowerCase().indexOf((insiteMicrositeUriPrefix + "/contentadmin/").toLowerCase()) === -1) {
+                        window.parent.location = "@Url.Action("Index", "Shell", new { area = "ContentAdmin", frameUrl = Request.ActualUrl().ToString() })";
+                    }
+                    //update panel
+                    else {
+                        insite.incontext.setup();
+                        @if (page != null && page is AbstractPage)
+                        {
+                            <text>
+                            insite.incontext.updateAdminShell(@Html.Raw(JsonConvert.SerializeObject(Html.ConvertToShellModel(page as AbstractPage))));
+                            </text>
+                        }
+                        else
+                        {
+                            <text>
+                            insite.incontext.updateAdminShell({ CurrentContentItem: null });
+                            </text>
+                        }
+                        insite.predefinedContentEditor.setup("@ContentMode");
+                    }
+                } else if(window.parent != null && window.parent.location.toString().toLowerCase().indexOf("/contentadmin/shell") != -1) {
+                    window.parent.location = "/";
+                }
+            });
+        </script>
+    }
+
+    <script>
+        $(document).ready(function() {
+            $(document).foundation();
+        });
+    </script>    
+    @RenderSection("AfterBodyContent", false)
+
+    <script type="text/ng-template" id="/Directives/WishList/AddWishListPopup">
+        @Html.ThemedPartial("/Views/Directives/WishList/AddWishListPopup.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Core/Pager">
+        @Html.ThemedPartial("/Views/Directives/Core/Pager.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/QuickOrder/QuickOrder">
+        @Html.ThemedPartial("/Views/Directives/QuickOrder/QuickOrder.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Cart/MicroCart">
+        @Html.ThemedPartial("/Views/Directives/Cart/MicroCart.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/ProductSearch">
+        @Html.ThemedPartial("/Views/Directives/Catalog/ProductSearch.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/UnitOfMeasureSelectList">
+        @Html.ThemedPartial("/Views/Directives/Catalog/UnitOfMeasureSelectList.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/UnitOfMeasureDisplay">
+        @Html.ThemedPartial("/Views/Directives/Catalog/UnitOfMeasureDisplay.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Core/RequiredField">
+        @Html.ThemedPartial("/Views/Directives/Core/RequiredField.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/AvailabilityMessage">
+        @Html.ThemedPartial("/Views/Directives/Catalog/AvailabilityMessage.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/ProductThumb">
+        @Html.ThemedPartial("/Views/Directives/Catalog/ProductThumb.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/ProductName">
+        @Html.ThemedPartial("/Views/Directives/Catalog/ProductName.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/ProductPrice">
+        @Html.ThemedPartial("/Views/Directives/Catalog/ProductPrice.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Core/BreadCrumb">
+        @Html.ThemedPartial("/Views/Directives/Core/BreadCrumb.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/QuantityBreakPricing">
+        @Html.ThemedPartial("/Views/Directives/Catalog/QuantityBreakPricing.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Catalog/SortedAttributeValueList">
+        @Html.ThemedPartial("/Views/Directives/Catalog/SortedAttributeValueList.cshtml")            
+    </script>
+    <script type="text/ng-template" id="/Directives/Rfq/RequiresQuote">
+        @Html.ThemedPartial("/Views/Directives/Rfq/RequiresQuote.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Cart/AddToCartPopup">
+        @Html.ThemedPartial("/Views/Directives/Cart/AddToCartPopup.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Cart/AddressErrorPopup">
+        @Html.ThemedPartial("/Views/Directives/Cart/AddressErrorPopup.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Core/ApiErrorPopup">
+        @Html.ThemedPartial("/Views/Directives/Core/ApiErrorPopup.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Rfq/UpdatedQuotesMessage">
+        @Html.ThemedPartial("/Views/Directives/Rfq/UpdatedQuotesMessage.cshtml")
+    </script>
+    <script type="text/ng-template" id="/Directives/Core/Spinner">
+        @Html.ThemedPartial("/Views/Directives/Core/Spinner.cshtml")
+    </script>
+</body>
+
+    <!-- @HttpContext.Current.Server.MachineName -->
+    <!-- InSiteCommerce -->
+    <!-- Persona: @ContextProvider.CurrentPersona.Name -->
+</html>

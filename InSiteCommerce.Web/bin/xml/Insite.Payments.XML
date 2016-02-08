@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Payments</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Payments.Services.Parameters.GetPaymentSettingsParameter">
+            <summary>The get payment settings parameter.</summary>
+        </member>
+        <member name="M:Insite.Payments.Services.Parameters.GetPaymentSettingsParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Payments.Services.Parameters.GetPaymentSettingsParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="T:Insite.Payments.Services.Results.GetPaymentSettingsResult">
+            <summary>The get payment settings result.</summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Results.GetPaymentSettingsResult.SupportsStoredPaymentProfiles">
+            <summary>Gets or sets a value indicating whether supports stored payment profiles.</summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Parameters.GetPaymentProfileCollectionParameter">
+            <summary>The get payment profile collection parameter.</summary>
+        </member>
+        <member name="M:Insite.Payments.Services.Parameters.GetPaymentProfileCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Payments.Services.Parameters.GetPaymentProfileCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.GetPaymentProfileCollectionParameter.BillToId">
+            <summary>
+            Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/>Id (leave null for the current BillTo).
+            </summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Parameters.RemovePaymentProfileParameter">
+            <summary>The remove payment profile parameter.</summary>
+        </member>
+        <member name="M:Insite.Payments.Services.Parameters.RemovePaymentProfileParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Payments.Services.Parameters.RemovePaymentProfileParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.RemovePaymentProfileParameter.BillToId">
+            <summary>
+            Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/>Id (leave null for the current BillTo).
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.RemovePaymentProfileParameter.PaymentProfileId">
+            <summary>
+            Gets or sets the stored payment profile identifier. Only applies to payments being made with a
+            stored payment profile.
+            </summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Results.RemovePaymentProfileResult">
+            <summary>The remove payment profile result.</summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Results.GetPaymentProfileCollectionResult">
+            <summary>The get payment profile collection result.</summary>
+        </member>
+        <member name="M:Insite.Payments.Services.Results.GetPaymentProfileCollectionResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Payments.Services.Results.GetPaymentProfileCollectionResult"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Results.GetPaymentProfileCollectionResult.PaymentProfiles">
+            <summary>Gets or sets the payment profiles.</summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Parameters.AddPaymentProfileParameter">
+            <summary>The add payment profile parameter.</summary>
+        </member>
+        <member name="M:Insite.Payments.Services.Parameters.AddPaymentProfileParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Payments.Services.Parameters.AddPaymentProfileParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentProfileParameter.BillToId">
+            <summary>
+            Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/>Id to update (leave null for the current BillTo).
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentProfileParameter.CurrencyCode">
+            <summary>
+            Gets or sets the currency code.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentProfileParameter.CreditCard">
+            <summary>
+            Gets or sets the credit card if not using a stored payment profile.
+            </summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Results.AddPaymentProfileResult">
+            <summary>The add payment profile result.</summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter">
+            <summary>This class defines the parameters required to call <see cref="M:Insite.Payments.Services.IPaymentService.AddPaymentTransaction(Insite.Payments.Services.Parameters.AddPaymentTransactionParameter)"/>.</summary>
+        </member>
+        <member name="M:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter"/> class.</summary>
+            <param name="currentContext">The current Context.</param>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.TransactionType">
+            <summary>
+            Gets or sets the type of the transaction.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.OriginalRequestNumber">
+            <summary>
+            Gets or sets the original request number (aka AuthorizationCode or AuthorizationNumber).
+            Only applies to reference transactions (Capture, Void, Credit), this is the
+            request number of the original Authorization you are Capturing or Voiding or the
+            Sale you are Crediting.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.OriginalRequestToken">
+            <summary>
+            Gets or sets the original request token (aka PNRef or ReferenceNumber).
+            Only applies to reference transactions (Capture, Void, Credit), this is the
+            request token of the original Authorization you are Capturing or Voiding or the
+            Sale you are Crediting.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.ReferenceNumber">
+            <summary>
+            Gets or sets the reference number (Order Number, Invoice Number etc... what you want this payment to reference).
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.CurrencyCode">
+            <summary>
+            Gets or sets the currency code.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.BillToId">
+            <summary>
+            Gets or sets the BillTo <see cref="T:InSite.Model.Customer"/>Id (leave null for the current BillTo).
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.ShipToId">
+            <summary>
+            Gets or sets the ShipTo <see cref="T:InSite.Model.Customer"/>Id (leave null for the current ShipTo).
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.PaymentProfileId">
+            <summary>
+            Gets or sets the stored payment profile identifier. Only applies to payments being made with a
+            stored payment profile.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.CreditCard">
+            <summary>
+            Gets or sets the credit card if not using a stored payment profile.
+            </summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Parameters.AddPaymentTransactionParameter.Amount">
+            <summary>
+            Gets or sets the amount for this payment.
+            </summary>
+        </member>
+        <member name="T:Insite.Payments.Services.PaymentService">
+            <summary>
+            The payment service.
+            </summary>
+        </member>
+        <member name="T:Insite.Payments.Services.IPaymentService">
+            <summary>
+            The PaymentService interface.
+            </summary>
+        </member>
+        <member name="M:Insite.Payments.Services.IPaymentService.GetPaymentSettings(Insite.Payments.Services.Parameters.GetPaymentSettingsParameter)">
+            <summary>The get payment settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.GetPaymentSettingsResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.IPaymentService.AddPaymentTransaction(Insite.Payments.Services.Parameters.AddPaymentTransactionParameter)">
+            <summary>
+            Add a payment.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.AddPaymentTransactionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.IPaymentService.GetPaymentProfileCollection(Insite.Payments.Services.Parameters.GetPaymentProfileCollectionParameter)">
+            <summary>The get payment profile collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.GetPaymentProfileCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.IPaymentService.AddPaymentProfile(Insite.Payments.Services.Parameters.AddPaymentProfileParameter)">
+            <summary>Adds the payment profile (to store credit card information in the <see cref="T:Insite.Plugins.PaymentGateway.IPaymentGateway"/> if it supports storing credit cards).</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.AddPaymentProfileResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.IPaymentService.RemovePaymentProfile(Insite.Payments.Services.Parameters.RemovePaymentProfileParameter)">
+            <summary>The remove payment profile.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.RemovePaymentProfileResult"/>.</returns>
+        </member>
+        <member name="F:Insite.Payments.Services.PaymentService.StoredCustomerProfileIdKey">
+            <summary>
+            The stored payment customer identifier key.
+            </summary>
+        </member>
+        <member name="F:Insite.Payments.Services.PaymentService.customerService">
+            <summary>
+            The customer service.
+            </summary>
+        </member>
+        <member name="F:Insite.Payments.Services.PaymentService.paymentGatewayFactory">
+            <summary>
+            The payment gateway factory.
+            </summary>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Plugins.PaymentGateway.IPaymentGatewayFactory,Insite.Customers.Services.ICustomerService)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Payments.Services.PaymentService"/> class.</summary>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="paymentGatewayFactory">The payment gateway factory.</param>
+            <param name="customerService">The customer service.</param>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.GetPaymentSettings(Insite.Payments.Services.Parameters.GetPaymentSettingsParameter)">
+            <summary>The get payment settings.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.GetPaymentSettingsResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.AddPaymentTransaction(Insite.Payments.Services.Parameters.AddPaymentTransactionParameter)">
+            <summary>Add a payment.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.AddPaymentTransactionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.GetPaymentProfileCollection(Insite.Payments.Services.Parameters.GetPaymentProfileCollectionParameter)">
+            <summary>The get payment profile collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.GetPaymentProfileCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.AddPaymentProfile(Insite.Payments.Services.Parameters.AddPaymentProfileParameter)">
+            <summary>The add payment profile.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.AddPaymentProfileResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.RemovePaymentProfile(Insite.Payments.Services.Parameters.RemovePaymentProfileParameter)">
+            <summary>The remove payment profile.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.RemovePaymentProfileResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.CreateCreditCardAddress(InSite.Model.Customer)">
+            <summary>The create credit card address.</summary>
+            <param name="customer">The customer.</param>
+            <returns>The <see cref="T:Insite.Plugins.PaymentGateway.Dtos.CreditCardAddressDto"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.GetPaymentGateway">
+            <summary>The get payment gateway.</summary>
+            <returns>The <see cref="T:Insite.Plugins.PaymentGateway.IPaymentGateway"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.SubmitNewTransaction(Insite.Payments.Services.Parameters.AddPaymentTransactionParameter)">
+            <summary>The submit new transaction.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.AddPaymentTransactionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.SubmitReferenceTransaction(Insite.Payments.Services.Parameters.AddPaymentTransactionParameter)">
+            <summary>The submit reference transaction.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Payments.Services.Results.AddPaymentTransactionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.GetBillTo(System.Nullable{System.Guid},InSite.Model.Core.CurrentContext)">
+            <summary>The get bill to.</summary>
+            <param name="billToId">The bill to id.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetBillToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.GetShipTo(System.Nullable{System.Guid},System.Nullable{System.Guid},InSite.Model.Core.CurrentContext)">
+            <summary>The get ship to.</summary>
+            <param name="billToId">The bill to id.</param>
+            <param name="shipToId">The ship to id.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Customers.Services.Results.GetShipToResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.CreateCreditCardTransaction(Insite.Plugins.PaymentGateway.Parameters.SubmitTransactionParameter,Insite.Plugins.PaymentGateway.Results.SubmitTransactionResult)">
+            <summary>The create credit card transaction.</summary>
+            <param name="submitTransactionParameter">The submit transaction parameter.</param>
+            <param name="submitTransactionResult">The submit transaction result.</param>
+            <returns>The <see cref="T:InSite.Model.CreditCardTransaction"/>.</returns>
+        </member>
+        <member name="M:Insite.Payments.Services.PaymentService.ResetContext">
+            <summary>
+            Resets the context.
+            </summary>
+        </member>
+        <member name="T:Insite.Payments.Services.Results.AddPaymentTransactionResult">
+            <summary>This class defines the results returned from calling <see cref="M:Insite.Payments.Services.IPaymentService.AddPaymentTransaction(Insite.Payments.Services.Parameters.AddPaymentTransactionParameter)"/>.</summary>
+        </member>
+        <member name="P:Insite.Payments.Services.Results.AddPaymentTransactionResult.CreditCardTransaction">
+            <summary>Gets or sets the credit card transaction.</summary>
+        </member>
+    </members>
+</doc>

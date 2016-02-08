@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,6BAA8B;EAC7B,aAAa,EAAC,GAAG;;;AAGlB,2BAA4B;EAC3B,UAAU,EAAC,GAAG;;;AAGf,qBAAsB;EACrB,UAAU,EAAC,GAAG;EACd,aAAa,EAAC,KAAK;EACnB,UAAU,EAAC,KAAK;;;AAGjB,wBAAyB;EACxB,SAAS,EAAC,OAAO;EACjB,WAAW,EAAC,KAAK",
+"sources": ["create-account.scss"],
+"names": [],
+"file": "create-account.css"
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,yBAA0B;EACtB,eAAgB;IAIZ,YAAY,EAAE,oBAAoB;IAClC,aAAa,EAAE,oBAAoB;;EAJnC,+BAAgB;IACR,OAAO,EAAC,kBAAkB;;;AAO1C,kBAAmB;EACf,UAAU,EAAE,MAAM;;;AAGtB,4BAA4B;EACxB,KAAK,EAAC,eAAe;EACrB,MAAM,EAAC,eAAe;EACtB,MAAM,EAAC,KAAK",
+"sources": ["promotions.scss"],
+"names": [],
+"file": "promotions.css"
+}

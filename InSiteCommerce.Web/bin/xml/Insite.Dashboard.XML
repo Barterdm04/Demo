@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Dashboard</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Dashboard.Services.DashboardService">
+            <summary>
+            The dashboard service
+            </summary>
+        </member>
+        <member name="T:Insite.Dashboard.Services.IDashboardService">
+            <summary>
+            The dashboard service interface
+            </summary>
+        </member>
+        <member name="M:Insite.Dashboard.Services.IDashboardService.GetDashboardPanelCollection(Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter)">
+            <summary>Gets the dashboard panel collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>A <see cref="T:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult"/></returns>
+        </member>
+        <member name="F:Insite.Dashboard.Services.DashboardService.HandlerFactory">
+            <summary>
+            The handler factory
+            </summary>
+        </member>
+        <member name="M:Insite.Dashboard.Services.DashboardService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dashboard.Services.DashboardService"/> class.</summary>
+            <param name="unitOfWorkFactory">The unit of work factory.</param>
+            <param name="contextProvider">The context provider.</param>
+            <param name="translationLocalizer">The translation localizer.</param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.Dashboard.Services.DashboardService.GetDashboardPanelCollection(Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter)">
+            <summary>Gets the dashboard panel collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>A <see cref="T:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult"/></returns>
+        </member>
+        <member name="T:Insite.Dashboard.Services.Dtos.DashboardPanelDto">
+            <summary>
+            The dashboard panel dto.
+            </summary>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.QuickLinkText">
+            <summary>
+            Gets or sets the QuickLinkText
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.Url">
+            <summary>
+            Gets or sets the URL.
+            </summary>
+            <value>
+            The URL.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.IsPanel">
+            <summary>
+            Gets or sets a value indicating whether this instance is panel.
+            </summary>
+            <value>
+              <c>true</c> if this instance is panel; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.IsQuickLink">
+            <summary>
+            Gets or sets a value indicating whether is quick link.
+            </summary>
+            <value>
+              <c>true</c> if this instance is quick link; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.Order">
+            <summary>
+            Gets or sets the order.
+            </summary>
+            <value>
+            The order.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.QuickLinkOrder">
+            <summary>
+            Gets or sets the quick link order.
+            </summary>
+            <value>
+            The order of quick link in left column.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Dtos.DashboardPanelDto.PanelType">
+            <summary>
+            Gets or sets the type of the panel.
+            </summary>
+            <value>
+            The type of the panel.
+            </value>
+        </member>
+        <member name="T:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler">
+            <summary>
+            Get dashboard panel collection handler
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.CartService">
+            <summary>
+            The cart service
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.ContentHelper">
+            <summary>
+            The content helper
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.ContextProvider">
+            <summary>
+            The context provider
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.HandlerFactory">
+            <summary>
+            The handler factory
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.RequisitionService">
+            <summary>
+            The requisition service
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.RfqService">
+            <summary>
+            The RFQ service
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.UrlProvider">
+            <summary>The url provider.</summary>
+        </member>
+        <member name="M:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.#ctor(Insite.Core.Services.Handlers.IHandlerFactory,InSite.Model.Interfaces.IContextProvider,Insite.WebFramework.Content.Interfaces.IContentHelper,Insite.Requisition.Services.IRequisitionService,Insite.Rfq.Services.IRfqService,Insite.Cart.Services.ICartService,Insite.WebFramework.Routing.IUrlProvider)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler"/> class.</summary>
+            <param name="handlerFactory">The handler factory.</param>
+            <param name="contextProvider">The context provider.</param>
+            <param name="contentHelper">The content helper.</param>
+            <param name="requisitionService">The requisition service.</param>
+            <param name="rfqService">The RFQ service.</param>
+            <param name="cartService">The cart service.</param>
+            /// <param name="urlProvider">The url Provider.</param>
+        </member>
+        <member name="M:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter,Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult)">
+            <summary>Executes the handler.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>A <see cref="T:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult"/></returns>
+        </member>
+        <member name="M:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.SetUpPanelDto(Insite.Dashboard.Services.Dtos.DashboardPanelDto,System.Collections.Generic.List{InSite.Model.DashboardPanelPosition})">
+            <summary>
+            Checks for dashboard link type to determine whether it is panel or simple link
+            </summary>
+            <param name="dashboardPanelDto">The item to be checked</param>
+            <param name="dashboardPanelPositions">Dashboard positions to set order</param>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Handlers.GetDashboardPanelCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter">
+            <summary>The get dashboard panel collection parameter.</summary>
+        </member>
+        <member name="M:Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="T:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult">
+            <summary>
+            Get dashboard collection result
+            </summary>
+        </member>
+        <member name="M:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult.#ctor">
+            <summary> Initializes a new instance of the <see cref="T:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult"/> class.</summary>
+        </member>
+        <member name="P:Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult.DashboardPanels">
+            <summary>Gets or sets the dashboard panels.</summary>
+        </member>
+        <member name="T:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelCollectionModel">
+            <summary>
+            The dashboard panel collection model
+            </summary>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelCollectionModel.DashboardPanels">
+            <summary>Gets or sets the dashboard panels.</summary>
+        </member>
+        <member name="T:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel">
+            <summary>The dashboard panel model.</summary>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.QuickLinkText">
+            <summary>
+            Gets or sets the quick link text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.Url">
+            <summary>
+            Gets or sets the URL.
+            </summary>
+            <value>
+            The URL.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.IsPanel">
+            <summary>
+            Gets or sets a value indicating whether this instance is panel.
+            </summary>
+            <value>
+              <c>true</c> if this instance is panel; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.IsQuickLink">
+            <summary>
+            Gets or sets a value indicating whether this instance is quick panel.
+            </summary>
+            <value>
+              <c>true</c> if this instance is quick link; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.PanelType">
+            <summary>
+            Gets or sets the type of the panel.
+            </summary>
+            <value>
+            The type of the panel.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.Order">
+            <summary>
+            Gets or sets the order.
+            </summary>
+            <value>
+            The order.
+            </value>
+        </member>
+        <member name="P:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelModel.QuickLinkOrder">
+            <summary>
+            Gets or sets the order of quick link.
+            </summary>
+            <value>
+            The order of quick link.
+            </value>
+        </member>
+        <member name="T:Insite.Dashboard.WepApi.V1.DashboardsV1Controller">
+            <summary>
+            The Dashboard Panels WebApi Controller.
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.WepApi.V1.DashboardsV1Controller.dashboardService">
+            <summary>The dashboard service.</summary>
+        </member>
+        <member name="F:Insite.Dashboard.WepApi.V1.DashboardsV1Controller.getDashboardCollectionMapper">
+            <summary>The get dashboard collection mapper.</summary>
+        </member>
+        <member name="M:Insite.Dashboard.WepApi.V1.DashboardsV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Dashboard.Services.IDashboardService,Insite.Dashboard.WepApi.V1.Mappers.Interfaces.IGetDashboardCollectionMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dashboard.WepApi.V1.DashboardsV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="dashboardService">The dashboard service.</param>
+            <param name="getDashboardCollectionMapper">The get dashboard collection mapper.</param>
+        </member>
+        <member name="M:Insite.Dashboard.WepApi.V1.DashboardsV1Controller.Get">
+            <summary>
+            Gets this instance of dashboard panel collection model
+            </summary>
+            <returns>A <see cref="T:System.Web.Http.IHttpActionResult"/> with <see cref="T:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelCollectionModel"/> inside</returns>
+        </member>
+        <member name="T:Insite.Dashboard.WepApi.V1.Mappers.GetDashboardCollectionMapper">
+            <summary>
+            The Get dashboard collection mapper
+            </summary>
+        </member>
+        <member name="T:Insite.Dashboard.WepApi.V1.Mappers.Interfaces.IGetDashboardCollectionMapper">
+            <summary>
+            The Get dashboard collection mapper interface
+            </summary>
+        </member>
+        <member name="F:Insite.Dashboard.WepApi.V1.Mappers.GetDashboardCollectionMapper.UrlHelper">
+            <summary>
+            The URL helper
+            </summary>
+        </member>
+        <member name="M:Insite.Dashboard.WepApi.V1.Mappers.GetDashboardCollectionMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Dashboard.WepApi.V1.Mappers.GetDashboardCollectionMapper"/> class.</summary>
+            <param name="urlHelper">The URL helper.</param>
+        </member>
+        <member name="M:Insite.Dashboard.WepApi.V1.Mappers.GetDashboardCollectionMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the parameter.</summary>
+            <param name="apiParameter">The API parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>A <see cref="T:Insite.Dashboard.Services.Parameters.GetDashboardPanelCollectionParameter"/></returns>
+        </member>
+        <member name="M:Insite.Dashboard.WepApi.V1.Mappers.GetDashboardCollectionMapper.MapResult(Insite.Dashboard.Services.Results.GetDashboardPanelCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>A <see cref="T:Insite.Dashboard.WepApi.V1.ApiModels.DashboardPanelCollectionModel"/></returns>
+        </member>
+    </members>
+</doc>

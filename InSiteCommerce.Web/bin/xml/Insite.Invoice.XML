@@ -1,0 +1,1307 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Insite.Invoice</name>
+    </assembly>
+    <members>
+        <member name="T:Insite.Invoice.Content.InvoiceContentPage">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoiceIsAuthorizedFilter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.Content.InvoiceIsAuthorizedFilter.#ctor(Insite.WebFramework.Mvc.IActionResultFactory)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Invoice.Content.InvoiceIsAuthorizedFilter.RolesAllowed">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Invoice.Content.InvoiceIsAuthorizedFilter.RolesDisallowed">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoiceDetailPage">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoiceDetailPageCreator">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Insite.Invoice.Content.InvoiceDetailPageCreator.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoiceDetailView">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoiceIsEnabledFilter">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.Content.InvoiceIsEnabledFilter.#ctor(Insite.WebFramework.Mvc.IActionResultFactory,InSite.Model.Interfaces.IUnitOfWorkFactory)">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Invoice.Content.InvoiceIsEnabledFilter.WebSiteConfigurationName">
+            <summary></summary>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoicesPage">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoicesPageCreator">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.Content.InvoicesPageCreator.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Insite.Invoice.Content.InvoicesView">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler">
+            <summary>
+            Gets a RealTime collection of invoice history objects.  Dependency Order 500.
+            </summary>
+            <remarks>
+            If RealTime Invoice History is enabled, this handler executes business logic, otherwise not.
+            </remarks>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.RealTimeInvoiceHistoryJobDefinitionName">
+            <summary>
+            The real time invoice history job definition name
+            </summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.CustomerNumberPrompt">
+            <summary>
+            The customer number prompt
+            </summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.IntegrationJobSchedulingService">
+            <summary>The integration job scheduling service.</summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.RealTimeInvoiceCollectionDataSetMapper">
+            <summary>The real time invoice collection data set mapper.</summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.#ctor(System.Lazy{InSite.Model.Integration.Interfaces.IIntegrationJobSchedulingService},System.Lazy{Insite.Invoice.Services.Handlers.Interfaces.IRealTimeInvoiceCollectionDataSetMapper})">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler"/> class.</summary>
+            <param name="integrationJobSchedulingService">The integration job scheduling service.</param>
+            <param name="realTimeInvoiceCollectionDataSetMapper">The real time invoice collection data set mapper.</param>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter,Insite.Invoice.Services.Results.GetInvoiceCollectionResult)">
+            <summary>Executes the specified parameter.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.GetRealTimeInvoiceCollection(InSite.Model.JobDefinition,InSite.Model.Customer,Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter,Insite.Invoice.Services.Results.GetInvoiceCollectionResult)">
+            <summary>Gets the real time invoice collection.</summary>
+            <param name="jobDefinition">The integration job definition.</param>
+            <param name="customer">The customer.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="P:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler">
+            <summary>
+            Gets a real time invoice history object.  Dependency Order 500.
+            </summary>
+            <remarks>
+            If RealTime Invoice History is enabled, this handler executes business logic, otherwise not.
+            </remarks>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.RealTimeInvoiceDetailJobDefinitionName">
+            <summary>
+            The real time invoice detail job definition name
+            </summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.CustomerNumberPrompt">
+            <summary>
+            The customer number prompt
+            </summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.InvoiceNumberPrompt">
+            <summary>
+            The invoice number prompt
+            </summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.IntegrationJobSchedulingService">
+            <summary>The integration job scheduling service.</summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.ProductService">
+            <summary>The product service.</summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.RealTimeInvoiceDataSetMapper">
+            <summary>The real time invoice data set mapper.</summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.#ctor(System.Lazy{Insite.Catalog.Services.IProductService},System.Lazy{InSite.Model.Integration.Interfaces.IIntegrationJobSchedulingService},System.Lazy{Insite.Invoice.Services.Handlers.Interfaces.IRealTimeInvoiceDataSetMapper})">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler"/> class.</summary>
+            <param name="productService">The product service.</param>
+            <param name="integrationJobSchedulingService">The integration job scheduling service.</param>
+            <param name="realTimeInvoiceDataSetMapper">The real time invoice data set mapper.</param>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Invoice.Services.Parameters.GetInvoiceParameter,Insite.Invoice.Services.Results.GetInvoiceResult)">
+            <summary>Executes the handler.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.GetRealTimeInvoice(InSite.Model.JobDefinition,InSite.Model.Customer,System.String,Insite.Invoice.Services.Results.GetInvoiceResult)">
+            <summary>Gets the real time invoice.</summary>
+            <param name="jobDefinition">The integration job definition.</param>
+            <param name="customer">The customer.</param>
+            <param name="invoiceNumber">The invoice number.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:InSite.Model.InvoiceHistory"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.GetProductDtos(System.Collections.Generic.IList{InSite.Model.InvoiceHistoryLine})">
+            <summary>Get Product Dtos for the specified <see cref="T:InSite.Model.OrderHistoryLine"/>s.</summary>
+            <param name="invoiceHistoryLines">List of <see cref="T:InSite.Model.OrderHistoryLine"/>s.</param>
+        </member>
+        <member name="P:Insite.Invoice.Services.Handlers.GetRealTimeInvoiceHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.GetStoredInvoiceCollectionHandler">
+            <summary>
+            Gets a locally stored collection of invoice history objects.  Dependency Order 550.
+            </summary>
+            <remarks>
+            Depends upon the IsRealTime property of the GetInvoiceCollectionResult
+            to determine if it should execute or pass responsibility to the next handler. If the
+            property is <c>false</c>, this handler executes business logic, otherwise not.
+            </remarks>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetStoredInvoiceCollectionHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter,Insite.Invoice.Services.Results.GetInvoiceCollectionResult)">
+            <summary>Executes the handler.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetStoredInvoiceCollectionHandler.GetStoredInvoiceCollection(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Customer,Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter)">
+            <summary>Gets the stored invoice collection.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="customer">The customer.</param>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:System.Linq.IQueryable"/>.</returns>
+        </member>
+        <member name="P:Insite.Invoice.Services.Handlers.GetStoredInvoiceCollectionHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler">
+            <summary>
+            Gets a stored invoice history object.  Dependency Order is 550.
+            </summary>
+            <remarks>
+            Depends upon the IsRealTime property of the GetInvoiceCollectionResult
+            to determine if it should execute or pass responsibility to the next handler. If the
+            property is <c>false</c>, this handler executes business logic, otherwise not.
+            </remarks>
+        </member>
+        <member name="F:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler.ProductService">
+            <summary>The product service.</summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler.#ctor(System.Lazy{Insite.Catalog.Services.IProductService})">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler"/> class.</summary>
+            <param name="productService">The product service.</param>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler.Execute(InSite.Model.Interfaces.IUnitOfWork,Insite.Invoice.Services.Parameters.GetInvoiceParameter,Insite.Invoice.Services.Results.GetInvoiceResult)">
+            <summary>Executes the handler.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="result">The result.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler.GetInvoiceHistory(InSite.Model.Interfaces.IUnitOfWork,InSite.Model.Customer,Insite.Invoice.Services.Parameters.GetInvoiceParameter)">
+            <summary>Gets the invoice history.</summary>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="customer">The customer.</param>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:InSite.Model.InvoiceHistory"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler.GetProductDtos(System.Collections.Generic.IList{InSite.Model.InvoiceHistoryLine})">
+            <summary>Get Product Dtos for the specified <see cref="T:InSite.Model.OrderHistoryLine"/>s.</summary>
+            <param name="invoiceHistoryLines">List of <see cref="T:InSite.Model.OrderHistoryLine"/>s.</param>
+        </member>
+        <member name="P:Insite.Invoice.Services.Handlers.GetStoredInvoiceHandler.Order">
+            <summary>Gets the order.</summary>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.Interfaces.IRealTimeInvoiceDataSetMapper">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.Interfaces.IRealTimeInvoiceDataSetMapper.MapDataSetToInvoiceCollection(System.Data.DataSet)">
+            <summary>
+            Maps the data set to invoice collection.
+            </summary>
+            <param name="invoiceCollectionDataSet">The invoice collection data set.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.Interfaces.IRealTimeInvoiceCollectionDataSetMapper">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.Interfaces.IRealTimeInvoiceCollectionDataSetMapper.MapDataSetToInvoiceCollection(System.Data.DataSet)">
+            <summary>
+            Maps the data set to invoice collection.
+            </summary>
+            <param name="invoiceCollectionDataSet">The invoice collection data set.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.Helpers.RealTimeInvoiceCollectionDataSetMapper">
+            <summary>The real time invoice collection data set mapper.</summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.Helpers.RealTimeInvoiceCollectionDataSetMapper.MapDataSetToInvoiceCollection(System.Data.DataSet)">
+            <summary>Maps the data set to invoice collection.</summary>
+            <param name="invoiceCollectionDataSet">The invoice collection data set.</param>
+        </member>
+        <member name="T:Insite.Invoice.Services.Handlers.Helpers.RealTimeInvoiceDataSetMapper">
+            <summary>The real time invoice data set mapper.</summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Handlers.Helpers.RealTimeInvoiceDataSetMapper.MapDataSetToInvoiceCollection(System.Data.DataSet)">
+            <summary>Maps the data set to order collection.</summary>
+            <param name="invoiceCollectionDataSet">The invoice collection data set.</param>
+        </member>
+        <member name="T:Insite.Invoice.Services.Results.GetInvoiceLineResult">
+            <summary>
+            This class defines the results returned from calling <see cref="M:Insite.Invoice.Services.IInvoiceService.GetInvoice(Insite.Invoice.Services.Parameters.GetInvoiceParameter)"/> for the lines.
+            </summary>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceLineResult.InvoiceHistoryLine">
+            <summary>
+            Gets or sets the invoice history line.
+            </summary>
+            <value>
+            The invoice history line.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceLineResult.ProductDto">
+            <summary>
+            Gets or sets the product dto.
+            </summary>
+            <value>
+            The product dto.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter">
+            <summary>The get invoice collection parameter.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.CustomerSequence">
+            <summary>Gets or sets the customer sequence.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.InvoiceNumber">
+            <summary>Gets or sets the invoice number.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.OrderNumber">
+            <summary>Gets or sets the order number.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.FromDate">
+            <summary>Gets or sets the from date.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.ToDate">
+            <summary>Gets or sets the to date.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.ShowOpenOnly">
+            <summary>
+            Gets or sets a value indicating whether [show open only].
+            </summary>
+            <value>
+            <c>true</c> if [show open only]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.StatusCollection">
+            <summary>Gets or sets the status collection.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.InvoiceTotalOperator">
+            <summary>Gets or sets the invoice total operator.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.PoNumber">
+            <summary>Gets or sets the customer po.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.Terms">
+            <summary>Gets or sets the terms.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.CurrentPage">
+            <summary>Gets or sets the start page.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.PageSize">
+            <summary>Gets or sets the page size.</summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter.Sort">
+            <summary>Gets or sets the sort.</summary>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel.Invoices">
+            <summary>
+            Gets or sets the invoices.
+            </summary>
+            <value>
+            The invoices.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel.Pagination">
+            <summary>
+            Gets or sets the pagination.
+            </summary>
+            <value>
+            The pagination.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel.ShowErpOrderNumber">
+            <summary>
+            Gets or sets a value indicating whether [show erp order number].
+            </summary>
+            <value>
+            <c>true</c> if [show erp order number]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel">
+            <summary></summary>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.InvoiceNumber">
+            <summary>
+            Gets or sets the invoice number.
+            </summary>
+            <value>
+            The invoice number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.InvoiceDate">
+            <summary>
+            Gets or sets the invoice date.
+            </summary>
+            <value>
+            The invoice date.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.DueDate">
+            <summary>
+            Gets or sets the due date.
+            </summary>
+            <value>
+            The due date.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.InvoiceType">
+            <summary>
+            Gets or sets the type of the invoice.
+            </summary>
+            <value>
+            The type of the invoice.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.CustomerNumber">
+            <summary>
+            Gets or sets the customer number.
+            </summary>
+            <value>
+            The customer number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.CustomerSequence">
+            <summary>
+            Gets or sets the customer sequence.
+            </summary>
+            <value>
+            The customer sequence.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.CustomerPO">
+            <summary>
+            Gets or sets the customer po.
+            </summary>
+            <value>
+            The customer po.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.Status">
+            <summary>
+            Gets or sets the status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.IsOpen">
+            <summary>
+            Gets or sets a value indicating whether this instance is open.
+            </summary>
+            <value>
+            <c>true</c> if this instance is open; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.CurrencyCode">
+            <summary>
+            Gets or sets the currency code.
+            </summary>
+            <value>
+            The currency code.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.Terms">
+            <summary>
+            Gets or sets the terms.
+            </summary>
+            <value>
+            The terms.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ShipCode">
+            <summary>
+            Gets or sets the ship code.
+            </summary>
+            <value>
+            The ship code.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.Salesperson">
+            <summary>
+            Gets or sets the salesperson.
+            </summary>
+            <value>
+            The salesperson.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BTCompanyName">
+            <summary>
+            Gets or sets the name of the bt company.
+            </summary>
+            <value>
+            The name of the bt company.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BTAddress1">
+            <summary>
+            Gets or sets the bt address1.
+            </summary>
+            <value>
+            The bt address1.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BTAddress2">
+            <summary>
+            Gets or sets the bt address2.
+            </summary>
+            <value>
+            The bt address2.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BillToCity">
+            <summary>
+            Gets or sets the bill to city.
+            </summary>
+            <value>
+            The bill to city.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BillToState">
+            <summary>
+            Gets or sets the state of the bill to.
+            </summary>
+            <value>
+            The state of the bill to.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BillToPostalCode">
+            <summary>
+            Gets or sets the bill to postal code.
+            </summary>
+            <value>
+            The bill to postal code.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.BTCountry">
+            <summary>
+            Gets or sets the bt country.
+            </summary>
+            <value>
+            The bt country.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.STCompanyName">
+            <summary>
+            Gets or sets the name of the st company.
+            </summary>
+            <value>
+            The name of the st company.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.STAddress1">
+            <summary>
+            Gets or sets the st address1.
+            </summary>
+            <value>
+            The st address1.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.STAddress2">
+            <summary>
+            Gets or sets the st address2.
+            </summary>
+            <value>
+            The st address2.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ShipToCity">
+            <summary>
+            Gets or sets the ship to city.
+            </summary>
+            <value>
+            The ship to city.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ShipToState">
+            <summary>
+            Gets or sets the state of the ship to.
+            </summary>
+            <value>
+            The state of the ship to.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ShipToPostalCode">
+            <summary>
+            Gets or sets the ship to postal code.
+            </summary>
+            <value>
+            The ship to postal code.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.STCountry">
+            <summary>
+            Gets or sets the st country.
+            </summary>
+            <value>
+            The st country.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.Notes">
+            <summary>
+            Gets or sets the notes.
+            </summary>
+            <value>
+            The notes.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ProductTotal">
+            <summary>
+            Gets or sets the product total.
+            </summary>
+            <value>
+            The product total.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.DiscountAmount">
+            <summary>
+            Gets or sets the discount amount.
+            </summary>
+            <value>
+            The discount amount.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ShippingAndHandling">
+            <summary>
+            Gets or sets the shipping and handling.
+            </summary>
+            <value>
+            The shipping and handling.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.OtherCharges">
+            <summary>
+            Gets or sets the other charges.
+            </summary>
+            <value>
+            The other charges.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.TaxAmount">
+            <summary>
+            Gets or sets the tax amount.
+            </summary>
+            <value>
+            The tax amount.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.InvoiceTotal">
+            <summary>
+            Gets or sets the invoice total.
+            </summary>
+            <value>
+            The invoice total.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.CurrentBalance">
+            <summary>
+            Gets or sets the current balance.
+            </summary>
+            <value>
+            The current balance.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.InvoiceLines">
+            <summary>
+            Gets or sets the invoice history lines.
+            </summary>
+            <value>
+            The invoice history lines.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.InvoiceTotalDisplay">
+            <summary>
+            Gets or sets the invoice total display.
+            </summary>
+            <value>
+            The invoice total display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ProductTotalDisplay">
+            <summary>
+            Gets or sets the product total display.
+            </summary>
+            <value>
+            The product total display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.DiscountAmountDisplay">
+            <summary>
+            Gets or sets the discount amount display.
+            </summary>
+            <value>
+            The discount amount display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.TaxAmountDisplay">
+            <summary>
+            Gets or sets the tax amount display.
+            </summary>
+            <value>
+            The tax amount display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.ShippingAndHandlingDisplay">
+            <summary>
+            Gets or sets the shipping and handling display.
+            </summary>
+            <value>
+            The shipping and handling display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.OtherChargesDisplay">
+            <summary>
+            Gets or sets the other charges display.
+            </summary>
+            <value>
+            The other charges display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.CurrentBalanceDisplay">
+            <summary>
+            Gets or sets the current balance display.
+            </summary>
+            <value>
+            The current balance display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel.OrderTotalDisplay">
+            <summary>
+            Gets or sets the order total display.
+            </summary>
+            <value>
+            The order total display.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel">
+            <summary></summary>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ProductUri">
+            <summary>
+            Gets or sets the product URI.
+            </summary>
+            <value>
+            The product URI.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.MediumImagePath">
+            <summary>
+            Gets or sets the medium image path.
+            </summary>
+            <value>
+            The medium image path.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.AltText">
+            <summary>
+            Gets or sets the alt text.
+            </summary>
+            <value>
+            The alt text.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+            <value>
+            The name of the product.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ManufacturerItem">
+            <summary>
+            Gets or sets the manufacturer item.
+            </summary>
+            <value>
+            The manufacturer item.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.CustomerName">
+            <summary>
+            Gets or sets the name of the customer.
+            </summary>
+            <value>
+            The name of the customer.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ShortDescription">
+            <summary>
+            Gets or sets the short description.
+            </summary>
+            <value>
+            The short description.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ProductERPNumber">
+            <summary>
+            Gets or sets the product erp number.
+            </summary>
+            <value>
+            The product erp number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.CustomerProductNumber">
+            <summary>
+            Gets or sets the customer product number.
+            </summary>
+            <value>
+            The customer product number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.LineType">
+            <summary>
+            Gets or sets the type of the line.
+            </summary>
+            <value>
+            The type of the line.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ERPOrderNumber">
+            <summary>
+            Gets or sets the erp order number.
+            </summary>
+            <value>
+            The erp order number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.LineNumber">
+            <summary>
+            Gets or sets the line number.
+            </summary>
+            <value>
+            The line number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ReleaseNumber">
+            <summary>
+            Gets or sets the release number.
+            </summary>
+            <value>
+            The release number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.LinePOReference">
+            <summary>
+            Gets or sets the line po reference.
+            </summary>
+            <value>
+            The line po reference.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.Warehouse">
+            <summary>
+            Gets or sets the warehouse.
+            </summary>
+            <value>
+            The warehouse.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.Notes">
+            <summary>
+            Gets or sets the notes.
+            </summary>
+            <value>
+            The notes.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.QtyInvoiced">
+            <summary>
+            Gets or sets the qty invoiced.
+            </summary>
+            <value>
+            The qty invoiced.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.UnitOfMeasure">
+            <summary>
+            Gets or sets the unit of measure.
+            </summary>
+            <value>
+            The unit of measure.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.UnitPrice">
+            <summary>
+            Gets or sets the unit price.
+            </summary>
+            <value>
+            The unit price.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.DiscountPercent">
+            <summary>
+            Gets or sets the discount percent.
+            </summary>
+            <value>
+            The discount percent.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.DiscountAmount">
+            <summary>
+            Gets or sets the discount amount.
+            </summary>
+            <value>
+            The discount amount.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.LineTotal">
+            <summary>
+            Gets or sets the line total.
+            </summary>
+            <value>
+            The line total.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.ShipmentNumber">
+            <summary>
+            Gets or sets the shipment number.
+            </summary>
+            <value>
+            The shipment number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.UnitPriceDisplay">
+            <summary>
+            Gets or sets the unit price display.
+            </summary>
+            <value>
+            The unit price display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.DiscountAmountDisplay">
+            <summary>
+            Gets or sets the discount amount display.
+            </summary>
+            <value>
+            The discount amount display.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.WebApi.V1.ApiModels.InvoiceLineModel.LineTotalDisplay">
+            <summary>
+            Gets or sets the line total display.
+            </summary>
+            <value>
+            The line total display.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.Services.IInvoiceService">
+            <summary>
+            Public interface that provides the contract for implementing an InvoiceHistoryService that offers functions for
+            retrieving invoice history information.
+            The implementations primary responsibility is providing access to various historical data sources in a standard format
+            of <see cref="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel"/>s.
+            </summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.IInvoiceService.GetInvoiceCollection(Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter)">
+            <summary>Gets the invoice histories.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.IInvoiceService.GetInvoice(Insite.Invoice.Services.Parameters.GetInvoiceParameter)">
+            <summary>Gets the invoice history.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Invoice.Services.InvoiceService">
+            <summary>
+            The default implementation of <see cref="T:Insite.Invoice.Services.IInvoiceService"/> that offers functions for retrieving invoice history
+            information.  It supports
+            both historical table data and real time data sources.
+            </summary>
+        </member>
+        <member name="F:Insite.Invoice.Services.InvoiceService.handlerFactory">
+            <summary>The handler factory.</summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.InvoiceService.#ctor(InSite.Model.Interfaces.IUnitOfWorkFactory,InSite.Model.Interfaces.IContextProvider,InSite.Model.Interfaces.ITranslationLocalizer,Insite.Core.Services.Handlers.IHandlerFactory)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.Services.InvoiceService"/> class. Dependency Injection constructor.</summary>
+            <param name="unitOfWorkFactory"><see cref="T:InSite.Model.Interfaces.IUnitOfWorkFactory"/></param>
+            <param name="contextProvider"><see cref="T:InSite.Model.Interfaces.IContextProvider"/></param>
+            <param name="translationLocalizer"><see cref="T:InSite.Model.Interfaces.ITranslationLocalizer"/></param>
+            <param name="handlerFactory">The handler factory.</param>
+        </member>
+        <member name="M:Insite.Invoice.Services.InvoiceService.GetInvoiceCollection(Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter)">
+            <summary>Gets the invoice collection.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceCollectionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.Services.InvoiceService.GetInvoice(Insite.Invoice.Services.Parameters.GetInvoiceParameter)">
+            <summary>Gets the invoice.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Results.GetInvoiceResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter">
+            <summary>
+            This class defines the parameters required to call <see cref="M:Insite.Invoice.Services.IInvoiceService.GetInvoiceCollection(Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter)"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.#ctor(InSite.Model.Core.CurrentContext)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter"/> class.</summary>
+            <param name="currentContext">The current context.</param>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.CustomerSequence">
+            <summary>
+            The customer sequence to limit the <see cref="T:InSite.Model.InvoiceHistory"/> query by.
+            </summary>
+            <value>
+            The customer sequence.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.InvoiceNumber">
+            <summary>
+            The invoice number to limit the <see cref="T:InSite.Model.InvoiceHistory"/> query by.
+            </summary>
+            <value>
+            The invoice number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.OrderNumber">
+            <summary>
+            The order number to limit the <see cref="T:InSite.Model.InvoiceHistory"/> query by.
+            </summary>
+            <value>
+            The order number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.FromDate">
+            <summary>
+            The from date to limit the <see cref="T:InSite.Model.InvoiceHistory"/> query by.
+            </summary>
+            <value>
+            From date.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.ToDate">
+            <summary>
+            The to date to limit the <see cref="T:InSite.Model.InvoiceHistory"/> query by.
+            </summary>
+            <value>
+            To date.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.ShowOpenOnly">
+            <summary>
+            Flag to determing if the <see cref="T:InSite.Model.InvoiceHistory"/> query should be limited to open invoices.
+            </summary>
+            <value>
+            <c>true</c> if [show open only]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.StatusCollection">
+            <summary>
+            Gets or sets the status collection.
+            </summary>
+            <value>
+            The status collection.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter.CustomerPO">
+            <summary>
+            Gets or sets the customer po.
+            </summary>
+            <value>
+            The customer po.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.Services.Parameters.GetInvoiceParameter">
+            <summary>
+            This class defines the parameters required to call <see cref="T:Insite.Invoice.Services.InvoiceService"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Parameters.GetInvoiceParameter.#ctor(InSite.Model.Core.CurrentContext,System.String)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Parameters.GetInvoiceParameter"/> class.</summary>
+            <param name="currentContext">The current Context.</param>
+            <param name="invoiceNumber">The invoice number.</param>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceParameter.InvoiceNumber">
+            <summary>
+            The specific invoice number to retrive <see cref="T:InSite.Model.InvoiceHistory"/> for.
+            </summary>
+            <value>
+            The invoice number.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Parameters.GetInvoiceParameter.GetInvoiceLines">
+            <summary>
+            Gets or sets a value indicating whether [get invoice lines].
+            </summary>
+            <value>
+            <c>true</c> if [get invoice lines]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.Services.Results.GetInvoiceCollectionResult">
+            <summary>
+            This class defines the results returned from calling <see cref="M:Insite.Invoice.Services.IInvoiceService.GetInvoiceCollection(Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter)"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Results.GetInvoiceCollectionResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Results.GetInvoiceCollectionResult"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceCollectionResult.InvoiceHistoryCollection">
+            <summary>
+            Gets or sets the invoice history collection.
+            </summary>
+            <value>
+            The invoice history collection.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceCollectionResult.ShowErpOrderNumber">
+            <summary>
+            Gets or sets a value indicating whether [show erp order number].
+            </summary>
+            <value>
+            <c>true</c> if [show erp order number]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceCollectionResult.ShowErpInvoiceNumber">
+            <summary>
+            Gets or sets a value indicating whether [show erp invoice number].
+            </summary>
+            <value>
+            <c>true</c> if [show erp invoice number]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceCollectionResult.IsRealTime">
+            <summary>
+            Gets or sets a value indicating whether this instance is real time.
+            </summary>
+            <value>
+            <c>true</c> if this instance is real time; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.Services.Results.GetInvoiceResult">
+            <summary>
+            This class defines the results returned from calling <see cref="M:Insite.Invoice.Services.IInvoiceService.GetInvoice(Insite.Invoice.Services.Parameters.GetInvoiceParameter)"/>.
+            </summary>
+        </member>
+        <member name="M:Insite.Invoice.Services.Results.GetInvoiceResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Insite.Invoice.Services.Results.GetInvoiceResult"/> class.
+            </summary>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceResult.InvoiceHistory">
+            <summary>
+            Gets or sets the invoice history.
+            </summary>
+            <value>
+            The invoice history.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceResult.GetInvoiceLineResults">
+            <summary>
+            Gets or sets the get invoice line results.
+            </summary>
+            <value>
+            The get invoice line results.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceResult.MicroSite">
+            <summary>
+            Gets or sets the micro site.
+            </summary>
+            <value>
+            The micro site.
+            </value>
+        </member>
+        <member name="P:Insite.Invoice.Services.Results.GetInvoiceResult.IsRealTime">
+            <summary>
+            Gets or sets a value indicating whether this instance is real time.
+            </summary>
+            <value>
+            <c>true</c> if this instance is real time; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.InvoicesV1Controller">
+            <summary>The invoices v 1 controller.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.InvoicesV1Controller.getInvoiceCollectionMapper">
+            <summary>The get invoice collection mapper.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.InvoicesV1Controller.getInvoiceMapper">
+            <summary>The get invoice mapper.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.InvoicesV1Controller.invoiceService">
+            <summary>The invoice service.</summary>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.InvoicesV1Controller.#ctor(Insite.Core.WebApi.Interfaces.IContextUnwrapper,InSite.Model.Managers.ICookieManager,Insite.Invoice.Services.IInvoiceService,Insite.Invoice.WebApi.V1.Mappers.Interfaces.IGetInvoiceCollectionMapper,Insite.Invoice.WebApi.V1.Mappers.Interfaces.IGetInvoiceMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.WebApi.V1.InvoicesV1Controller"/> class.</summary>
+            <param name="contextUnwrapper">The context un-wrapper.</param>
+            <param name="cookieManager">The cookie Manager.</param>
+            <param name="invoiceService">The invoice service.</param>
+            <param name="getInvoiceCollectionMapper">The get invoice collection mapper.</param>
+            <param name="getInvoiceMapper">The get invoice mapper.</param>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.InvoicesV1Controller.Get(Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter)">
+            <summary>Gets this instance.</summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.InvoicesV1Controller.Get(System.String)">
+            <summary>Gets the specified invoice identifier.</summary>
+            <param name="invoiceId">The invoice identifier.</param>
+            <returns>The <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper">
+            <summary>The get invoice collection mapper.</summary>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.Mappers.Interfaces.IGetInvoiceCollectionMapper">
+            <summary>The GetInvoiceCollectionMapper interface.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.GetInvoiceMapper">
+            <summary>The get invoice mapper.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.#ctor(Insite.Invoice.WebApi.V1.Mappers.Interfaces.IGetInvoiceMapper,Insite.Core.Common.Interfaces.IObjectToObjectMapper,Insite.Core.WebApi.Interfaces.IUrlHelper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper"/> class. </summary>
+            <param name="getInvoiceMapper">The get Invoice Mapper.</param>
+            <param name="objectToObjectMapper">The object To Object Mapper.</param>
+            <param name="urlHelper">The url Helper.</param>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.MapParameter(Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionParameter,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="apiParameter">The api parameter.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Parameters.GetInvoiceCollectionParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.MapResult(Insite.Invoice.Services.Results.GetInvoiceCollectionResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>Maps the result.</summary>
+            <param name="serviceResult">The get invoice collection result.</param>
+            <param name="request">The HTTP request message.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceCollectionModel"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">The value of 'serviceResult' cannot be null. </exception>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceCollectionMapper.GetLink(Insite.Invoice.Services.Results.GetInvoiceCollectionResult,System.Net.Http.HttpRequestMessage,System.Int32)">
+            <summary>The get link.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="page">The page.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper">
+            <summary>The get invoice mapper.</summary>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.Mappers.Interfaces.IGetInvoiceMapper">
+            <summary>The GetInvoiceMapper interface.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper.ObjectToObjectMapper">
+            <summary>The object to object mapper.</summary>
+        </member>
+        <member name="F:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper.UrlHelper">
+            <summary>The url helper.</summary>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper.#ctor(Insite.Core.WebApi.Interfaces.IUrlHelper,Insite.Core.Common.Interfaces.IObjectToObjectMapper)">
+            <summary>Initializes a new instance of the <see cref="T:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper"/> class.</summary>
+            <param name="urlHelper">The url helper.</param>
+            <param name="objectToObjectMapper">The object to object mapper.</param>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper.MapParameter(System.String,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map parameter.</summary>
+            <param name="invoiceNumber">The invoice number.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Invoice.Services.Parameters.GetInvoiceParameter"/>.</returns>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.GetInvoiceMapper.MapResult(Insite.Invoice.Services.Results.GetInvoiceResult,System.Net.Http.HttpRequestMessage,InSite.Model.Core.CurrentContext)">
+            <summary>The map result.</summary>
+            <param name="serviceResult">The service result.</param>
+            <param name="request">The request.</param>
+            <param name="currentContext">The current Context.</param>
+            <returns>The <see cref="T:Insite.Invoice.WebApi.V1.ApiModels.InvoiceModel"/>.</returns>
+        </member>
+        <member name="T:Insite.Invoice.WebApi.V1.Mappers.InvoiceMapperStartupTask">
+            <summary>The invoice mapper startup task.</summary>
+        </member>
+        <member name="M:Insite.Invoice.WebApi.V1.Mappers.InvoiceMapperStartupTask.Run">
+            <summary>
+            Method that gets executed by the <see cref="T:InSite.Model.BootStrapper.IBootStrapper"/>.
+            </summary>
+        </member>
+    </members>
+</doc>
