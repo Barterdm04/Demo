@@ -3000,6 +3000,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>insite.models.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\Custom\App\account\custom.selectcustomer.controller.ts" />
     <TypeScriptCompile Include="Scripts\Custom\App\cart\custom.checkoutaddress.controller.ts" />
     <TypeScriptCompile Include="Scripts\Custom\App\cart\custom.userexchange.service.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

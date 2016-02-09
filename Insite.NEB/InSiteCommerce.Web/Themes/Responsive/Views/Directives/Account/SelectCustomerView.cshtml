@@ -5,7 +5,7 @@
             <label for="selectBillTo">@T("Select Bill To")</label>
             <select class="billto-selector" id="selectBillTo" name="selectedBillTo"
                     ng-model="vm.billTo" ng-change="vm.changeBillTo()"
-                    ng-options="billTo.label for billTo in vm.billTos">
+                    ng-options="billTo.label for billTo in vm.billTos | removeSequences">
                 <option value="">@T("Select Bill To")</option>
             </select>
         </div>
@@ -14,7 +14,7 @@
             <label for="selectShipTo">@T("Select Ship To")</label>
             <select name="selectShipTo" class="shipto-selector" id="selectShipTo"
                     ng-model="vm.shipTo"
-                    ng-options="shipTo.label for shipTo in vm.billTo.shipTos">
+                    ng-options="shipTo.label for shipTo in vm.billTo.shipTos | removeSequences">
                 <option value="">@T("Select Ship To")</option>
             </select>
         </div>
