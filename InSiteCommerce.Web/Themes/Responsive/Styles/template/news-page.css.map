@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,0BAA2B;EAC1B,aAAa,EAAC,KAAK;;;AAEpB,0BAA2B;EAC1B,aAAa,EAAC,GAAG;;;AAElB,6BAA8B;EAC7B,SAAS,EAAC,OAAO;EACjB,aAAa,EAAC,GAAG;;;AAEjB,oCAAqC;EACpC,YAAY,EAAC,IAAI",
-"sources": ["news-page.scss"],
-"names": [],
-"file": "news-page.css"
-}

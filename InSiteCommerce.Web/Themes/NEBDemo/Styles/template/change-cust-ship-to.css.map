@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,gCAAkC;EACjC,aAAa,EAAC,GAAG;;;AAGlB,iCAAkC;EAElC,gCAAkC;IACjC,KAAK,EAAC,IAAI;;;AAKX,iCAAkC;EAElC,0BAA2B;IAC1B,UAAU,EAAC,KAAK;;;AAKjB,+BAAgC;EAC/B,aAAa,EAAC,KAAK;;;AAGnB,4CAA6C;EAC5C,aAAa,EAAC,GAAG;;;AAInB,iCAAkC;EAClC,oCAAqC;IACpC,KAAK,EAAC,KAAK;IACX,WAAW,EAAC,GAAG;;;AAIhB,0BAA2B;EAC1B,UAAU,EAAC,KAAK",
-"sources": ["change-cust-ship-to.scss"],
-"names": [],
-"file": "change-cust-ship-to.css"
-}

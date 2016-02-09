@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,iCAAkC;EACjC,sCAAuC;IACtC,MAAM,EAAC,eAAe;;;AAGxB,iCAAkC;EAC7B,oCAAqC;IACxC,OAAO,EAAC,YAAY",
-"sources": ["ma-order-approval.scss"],
-"names": [],
-"file": "ma-order-approval.css"
-}
