@@ -13,6 +13,7 @@
         when the directive has replace = true. https://github.com/angular/angular.js/issues/9837 *@
     <div class="row" role="cross-sells" ng-if="vm.showCrossSellCarousel()" ng-cloak>
         <div class="medium-12 large-12 columns">
+            <h2 style="text-align: center; margin-bottom: .25em;">Recommended Products</h2>
             <div class="carousel-wrapper">
                 <div class="cs-carousel">
 
@@ -65,7 +66,7 @@
 
                                             <div class="item-qty" ng-if="crossSellProduct.canAddToCart">
                                                 <label>@T("QTY_quantity"):</label>
-                                                <input id="crossSellCarouselQuantityOrdered_{{crossSellProduct.id}}" type="text" ng-model="crossSellProduct.qtyOrdered" ng-init="crossSellProduct.qtyOrdered = 1" class="qty numerictextbox" />
+                                                <input id="crossSellCarouselQuantityOrdered_{{crossSellProduct.id}}" type="text" ng-model="crossSellProduct.qtyOrdered" ng-init="crossSellProduct.qtyOrdered = 1" class="qty numerictextbox"/>
                                             </div>
 
                                             <div class="action">

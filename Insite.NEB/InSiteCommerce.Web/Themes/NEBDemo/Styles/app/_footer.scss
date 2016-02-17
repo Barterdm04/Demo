@@ -60,6 +60,7 @@
 #footer {
     padding-top: 0;
     padding-bottom:0;
+    border-top:none;
     button {
         margin:.5em 0;
     }
@@ -80,6 +81,7 @@
     .row {
         margin: 0 auto;
         padding: 0;
+        max-width: 1040px;
     }
 }
 
@@ -90,7 +92,7 @@
 }
 
 .footer-tier-1 {
-    width: 1040px;
+    max-width: 1040px;
     margin:0 auto;
     padding-top: 0;
     font-size:14pt;

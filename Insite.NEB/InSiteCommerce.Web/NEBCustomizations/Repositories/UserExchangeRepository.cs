@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using Insite.Catalog.Services;
@@ -29,9 +30,19 @@ namespace InSiteCommerce.Web.NEBCustomizations.Repositories
 
             foreach (var user in users)
             {
+                var nameLabel = "";
+                if (string.IsNullOrEmpty(user.FirstName) && string.IsNullOrEmpty(user.LastName))
+                {
+                    nameLabel = user.UserName;
+                }
+                else
+                {
+                    nameLabel = String.Format("{0} {1} ({2})", user.FirstName, user.LastName, user.UserName);
+                }
                 var nebUser = new NEBUser
                 {
-                    Name = user.UserName,
+                    Name = nameLabel,
+                    UserName = user.UserName,
                     Id = user.Id,
                     BillTo = new List<Customer>()
                 };

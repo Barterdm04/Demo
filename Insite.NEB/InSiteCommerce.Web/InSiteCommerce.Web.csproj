@@ -559,6 +559,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Console\IntegrationService.asmx" />
+    <Content Include="Images\favicon.ico" />
     <Content Include="Images\grab.png" />
     <Content Include="Scripts\Libraries\flexslider\2.5.0\jquery.flexslider-min.js" />
     <Content Include="Scripts\Libraries\papaparse\4.1\papaparse.js" />
@@ -2227,6 +2228,9 @@
     </Content>
     <Content Include="Themes\NEBDemo\Views\Pages\CatalogNavigationPage\Navigation\Standard.cshtml" />
     <Content Include="Themes\NEBDemo\Views\Directives\Cart\OrderConfirmationView.cshtml" />
+    <Content Include="Themes\NEBDemo\Views\Pages\HomePage\LeftNav.cshtml" />
+    <Content Include="Themes\NEBDemo\Views\Pages\HomePage\FullPage.cshtml" />
+    <Content Include="Themes\NEBDemo\Views\Directives\Account\SelectCustomerView.cshtml" />
     <None Include="Themes\Responsive\Styles\base.scss" />
     <Content Include="Themes\Responsive\Styles\fonts\accessibility_foundicons.svg" />
     <Content Include="Themes\Responsive\Styles\fonts\general_enclosed_foundicons.svg" />

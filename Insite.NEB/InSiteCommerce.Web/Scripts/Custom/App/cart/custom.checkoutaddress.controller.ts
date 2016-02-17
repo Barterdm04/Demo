@@ -56,7 +56,7 @@
                             self.sessionService.getSession().then((result: SessionModel) => {
                                 self.session = result;
                                 for (var i = 0; i < userList.length; i++) {
-                                    if (userList[i].name !== self.session.userName) {
+                                    if (userList[i].userName !== self.session.userName) {
                                         if (userList[i].billTo) {
                                             var billTos = userList[i].billTo;
                                             for (var x = 0; x < billTos.length; x++) {

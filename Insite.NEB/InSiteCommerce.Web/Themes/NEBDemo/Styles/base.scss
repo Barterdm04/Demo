@@ -84,7 +84,7 @@
 
 .widget-linklist ul .active {
     font-weight: bold;
-    color:$tarawera;
+    color:$mine-shaft;
 }
 
 .widget-linklist.list-vertical ul li {
@@ -129,7 +129,7 @@
 
 .widget-navlist h4 {
     color:$white;
-    background:$tarawera;
+    background:$tundora;
     padding-left:.6rem;
     height:45px;
     line-height:45px;
@@ -144,7 +144,7 @@
 
 .widget-navlist ul .active {
     font-weight: bold;
-    color:$tarawera;
+    color:$mine-shaft;
 }
 
 .widget-navlist ul li {
@@ -197,10 +197,14 @@ h1 {
 }
 
 /* Links global */
+a:link, a:visited, a:active {
+    color:$tundora;
+}
+
 
 a:hover, a:focus {
-    text-decoration:none;
-    font-weight:bold;
+    /*text-decoration:none;*/
+    font-weight:bold !important;
     color:$mine-shaft;
 }
 
@@ -238,7 +242,7 @@ a.btn:link, a.btn:visited, button.btn, div.remove a.btn {
 
   .columns:nth-of-type(-n + 2):nth-child(1) {
     padding-left:0;
-    padding-right:.75rem;
+    padding-right:1.5rem;
   }
   .columns:nth-of-type(-n + 2):last-child {
       padding-left:0;
@@ -305,11 +309,23 @@ a.btn:link, a.btn:visited, button.btn, div.remove a.btn {
 
 @media (min-width: 48em) {
     .isc-primary-nav ul .subnav {
-        width:300px;
+        width:305px;
     }
 }
 
-
-.item-thumb, detail-image {
+.item-thumb {
     display:none !important;
+}
+
+.detail-image {
+    display:none !important;
+}
+
+.name-price {
+    width:100% !important;
+}
+
+.flexslider {
+    border:none;
+    margin: 0 0 28px !important;
 }

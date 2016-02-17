@@ -9,6 +9,7 @@ namespace InSiteCommerce.Web.NEBCustomizations.UserExchange.Models
     public class NEBUser
     {
         public string Name { get; set; }
+        public string UserName { get; set; }
 
         public Guid Id { get; set; }
 
