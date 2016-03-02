@@ -2576,6 +2576,7 @@
     <Folder Include="Themes\Responsive\Scripts\app\" />
     <Folder Include="Themes\Responsive\Scripts\libraries\" />
     <Folder Include="Themes\Responsive\Scripts\template\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\connectionStrings.config">
@@ -3027,6 +3028,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DefaultEmails\StatusReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FuelSDK-CSharp\FuelSDK-CSharp.csproj">
+      <Project>{50281782-fa9f-44b3-a073-3759a5ca1cd8}</Project>
+      <Name>FuelSDK-CSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
